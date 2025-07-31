@@ -1,29 +1,20 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import {  Instagram, Linkedin} from "lucide-react"
 
 const Footer = () => {
   return (
     <footer className="bg-primary/5 border-t">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="relative h-10 w-10">
-                <Image src="/logo.svg" alt="E-cell Logo" fill className="object-contain" />
-              </div>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">
+          {/* Logo & Social */}
+          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-4">
+            <Link href="/" className="flex items-center gap-2 mb-2">
+             
               <span className="font-poppins font-bold text-xl">E-cell SVCE</span>
             </Link>
-            <p className="text-muted-foreground mb-4">Grow your Skills in Entrepreneurship</p>
-            <div className="flex gap-4">
-              <Link href="#" className="text-foreground/70 hover:text-primary transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-foreground/70 hover:text-primary transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </Link>
+            <p className="text-muted-foreground mb-2">Grow your Skills in Entrepreneurship</p>
+            <div className="flex gap-4 justify-center md:justify-start">
               <Link href="#" className="text-foreground/70 hover:text-primary transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
@@ -35,7 +26,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-span-1">
+          {/* Quick Links */}
+          <div className="flex-1 flex flex-col items-center md:items-start">
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -59,6 +51,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/builders-guild" className="text-foreground/70 hover:text-primary transition-colors">
+                  Builders Guild
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-foreground/70 hover:text-primary transition-colors">
                   Contact
                 </Link>
@@ -66,36 +63,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-1">
+          {/* Contact Info */}
+          <div className="flex-1 flex flex-col items-center md:items-start">
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <address className="not-italic text-foreground/70 space-y-2">
+            <address className="not-italic text-foreground/70 space-y-2 text-center md:text-left">
               <p>Sri Venkateswara College of Engineering</p>
               <p>Post Bag No.1, Pennalur Village</p>
               <p>Chennai - Bengaluru High Road</p>
               <p>Sriperumbudur Tk, Tamil Nadu 602117</p>
               <p className="mt-2">Email: ecell@svce.ac.in</p>
             </address>
-          </div>
-
-          <div className="col-span-1">
-            <h3 className="font-bold text-lg mb-4">Subscribe</h3>
-            <p className="text-foreground/70 mb-4">
-              Subscribe to our newsletter to get updates on events and opportunities.
-            </p>
-            <form className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 rounded-md border border-border bg-background"
-                required
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
 

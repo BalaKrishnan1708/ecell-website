@@ -37,9 +37,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-10 w-10">
-            <Image src="/logo.svg" alt="E-cell Logo" fill className="object-contain" />
-          </div>
+          
           <span className="font-poppins font-bold text-xl">E-cell SVCE</span>
         </Link>
 
@@ -57,12 +55,12 @@ const Navbar = () => {
           <Link href="/team" className="font-medium text-foreground/80 hover:text-primary transition-colors">
             Team
           </Link>
+          <Link href="/builders-guild" className="font-medium text-foreground/80 hover:text-primary transition-colors">
+            Builders Guild
+          </Link>
           <Link href="/contact" className="font-medium text-foreground/80 hover:text-primary transition-colors">
             Contact
           </Link>
-          <Button variant="default" size="sm">
-            Login
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}

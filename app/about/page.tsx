@@ -4,13 +4,20 @@ import { CheckCircle2 } from "lucide-react"
 
 export default function AboutPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gradient-to-br from-primary/5 via-white to-secondary/10 min-h-screen relative">
+      {/* College Logo Top Right */}
+      <div className="absolute top-6 right-8 z-50">
+        <Image src="/svce.jpg" alt="SVCE College Logo" width={120} height={30} className="object-contain" />
+      </div>
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Learn more about E-cell SVCE and our mission to foster entrepreneurship among students.
+      <section className="relative py-24 bg-primary text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20 flex items-center justify-center">
+          <Image src="/logo.jpg" alt="E-cell SVCE Logo" width={164} height={104} className="object-contain mx-auto" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">About Us</h1>
+          <p className="text-2xl max-w-2xl mx-auto font-medium drop-shadow">
+            E-cell SVCE is dedicated to empowering students to become future entrepreneurs and leaders.
           </p>
         </div>
       </section>
@@ -20,44 +27,40 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
-              <p className="text-muted-foreground mb-6">
-                The Entrepreneurship Cell (E-cell) of Sri Venkateswara College of Engineering is a student-run
-                organization dedicated to fostering the entrepreneurial spirit among students and providing them with
-                the necessary resources and guidance to transform their innovative ideas into successful ventures.
+              <h2 className="text-3xl font-bold mb-6 text-primary">Who We Are</h2>
+              <p className="text-muted-foreground mb-6 text-lg">
+                The Entrepreneurship Cell (E-cell) at Sri Venkateswara College of Engineering is a vibrant, student-driven community that nurtures innovation, creativity, and leadership. Our mission is to inspire and support students in transforming their ideas into impactful ventures.
               </p>
-              <p className="text-muted-foreground mb-6">
-                Established in 2015, E-cell SVCE has been at the forefront of promoting entrepreneurship through various
-                initiatives, events, workshops, and competitions. We believe that entrepreneurship is not just about
-                starting a business but a mindset that encourages innovation, problem-solving, and leadership.
+              <p className="text-muted-foreground mb-6 text-lg">
+                Since 2015, E-cell SVCE has championed entrepreneurship through hands-on events, workshops, and mentorship. We believe entrepreneurship is a mindset—one that values curiosity, resilience, and collaboration.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary mt-1 flex-shrink-0" />
-                  <p>Fostering innovation and entrepreneurial mindset among students</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary mt-1 flex-shrink-0" />
-                  <p>Providing resources, mentorship, and networking opportunities</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary mt-1 flex-shrink-0" />
-                  <p>Organizing workshops, seminars, and competitions</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary mt-1 flex-shrink-0" />
-                  <p>Connecting students with industry experts and investors</p>
-                </div>
-              </div>
-              <Button size="lg">Learn More</Button>
+              <ul className="space-y-4 mb-8 list-none">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-accent mt-1 flex-shrink-0" />
+                  <span>Fostering innovation and entrepreneurial thinking</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-accent mt-1 flex-shrink-0" />
+                  <span>Providing resources, mentorship, and networking</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-accent mt-1 flex-shrink-0" />
+                  <span>Organizing workshops, seminars, and competitions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-accent mt-1 flex-shrink-0" />
+                  <span>Connecting students with industry experts and investors</span>
+                </li>
+              </ul>
+              <Button size="lg" asChild>
+                <a href="/contact">Contact Us</a>
+              </Button>
             </div>
             <div className="relative">
               <div className="relative h-[500px] w-full overflow-hidden rounded-xl shadow-xl">
                 <Image src="/placeholder.svg?height=1000&width=800" alt="E-cell Team" fill className="object-cover" />
               </div>
-              <div className="absolute -bottom-6 -left-6 h-24 w-24 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">EST. 2015</span>
-              </div>
+              
             </div>
           </div>
         </div>

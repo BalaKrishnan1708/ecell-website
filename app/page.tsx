@@ -5,29 +5,33 @@ import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-primary/5 via-white to-secondary/10">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 animate-fade-in">
           <Image
             src="/placeholder.svg?height=1080&width=1920"
             alt="E-cell Team"
             fill
-            className="object-cover"
+            className="object-cover brightness-75"
             priority
           />
-          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-transparent to-secondary/80 opacity-80"></div>
         </div>
 
-        <div className="container mx-auto px-4 z-10 text-white">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">E-cell</h1>
-            <p className="text-xl md:text-2xl mb-8">Grow your Skills in Entrepreneurship</p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+        <div className="container mx-auto px-4 z-10 text-white text-center animate-slide-up">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg tracking-tight">
+              Welcome to <span className="text-accent">E-cell SVCE</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 font-medium drop-shadow">
+              Empowering the next generation of entrepreneurs and innovators.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-white text-primary font-bold shadow-lg hover:bg-accent/90 transition">
                 Get Started
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+              <Button size="lg" className="bg-white text-primary font-bold shadow-lg hover:bg-accent/90 transition">
                 Learn More
               </Button>
             </div>
@@ -36,15 +40,18 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background/80">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-title">Our Services</h2>
+            <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              We provide a platform for students to learn, innovate, and launch their entrepreneurial journey through events, mentorship, and resources.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border/50">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow border border-border/50 group hover:-translate-y-2 duration-300">
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition">
                 <Lightbulb className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4">Entrepreneurship</h3>
@@ -215,23 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Entrepreneurial Journey?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join E-cell SVCE and transform your innovative ideas into successful ventures.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-              Join Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }
