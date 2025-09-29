@@ -3,65 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --primary: 230 60% 50%;
-  --primary-foreground: 210 40% 98%;
+  /* Primary Brand Colors - Indigo Blue */
+  --primary: 238 100% 67%; /* Indigo */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 25 95% 53%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 0 0% 20%; /* Dark gray/black */
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 262 83% 58%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 238 100% 50%; /* Darker indigo accent */
+  --accent-foreground: 0 0% 100%;
 
-  --background: 0 0% 100%;
-  --foreground: 224 71.4% 4.1%;
+  /* Background Colors */
+  --background: 0 0% 5%; /* Very dark background */
+  --foreground: 0 0% 95%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 224 71.4% 4.1%;
+  --card: 0 0% 8%; /* Slightly lighter dark */
+  --card-foreground: 0 0% 95%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 224 71.4% 4.1%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 95%;
 
-  --muted: 220 14.3% 95.9%;
-  --muted-foreground: 220 8.9% 46.1%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 70%;
 
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
+  --border: 0 0% 25%;
+  --input: 0 0% 25%;
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
 
-  --ring: 230 60% 50%;
+  --ring: 238 100% 67%;
+  
+  /* Custom Brand Colors */
+  --brand-primary: 238 100% 67%; /* Indigo */
+  --brand-secondary: 0 0% 15%; /* Dark gray */
+  --brand-accent: 238 100% 50%; /* Darker indigo */
+  --brand-background: 0 0% 5%; /* Very dark */
+  --brand-surface: 0 0% 8%; /* Card background */
+  --brand-text: 0 0% 95%; /* Light text */
+  --brand-text-muted: 0 0% 70%; /* Muted text */
+  
+  /* Modern shadow for cards and popovers */
+  --shadow: 0 4px 32px 0 rgba(99, 102, 241, 0.15);
 }
 
 .dark {
-  --primary: 230 60% 50%;
-  --primary-foreground: 210 40% 98%;
+  /* Same as root since we're using dark theme by default */
+  --primary: 238 100% 67%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 25 95% 53%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 262 83% 58%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 238 100% 50%;
+  --accent-foreground: 0 0% 100%;
 
-  --background: 224 71.4% 4.1%;
-  --foreground: 210 40% 98%;
+  --background: 0 0% 5%;
+  --foreground: 0 0% 95%;
 
-  --card: 224 71.4% 4.1%;
-  --card-foreground: 210 40% 98%;
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 95%;
 
-  --popover: 224 71.4% 4.1%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 95%;
 
-  --muted: 215 27.9% 16.9%;
-  --muted-foreground: 217.9 10.6% 64.9%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 70%;
 
-  --border: 215 27.9% 16.9%;
-  --input: 215 27.9% 16.9%;
+  --border: 0 0% 25%;
+  --input: 0 0% 25%;
 
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 0 0% 100%;
 
-  --ring: 230 60% 50%;
+  --ring: 238 100% 67%;
 }
 
 @layer base {
@@ -69,7 +84,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
   h1,
   h2,
@@ -81,17 +96,145 @@
   }
 }
 
-.hero-gradient {
-  background: linear-gradient(90deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--accent) / 0.9) 100%);
+@layer components {
+  /* Standardized Page Layout */
+  .page-container {
+    @apply min-h-screen bg-gradient-to-br from-black via-gray-900 to-indigo-900;
+  }
+  
+  .page-hero {
+    @apply relative py-24 bg-gradient-to-br from-black via-gray-900 to-indigo-900 text-white overflow-hidden;
+  }
+  
+  .page-content {
+    @apply py-20;
+  }
+  
+  .page-section {
+    @apply py-16;
+  }
+  
+  /* Standardized Typography */
+  .heading-xl {
+    @apply text-5xl md:text-7xl font-bold text-brand-primary;
+  }
+  
+  .heading-lg {
+    @apply text-4xl md:text-6xl font-bold text-brand-primary;
+  }
+  
+  .heading-md {
+    @apply text-3xl md:text-4xl font-bold text-brand-primary;
+  }
+  
+  .heading-sm {
+    @apply text-2xl md:text-3xl font-bold text-brand-primary;
+  }
+  
+  .text-body-lg {
+    @apply text-lg md:text-xl text-brand-secondary leading-relaxed;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg text-brand-secondary leading-relaxed;
+  }
+  
+  .text-body-sm {
+    @apply text-sm md:text-base text-brand-muted leading-relaxed;
+  }
+  
+  /* Standardized Cards */
+  .card-primary {
+    @apply bg-gradient-to-br from-gray-800/90 to-indigo-900/90 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-indigo-700/50;
+  }
+  
+  .card-secondary {
+    @apply bg-gray-900 rounded-2xl shadow-2xl p-8 border border-gray-800;
+  }
+  
+  /* Standardized Text Colors */
+  .text-brand-primary {
+    @apply text-indigo-400;
+  }
+  
+  .text-brand-secondary {
+    @apply text-gray-300;
+  }
+  
+  .text-brand-muted {
+    @apply text-gray-400;
+  }
+  
+  /* Standardized Buttons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-indigo-600 text-white font-bold shadow-lg hover:from-indigo-600 hover:to-indigo-700 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-indigo-400 text-indigo-400 font-bold shadow-lg hover:bg-indigo-400 hover:text-black transition-all duration-300;
+  }
 }
 
+/* Standardized Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out;
+}
+
+/* Standardized Section Titles */
+.section-title {
+  @apply text-4xl font-bold text-center mb-12 relative inline-block text-brand-primary;
+}
+
+.section-title::after {
+  content: "";
+  @apply absolute bottom-0 left-1/2 w-24 h-1 bg-indigo-500 -translate-x-1/2 mt-2;
+}
+
+/* Standardized Cards */
 .event-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl;
 }
 
 .team-card {
@@ -115,33 +258,4 @@
 
 .team-card-back {
   transform: rotateY(180deg);
-}
-
-.section-title {
-  @apply text-4xl font-bold text-center mb-12 relative inline-block;
-}
-
-.section-title::after {
-  content: "";
-  @apply absolute bottom-0 left-1/2 w-24 h-1 bg-secondary -translate-x-1/2 mt-2;
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }

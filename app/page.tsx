@@ -1,134 +1,291 @@
+"use client"
+
+import type React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users } from "lucide-react"
+import { useState, useEffect } from "react"
+import ServiceModal from "@/components/ServiceModal"
 
 export default function Home() {
+  // State for slideshow
+  const [currentSlide, setCurrentSlide] = useState(0)
+  // State for service modal
+  const [selectedService, setSelectedService] = useState<number | null>(null)
+  
+  // Service data
+  const services = [
+    {
+      title: "Entrepreneurship",
+      icon: <Lightbulb className="w-6 h-6 text-indigo-400" />,
+      description: "Start a roadmap that will determine where you want to go with your entrepreneurial efforts.",
+      details: "We provide comprehensive guidance and resources to help students develop their entrepreneurial mindset and skills. Our programs include mentorship, workshops, and hands-on experience in business development.",
+      features: [
+        "Personalized mentorship programs",
+        "Business model canvas workshops",
+        "Pitching and presentation training",
+        "Market research and validation support",
+        "Networking with industry experts"
+      ]
+    },
+    {
+      title: "Incubation Center",
+      icon: <Briefcase className="w-6 h-6 text-indigo-400" />,
+      description: "Entrepreneurial and Managerial Development of SMEs through Incubator MSME.",
+      details: "Our incubation center provides a supportive environment for startups to grow and scale. We offer workspace, funding opportunities, and expert guidance to help transform ideas into successful businesses.",
+      features: [
+        "Co-working spaces and facilities",
+        "Seed funding and investment connections",
+        "Legal and regulatory guidance",
+        "Technology and infrastructure support",
+        "Access to investor networks"
+      ]
+    },
+    {
+      title: "Our Services",
+      icon: <BookOpen className="w-6 h-6 text-indigo-400" />,
+      description: "Promoting Entrepreneurship and Facilities to help you grow your business ideas.",
+      details: "We offer a comprehensive suite of services designed to support every stage of your entrepreneurial journey, from ideation to execution and growth.",
+      features: [
+        "Workshop and seminar series",
+        "Competition and hackathon events",
+        "Industry collaboration programs",
+        "Resource library and tools",
+        "Community building and networking"
+      ]
+    }
+  ]
+  
+  // Static slideshow - no auto-advance
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % 3)
+  //   }, 5000) // Change slide every 5 seconds
+  //   return () => clearInterval(timer)
+  // }, [])
+
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-primary/5 via-white to-secondary/10">
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 animate-fade-in">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden page-hero z-20">
+        {/* Slide 1: Image with E-cell Members text */}
+        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100' : 'opacity-0'}`}>
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
-            alt="E-cell Team"
+            src="/main.png"
+            alt="E-cell Members"
             fill
             className="object-cover brightness-75"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-transparent to-secondary/80 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-transparent to-gray-900/80 opacity-80"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-40">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
+                E-cell <span className="text-indigo-400">Members</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
+                Passionate students driving innovation and entrepreneurship
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="container mx-auto px-4 z-10 text-white text-center animate-slide-up">
+        {/* Slide 2: Welcome message */}
+        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 1 ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-indigo-900"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-40">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
+                Welcome to <span className="text-indigo-400">E-cell SVCE</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
+                Empowering the next generation of entrepreneurs and innovators
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide 3: Mission and Vision */}
+        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 2 ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-gray-900"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-40">
+            <div className="text-center max-w-4xl mx-auto px-4">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg">
+                Our <span className="text-purple-400">Mission</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 drop-shadow mb-4">
+                To create a vibrant entrepreneurial ecosystem that nurtures innovation, creativity, and leadership
+              </p>
+              <p className="text-lg md:text-xl text-gray-300 drop-shadow">
+                Bridging the gap between academic knowledge and practical application
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 z-50 text-center animate-slide-up">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg tracking-tight">
-              Welcome to <span className="text-accent">E-cell SVCE</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 font-medium drop-shadow">
-              Empowering the next generation of entrepreneurs and innovators.
-            </p>
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/logo2.png"
+                alt="E-cell SVCE Logo"
+                width={150}
+                height={150}
+                className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-lg"
+              />
+            </div>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-primary font-bold shadow-lg hover:bg-accent/90 transition">
+              <Button size="lg" className="btn-primary">
                 Get Started
               </Button>
-              <Button size="lg" className="bg-white text-primary font-bold shadow-lg hover:bg-accent/90 transition">
+              <Button size="lg" className="btn-secondary">
                 Learn More
               </Button>
             </div>
           </div>
         </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
+          <button
+            onClick={() => setCurrentSlide(0)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              currentSlide === 0 ? 'bg-indigo-400' : 'bg-gray-600'
+            }`}
+          />
+          <button
+            onClick={() => setCurrentSlide(1)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              currentSlide === 1 ? 'bg-indigo-400' : 'bg-gray-600'
+            }`}
+          />
+          <button
+            onClick={() => setCurrentSlide(2)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              currentSlide === 2 ? 'bg-indigo-400' : 'bg-gray-600'
+            }`}
+          />
+        </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background/80">
+      <section className="page-content">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              We provide a platform for students to learn, innovate, and launch their entrepreneurial journey through events, mentorship, and resources.
+            <h2 className="section-title">Our Services</h2>
+            <p className="text-brand-secondary max-w-xl mx-auto">
+              We provide a platform for students to learn, innovate, and launch their entrepreneurial journey through
+              events, mentorship, and resources.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow border border-border/50 group hover:-translate-y-2 duration-300">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition">
-                <Lightbulb className="w-8 h-8 text-primary" />
+            {services.map((service, index) => (
+              <div key={index} className="card-primary group hover:-translate-y-2 duration-300">
+              <div className="w-16 h-16 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-500/30 transition">
+                  {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4">Entrepreneurship</h3>
-              <p className="text-muted-foreground mb-4">
-                Start a roadmap that will determine where he or she wants to go with their entrepreneurial efforts.
+                <h3 className="text-xl font-bold mb-4 text-white">{service.title}</h3>
+              <p className="text-brand-secondary mb-4">
+                  {service.description}
               </p>
-              <Link href="#" className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                <button 
+                  onClick={() => setSelectedService(index)}
+                  className="text-brand-primary font-medium flex items-center gap-2 hover:gap-3 transition-all cursor-pointer"
+                >
                 Learn more <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border/50">
-              <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                <Briefcase className="w-8 h-8 text-secondary" />
+                </button>
               </div>
-              <h3 className="text-xl font-bold mb-4">Incubation Center</h3>
-              <p className="text-muted-foreground mb-4">
-                Entrepreneurial and Managerial Development of SMEs through Incubator MSME.
-              </p>
-              <Link href="#" className="text-secondary font-medium flex items-center gap-2 hover:gap-3 transition-all">
-                Learn more <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border/50">
-              <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                <BookOpen className="w-8 h-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Our Services</h3>
-              <p className="text-muted-foreground mb-4">
-                Promoting Entrepreneurship and Facilities to help you grow your business ideas.
-              </p>
-              <Link href="#" className="text-accent font-medium flex items-center gap-2 hover:gap-3 transition-all">
-                Learn more <ArrowRight size={16} />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Recent Events Section */}
-      <section className="py-20 bg-primary/5">
+      <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title">Recent Events</h2>
           </div>
 
           <div className="space-y-16">
-            {/* Event 1 - Left Aligned */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
+            {/* Latest Events from Events Page */}
+            {[
+              {
+                id: 20,
+                title: "IIT Madras E-Summit 2025 & E-Auction",
+                category: "Summit",
+                description: "SVCE E-Cell members participated in the E-Auction, simulating real-world investment and startup valuation scenarios, testing financial decision-making, negotiation, and strategic thinking.",
+                date: "March 1, 2025",
+                location: "IIT Madras",
+                participantsInfo: "SVCE E-Cell Team",
+                image: "/placeholder.svg?height=600&width=800",
+                color: "primary"
+              },
+              {
+                id: 19,
+                title: "MSME Idea Hackathon 4.0",
+                category: "Hackathon",
+                description: "A high-energy hackathon where students pitched innovative solutions to real-world challenges. 18 proposals from SVCE were forwarded for incubation.",
+                date: "October 29, 2024",
+                location: "Library Conference Hall, SVCE",
+                participantsInfo: "18 Proposals Selected",
+                image: "/placeholder.svg?height=600&width=800",
+                color: "secondary"
+              },
+              {
+                id: 18,
+                title: "MoU with E-Cell MANIT Bhopal",
+                category: "Collaboration",
+                description: "A collaboration to promote joint events and mutual support. SVCE E-Cell was named the official outreach partner for MANIT Bhopal's E-Summit 2025.",
+                date: "October 14, 2024",
+                location: "SVCE & MANIT Bhopal",
+                participantsInfo: "Official Partnership",
+                image: "/placeholder.svg?height=600&width=800",
+                color: "accent"
+              }
+            ].map((event, index) => (
+              <div key={event.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
+                index % 2 !== 0 ? "md:grid-flow-dense" : ""
+              }`}>
+                {/* Text Section */}
+                <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
                 <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                    Workshop
+                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${
+                      event.color === 'primary' ? 'bg-blue-900/30 text-blue-300' :
+                      event.color === 'secondary' ? 'bg-purple-900/30 text-purple-300' :
+                      'bg-teal-900/30 text-teal-300'
+                    }`}>
+                      {event.category}
                   </span>
-                  <h3 className="text-2xl font-bold mb-4">Entrepreneurship Workshop</h3>
+                    <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
                   <p className="text-muted-foreground mb-6">
-                    A comprehensive workshop on entrepreneurship basics, business model canvas, and pitching techniques
-                    for aspiring entrepreneurs.
+                      {event.description}
                   </p>
-                  <div className="flex items-center gap-4 mb-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
                     <div className="flex items-center gap-2">
                       <Users size={18} className="text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">120 Participants</span>
+                        <span className="text-sm text-muted-foreground">
+                          {event.participantsInfo}
+                  </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground">March 15, 2023</span>
+                        <span className="text-sm text-muted-foreground">
+                          {event.date}
+                  </span>
                     </div>
+                    </div>
+                    <Button variant="default">View Details</Button>
                   </div>
-                  <Button variant="default">View Details</Button>
                 </div>
-              </div>
-              <div className="order-1 md:order-2">
+                {/* Image Section */}
+                <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
                 <div className="event-card overflow-hidden rounded-xl shadow-lg">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="Entrepreneurship Workshop"
+                      src={event.image}
+                      alt={event.title}
                     width={800}
                     height={600}
                     className="w-full h-auto object-cover aspect-video"
@@ -136,85 +293,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Event 2 - Right Aligned */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="order-1">
-                <div className="event-card overflow-hidden rounded-xl shadow-lg">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="Startup Pitch Competition"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover aspect-video"
-                  />
-                </div>
-              </div>
-              <div className="order-2">
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
-                    Competition
-                  </span>
-                  <h3 className="text-2xl font-bold mb-4">Startup Pitch Competition</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Students presented their innovative startup ideas to a panel of judges from the industry. Cash
-                    prizes and mentorship opportunities were awarded.
-                  </p>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Users size={18} className="text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">50 Teams</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground">February 28, 2023</span>
-                    </div>
-                  </div>
-                  <Button variant="secondary">View Details</Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Event 3 - Left Aligned */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    Seminar
-                  </span>
-                  <h3 className="text-2xl font-bold mb-4">Industry Expert Talk Series</h3>
-                  <p className="text-muted-foreground mb-6">
-                    A series of talks by industry experts sharing their entrepreneurial journey, challenges faced, and
-                    insights on building successful startups.
-                  </p>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Users size={18} className="text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">200+ Attendees</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground">January 10, 2023</span>
-                    </div>
-                  </div>
-                  <Button variant="accent">View Details</Button>
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="event-card overflow-hidden rounded-xl shadow-lg">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="Industry Expert Talk"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover aspect-video"
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-16 text-center">
             <Link href="/events">
-              <Button variant="outline" size="lg" className="gap-2">
+              <Button variant="outline" size="lg" className="gap-2 bg-transparent">
                 View All Events <ArrowRight size={16} />
               </Button>
             </Link>
@@ -222,6 +306,15 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Service Modal */}
+      {selectedService !== null && (
+        <ServiceModal
+          isOpen={selectedService !== null}
+          onClose={() => setSelectedService(null)}
+          service={services[selectedService]}
+        />
+      )}
 
     </div>
   )
