@@ -95,3 +95,4 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
     </AnimatePresence>
   );
 }
+

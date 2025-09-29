@@ -479,3 +479,4 @@ class AIPageAnalyzer {
 
 // Export singleton instance
 export const aiPageAnalyzer = new AIPageAnalyzer();
+

@@ -545,7 +545,7 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
   }
 
   return (
-    <div className="aspect-square w-full [perspective:1000px] relative" onClick={onFlip}>
+    <div className="aspect-square w-full [perspective:1000px] relative cursor-pointer" onClick={onFlip}>
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d]"
         variants={cardVariants}
@@ -555,14 +555,14 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
       >
         {/* Card Front */}
         <div className="absolute w-full h-full [backface-visibility:hidden]">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
             <div className="aspect-square relative">
               <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
             </div>
-            <div className="p-4 text-center">
-              <h3 className="text-lg font-bold">{member.name}</h3>
-              <p className="text-sm text-muted-foreground">{member.position}</p>
-              <span className="inline-block mt-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+            <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
+              <h3 className="text-base sm:text-lg font-bold mb-1">{member.name}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-2">{member.position}</p>
+              <span className="inline-block px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
                 {member.domain}
               </span>
             </div>
@@ -571,21 +571,21 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
 
         {/* Card Back */}
         <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <div className="bg-[#0b1b34] text-white rounded-xl shadow-lg h-full flex flex-col items-center justify-center p-4">
-            <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-            <p className="text-brand-primary mb-4">{member.position}</p>
-            <span className="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+          <div className="bg-[#0b1b34] text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col items-center justify-center p-3 sm:p-4">
+            <h3 className="text-lg sm:text-xl font-bold mb-1 text-center">{member.name}</h3>
+            <p className="text-brand-primary mb-3 text-center text-sm sm:text-base">{member.position}</p>
+            <span className="inline-block mb-4 px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
               {member.domain}
             </span>
-            <div className="flex gap-5 mt-2">
+            <div className="flex gap-4 sm:gap-5 mt-2">
               {member.linkedin && (
-                <Link href={member.linkedin} target="_blank" className="hover:text-brand-primary transition-colors">
-                  <Linkedin size={24} />
+                <Link href={member.linkedin} target="_blank" className="hover:text-brand-primary transition-colors p-1">
+                  <Linkedin size={20} className="sm:w-6 sm:h-6" />
                 </Link>
               )}
               {member.email && (
-                <Link href={`mailto:${member.email}`} className="hover:text-brand-primary transition-colors">
-                  <Mail size={24} />
+                <Link href={`mailto:${member.email}`} className="hover:text-brand-primary transition-colors p-1">
+                  <Mail size={20} className="sm:w-6 sm:h-6" />
                 </Link>
               )}
             </div>
@@ -613,43 +613,52 @@ export default function TeamPage() {
         setFlippedCardId(null)
       }
     }
+    
+    function handleTouchOutside(event: TouchEvent) {
+      if (pageRef.current && !pageRef.current.contains(event.target as Node)) {
+        setFlippedCardId(null)
+      }
+    }
+    
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("touchstart", handleTouchOutside)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("touchstart", handleTouchOutside)
     }
   }, [pageRef])
 
   return (
-    <div className="min-h-screen" onClick={() => setFlippedCardId(null)}>
+    <div className="min-h-screen bg-gray-50" onClick={() => setFlippedCardId(null)}>
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="page-hero relative z-20"
+        className="page-hero relative z-20 py-12 sm:py-16 md:py-20"
       >
         {/* Constellation dots */}
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-30">
           <div className="w-full h-full bg-[radial-gradient(circle_at_10%_20%,rgba(59,130,246,0.15),transparent_25%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(59,130,246,0.1),transparent_35%)]" />
         </div>
-        <div className="container mx-auto px-4 text-center relative z-40">
-          <AnimatedHeading className="text-white mb-4 text-4xl md:text-5xl">Our Team</AnimatedHeading>
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-40">
+          <AnimatedHeading className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl">Our Team</AnimatedHeading>
           <motion.div
-            className="mb-6"
+            className="mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">
               <span className="text-white">E-cell</span>{" "}
               <span className="text-blue-300">Members</span>
             </h2>
-            <p className="text-lg text-white/90">
+            <p className="text-base sm:text-lg text-white/90 px-2">
               Passionate students driving innovation and entrepreneurship
             </p>
           </motion.div>
           <motion.p
-            className="text-xl max-w-2xl mx-auto text-brand-secondary"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-brand-secondary px-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -660,14 +669,14 @@ export default function TeamPage() {
       </motion.section>
 
       {/* Team Members Section */}
-      <section className="page-content" ref={pageRef}>
-        <div className="container mx-auto px-4">
+      <section className="page-content py-8 sm:py-12" ref={pageRef}>
+        <div className="container mx-auto px-4 sm:px-6">
           {Object.entries(groupedTeamMembers).map(([team, members]) => (
-            <div key={team} className="mb-16">
-              <AnimatedHeading className="text-brand-primary text-3xl mb-12 text-center">{team}</AnimatedHeading>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div key={team} className="mb-12 sm:mb-16">
+              <AnimatedHeading className="text-brand-primary text-2xl sm:text-3xl mb-8 sm:mb-12 text-center px-2">{team}</AnimatedHeading>
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
                 {members.map((member) => (
-                  <div key={member.id} onClick={(e) => e.stopPropagation()}>
+                  <div key={member.id} onClick={(e) => e.stopPropagation()} className="transform transition-transform duration-200 hover:scale-105">
                     <TeamMemberCard
                       member={member}
                       isFlipped={flippedCardId === member.id}
@@ -678,6 +687,12 @@ export default function TeamPage() {
               </div>
             </div>
           ))}
+          
+          {/* Mobile scroll indicator */}
+          <div className="block sm:hidden mt-8 text-center">
+            <p className="text-sm text-gray-500 mb-4">Tap cards to flip and learn more</p>
+            <div className="w-8 h-1 bg-gray-300 rounded-full mx-auto"></div>
+          </div>
         </div>
       </section>
 
