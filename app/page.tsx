@@ -80,7 +80,7 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-transparent to-gray-900/80 opacity-80"></div>
-          <div className="absolute inset-0 flex items-center justify-center z-40">
+          <div className="absolute inset-0 flex flex-col items-center justify-end z-40 pb-20 md:pb-24">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
                 E-cell <span className="text-indigo-400">Members</span>
@@ -125,27 +125,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 z-50 text-center animate-slide-up">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/logo2.png"
-                alt="E-cell SVCE Logo"
-                width={150}
-                height={150}
-                className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-lg"
-              />
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="btn-primary">
-                Get Started
-              </Button>
-              <Button size="lg" className="btn-secondary">
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
+
 
         {/* Slide indicators */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
@@ -184,18 +164,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="card-primary group hover:-translate-y-2 duration-300">
-              <div className="w-16 h-16 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-500/30 transition">
+                <div className="w-16 h-16 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-500/30 transition">
                   {service.icon}
-              </div>
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-white">{service.title}</h3>
-              <p className="text-brand-secondary mb-4">
+                <p className="text-brand-secondary mb-4">
                   {service.description}
-              </p>
+                </p>
                 <button 
                   onClick={() => setSelectedService(index)}
                   className="text-brand-primary font-medium flex items-center gap-2 hover:gap-3 transition-all cursor-pointer"
                 >
-                Learn more <ArrowRight size={16} />
+                  Learn more <ArrowRight size={16} />
                 </button>
               </div>
             ))}
@@ -252,47 +232,47 @@ export default function Home() {
               }`}>
                 {/* Text Section */}
                 <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
-                <div className="p-6">
+                  <div className="p-6">
                     <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${
                       event.color === 'primary' ? 'bg-blue-900/30 text-blue-300' :
                       event.color === 'secondary' ? 'bg-purple-900/30 text-purple-300' :
                       'bg-teal-900/30 text-teal-300'
                     }`}>
                       {event.category}
-                  </span>
+                    </span>
                     <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
-                  <p className="text-muted-foreground mb-6">
+                    <p className="text-muted-foreground mb-6">
                       {event.description}
-                  </p>
+                    </p>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <Users size={18} className="text-muted-foreground" />
+                      <div className="flex items-center gap-2">
+                        <Users size={18} className="text-muted-foreground" />
                         <span className="text-sm text-muted-foreground">
                           {event.participantsInfo}
-                  </span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
                         <span className="text-sm text-muted-foreground">
                           {event.date}
-                  </span>
-                    </div>
+                        </span>
+                      </div>
                     </div>
                     <Button variant="default">View Details</Button>
                   </div>
                 </div>
                 {/* Image Section */}
                 <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
-                <div className="event-card overflow-hidden rounded-xl shadow-lg">
-                  <Image
+                  <div className="event-card overflow-hidden rounded-xl shadow-lg">
+                    <Image
                       src={event.image}
                       alt={event.title}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover aspect-video"
-                  />
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover aspect-video"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
             ))}
           </div>
 
@@ -305,7 +285,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Service Modal */}
       {selectedService !== null && (
