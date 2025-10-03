@@ -173,6 +173,46 @@ export default function Home() {
         </div>
       </section>
 
+ <div className="w-full flex justify-center gap-4 mt-6"> {/* Added flex container */}
+  {/* Instagram Link Section */}
+  <a
+    href="https://www.instagram.com/ecell.svce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 2.25h9A5.25 5.25 0 0 1 21.75 7.5v9a5.25 5.25 0 0 1-5.25 5.25h-9A5.25 5.25 0 0 1 2.25 16.5v-9A5.25 5.25 0 0 1 7.5 2.25zm9.75 3.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 7.875A4.125 4.125 0 1 0 12 16.125 4.125 4.125 0 0 0 12 7.875z" />
+    </svg>
+    Follow us on Instagram
+  </a>
+
+  {/* LinkedIn Link Section */}
+  <a
+    href="https://www.linkedin.com/company/e-cell-svce/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+      <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.75 1.75 0 0 1 6.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.6-1.4c2.5 0 4.5 2.1 4.5 5.3V19z" />
+    </svg>
+    Follow us on LinkedIn
+  </a>
+
+  {/* WhatsApp Link Section */}
+  <a
+    href="https://chat.whatsapp.com/Gf3tw3YTHLwLpiOtGofj1Q"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-green-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.75.45 3.42 1.29 4.9L2 22l5.3-1.42c1.44.75 3.06 1.17 4.74 1.17h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.05 3.67c4.54 0 8.23 3.69 8.23 8.23s-3.69 8.23-8.23 8.23-8.23-3.69-8.23-8.23c0-2.22 1-4.3 2.6-5.83s3.51-2.4 5.63-2.4zM9.56 7.42c-.22-.12-.48-.2-1.03.28-.55.48-.91 1.17-.91 1.25s.12 1.48 1.17 2.53c1.05 1.05 2.25 2.02 3.82 2.02.23 0 1.05-.12 1.37-.91s.37-.91.28-1.03c-.12-.12-.25-.18-.46-.3l-1.48-.74c-.18-.09-.37-.15-.55.12s-.48.65-.58.78c-.12.12-.22.15-.37.09s-.65-.22-1.25-.78c-.78-.71-1.14-1.28-1.14-1.48s.18-.31.28-.42l.3-.34c.1-.12.15-.22.22-.37s.03-.28-.03-.43l-.43-1.03z" />
+    </svg>
+    Join our WhatsApp Group
+  </a>
+</div>
       {/* Services Section */}
       <section className="page-content">
         <div className="container mx-auto px-4">
