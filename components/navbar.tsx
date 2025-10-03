@@ -55,7 +55,7 @@ const Navbar = () => {
             <Image
               src="/logo.png"
               alt="E-cell SVCE Logo"
-              width={scrolled ? 50 : 30}
+              width={scrolled ? 170 : 100}
               height={scrolled ? 50 : 30}
               className={`object-contain transition-all duration-500 ${
                 scrolled ? "w-10 h-10 md:w-12 md:h-12" : "w-6 h-6 md:w-8 md:h-8"
@@ -64,7 +64,7 @@ const Navbar = () => {
             <span className={`font-poppins font-extrabold text-indigo-400 drop-shadow-sm hidden sm:block transition-all duration-500 ${
               scrolled ? "text-xl" : "text-sm"
             }`}>
-              E-cell SVCE
+              E - Cell
             </span>
           </Link>
         </div>

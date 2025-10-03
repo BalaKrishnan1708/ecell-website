@@ -54,7 +54,7 @@ export default function AboutPage() {
                 and support students in transforming their ideas into impactful ventures.
               </p>
               <p className="text-brand-secondary text-lg leading-relaxed">
-                Since 2015, E-cell SVCE has championed entrepreneurship through hands-on events, workshops, and
+                Since 2018, E-cell SVCE has championed entrepreneurship through hands-on events, workshops, and
                 mentorship. We believe entrepreneurship is a mindset—one that values curiosity, resilience, and
                 collaboration.
               </p>
@@ -77,17 +77,16 @@ export default function AboutPage() {
                 ]}
               </ul>
               <Button size="lg" asChild className="animate-bounce-slow">
-                <a href="/contact" className="text-blue-300">
-                  Contact Us
-                </a>
+               
               </Button>
             </div>
-            <div className="relative group">
-              <div className="relative h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-110">
+            <div className="relative">
+              <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl shadow-xl">
                 <img
-                  src="https://placehold.co/800x1000/1e3a8a/ffffff?text=E-Cell+Team"
-                  alt="E-cell Team"
-                  className="absolute w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  src="main.png"
+                  className="object-contain w-full h-auto"
+                  style={{ display: 'block' }}
+                  alt="E-cell group"
                 />
               </div>
             </div>
