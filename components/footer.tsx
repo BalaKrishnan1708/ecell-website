@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import {  Instagram, Linkedin} from "lucide-react"
+import { Instagram, Linkedin, MessageCircle } from "lucide-react"
 
 const Footer = () => {
   return (
@@ -21,13 +21,17 @@ const Footer = () => {
             </Link>
             <p className="text-indigo-300 mb-2">Grow your Skills in Entrepreneurship</p>
             <div className="flex gap-4 justify-center md:justify-start">
-              <Link href="#" className="text-indigo-400/70 hover:text-indigo-500 transition-colors">
+              <Link href="https://www.instagram.com/ecell.svce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="text-indigo-400/70 hover:text-indigo-500 transition-colors">
                 <Instagram size={20} className="text-indigo-400" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-indigo-400/70 hover:text-indigo-500 transition-colors">
+              <Link href="https://www.linkedin.com/company/e-cell-svce/" target="_blank" rel="noopener noreferrer" className="text-indigo-400/70 hover:text-indigo-500 transition-colors">
                 <Linkedin size={20} className="text-indigo-400" />
                 <span className="sr-only">LinkedIn</span>
+              </Link>
+              <Link href="https://chat.whatsapp.com/Gf3tw3YTHLwLpiOtGofj1Q" target="_blank" rel="noopener noreferrer" className="text-indigo-400/70 hover:text-green-500 transition-colors">
+                <MessageCircle size={20} className="text-green-400" />
+                <span className="sr-only">WhatsApp</span>
               </Link>
             </div>
           </div>
