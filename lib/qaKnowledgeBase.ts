@@ -323,3 +323,4 @@ export function generateEnhancedResponse(query: string): string {
   
   return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with team information, events, services, programs, and contact details. Could you please rephrase your question or ask about something specific like 'Who is the CFO?' or 'What events does E-cell organize?'";
 }
+

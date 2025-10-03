@@ -613,13 +613,11 @@ export default function TeamPage() {
         setFlippedCardId(null)
       }
     }
-    
     function handleTouchOutside(event: TouchEvent) {
       if (pageRef.current && !pageRef.current.contains(event.target as Node)) {
         setFlippedCardId(null)
       }
     }
-    
     document.addEventListener("mousedown", handleClickOutside)
     document.addEventListener("touchstart", handleTouchOutside)
     return () => {
@@ -629,7 +627,13 @@ export default function TeamPage() {
   }, [pageRef])
 
   return (
-    <div className="min-h-screen bg-gray-50" onClick={() => setFlippedCardId(null)}>
+    <div
+      className="min-h-screen relative overflow-hidden mt-24"
+      style={{
+        background: "radial-gradient(circle at 50% 40%, #23255d 0%, #181e36 100%)"
+      }}
+      onClick={() => setFlippedCardId(null)}
+    >
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -687,7 +691,6 @@ export default function TeamPage() {
               </div>
             </div>
           ))}
-          
           {/* Mobile scroll indicator */}
           <div className="block sm:hidden mt-8 text-center">
             <p className="text-sm text-gray-500 mb-4">Tap cards to flip and learn more</p>
@@ -695,7 +698,6 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-
     </div>
   )
 }

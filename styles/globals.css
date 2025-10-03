@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at 50% 40%, #23255d 0%, #181e36 100%) !important;
 }
 
 @layer utilities {
