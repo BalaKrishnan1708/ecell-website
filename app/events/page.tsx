@@ -395,13 +395,7 @@ export default function EventsPage() {
                         {event.participants &&
                           event.participants.length > 0 && (
                             <div className="mt-4">
-                              <Button
-                                onClick={() => handleToggleParticipants(event.id)}
-                              >
-                                {openEventId === event.id
-                                  ? "Hide Details"
-                                  : "View Details"}
-                              </Button>
+
                               {openEventId === event.id && (
                                 <div className="overflow-x-auto overflow-y-auto mt-4 rounded-lg border border-gray-700 bg-gray-800 shadow-lg max-h-64">
                                   <table className="min-w-full text-sm text-left">

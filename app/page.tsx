@@ -1,28 +1,17 @@
 "use client"
 
 import type React from "react"
-
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import ServiceModal from "@/components/ServiceModal"
 
 export default function Home() {
-  // State for slideshow
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  // Auto-advance slideshow every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
   // State for service modal
   const [selectedService, setSelectedService] = useState<number | null>(null)
-  
+
   // Service data
   const services = [
     {
@@ -35,8 +24,8 @@ export default function Home() {
         "Business model canvas workshops",
         "Pitching and presentation training",
         "Market research and validation support",
-        "Networking with industry experts"
-      ]
+        "Networking with industry experts",
+      ],
     },
     {
       title: "Incubation Center",
@@ -48,8 +37,8 @@ export default function Home() {
         "Seed funding and investment connections",
         "Legal and regulatory guidance",
         "Technology and infrastructure support",
-        "Access to investor networks"
-      ]
+        "Access to investor networks",
+      ],
     },
     {
       title: "Our Services",
@@ -61,25 +50,17 @@ export default function Home() {
         "Competition and hackathon events",
         "Industry collaboration programs",
         "Resource library and tools",
-        "Community building and networking"
-      ]
-    }
+        "Community building and networking",
+      ],
+    },
   ]
-  
-  // Static slideshow - no auto-advance
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % 3)
-  //   }, 5000) // Change slide every 5 seconds
-  //   return () => clearInterval(timer)
-  // }, [])
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden page-hero z-20">
-        {/* Slide 1: Image with E-cell Members text */}
-        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Static Hero Content */}
+        <div className="absolute inset-0 z-0">
           <Image
             src="/main.png"
             alt="E-cell Members"
@@ -99,95 +80,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-{/* Slide 2: Welcome message */}
-        <div className={`absolute inset-0 z-0 ${currentSlide === 1 ? 'block' : 'hidden'}`}>
-          
-          <div className="relative w-full h-full">
-
-            {/* Background Image */}
-            <Image
-              src="/our mission.jpg" // Or your correct image path
-              alt="E-cell Members"
-              fill
-              className="object-cover brightness-75"
-              priority
-            />
-
-            {/* Content Layer: Changed justify-center to justify-end and added padding */}
-            <div className="relative h-full flex flex-col items-center justify-end z-10 pb-20 md:pb-24">
-              <div className="text-center">
-               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg">
-                Our <span className="text-purple-400">Vission</span>
-              </h1>
-                <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
-                  To be the premier student-run E-Cell fostering innovation and entrepreneurship across the region.
-                  <p className="text-xl md:text-2xl text-gray-200 drop-shadow"></p>
-Connecting students with industry experts, entrepreneurs, and investors to turn ideas into reality.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-{/* Slide 3: Mission and Vision (Low Center Layout) */}
-        <div className={`absolute inset-0 z-0 ${currentSlide === 2 ? 'block' : 'hidden'}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-gray-900"></div>
-          
-          {/* Content Layer: Positioned at the low center */}
-          <div className="relative w-full h-full flex flex-col items-center justify-end z-10 pb-20 md:pb-24">
-            <div className="text-center max-w-4xl mx-auto px-4">
-
-                          <Image
-              src="/vision.jpg" // Or your correct image path
-              alt="E-cell Members"
-              fill
-              className="object-cover brightness-75"
-              priority
-            />
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg">
-                Our <span className="text-purple-400">Mission</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 drop-shadow mb-4">
-                To create a vibrant entrepreneurial ecosystem that nurtures innovation, creativity, and leadership
-              </p>
-              <p className="text-lg md:text-xl text-gray-300 drop-shadow">
-                Bridging the gap between academic knowledge and practical application
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
-          <button
-            onClick={() => setCurrentSlide(0)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              currentSlide === 0 ? 'bg-indigo-400' : 'bg-gray-600'
-            }`}
-          />
-          <button
-            onClick={() => setCurrentSlide(1)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              currentSlide === 1 ? 'bg-indigo-400' : 'bg-gray-600'
-            }`}
-          />
-          <button
-            onClick={() => setCurrentSlide(2)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              currentSlide === 2 ? 'bg-indigo-400' : 'bg-gray-600'
-            }`}
-          />
-        </div>
       </section>
 
- 
       {/* Services Section */}
       <section className="page-content">
         <div className="container mx-auto px-4">
@@ -198,7 +92,6 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
               events, mentorship, and resources.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="card-primary group hover:-translate-y-2 duration-300">
@@ -209,7 +102,7 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
                 <p className="text-brand-secondary mb-4">
                   {service.description}
                 </p>
-                <button 
+                <button
                   onClick={() => setSelectedService(index)}
                   className="text-brand-primary font-medium flex items-center gap-2 hover:gap-3 transition-all cursor-pointer"
                 >
@@ -227,9 +120,7 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
           <div className="text-center mb-16">
             <h2 className="section-title">Recent Events</h2>
           </div>
-
           <div className="space-y-16">
-            {/* Latest Events from Events Page */}
             {[
               {
                 id: 20,
@@ -240,7 +131,7 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
                 location: "IIT Madras",
                 participantsInfo: "SVCE E-Cell Team",
                 image: "/placeholder.svg?height=600&width=800",
-                color: "primary"
+                color: "primary",
               },
               {
                 id: 19,
@@ -251,7 +142,7 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
                 location: "Library Conference Hall, SVCE",
                 participantsInfo: "18 Proposals Selected",
                 image: "/placeholder.svg?height=600&width=800",
-                color: "secondary"
+                color: "secondary",
               },
               {
                 id: 18,
@@ -262,20 +153,27 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
                 location: "SVCE & MANIT Bhopal",
                 participantsInfo: "Official Partnership",
                 image: "/placeholder.svg?height=600&width=800",
-                color: "accent"
-              }
+                color: "accent",
+              },
             ].map((event, index) => (
-              <div key={event.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
-                index % 2 !== 0 ? "md:grid-flow-dense" : ""
-              }`}>
+              <div
+                key={event.id}
+                className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
+                  index % 2 !== 0 ? "md:grid-flow-dense" : ""
+                }`}
+              >
                 {/* Text Section */}
                 <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
                   <div className="p-6">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${
-                      event.color === 'primary' ? 'bg-blue-900/30 text-blue-300' :
-                      event.color === 'secondary' ? 'bg-purple-900/30 text-purple-300' :
-                      'bg-teal-900/30 text-teal-300'
-                    }`}>
+                    <span
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${
+                        event.color === 'primary'
+                          ? 'bg-blue-900/30 text-blue-300'
+                          : event.color === 'secondary'
+                          ? 'bg-purple-900/30 text-purple-300'
+                          : 'bg-teal-900/30 text-teal-300'
+                      }`}
+                    >
                       {event.category}
                     </span>
                     <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
@@ -294,10 +192,9 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
                           {event.date}
                         </span>
                       </div>
-                    </div> {/* <-- CORRECTED: Added missing closing div */}
-                  </div> {/* <-- CORRECTED: Added missing closing div */}
-                </div> {/* <-- CORRECTED: Added missing closing div */}
-                
+                    </div>
+                  </div>
+                </div>
                 {/* Image Section */}
                 <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
                   <div className="event-card overflow-hidden rounded-xl shadow-lg">
@@ -313,7 +210,6 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
               </div>
             ))}
           </div>
-
           <div className="mt-16 text-center">
             <Link href="/events">
               <Button variant="outline" size="lg" className="gap-2 bg-transparent">
@@ -332,7 +228,6 @@ Connecting students with industry experts, entrepreneurs, and investors to turn 
           service={services[selectedService]}
         />
       )}
-
     </div>
   )
 }
