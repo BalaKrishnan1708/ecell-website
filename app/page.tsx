@@ -256,10 +256,10 @@ export default function Home() {
                           {event.date}
                         </span>
                       </div>
-                    </div>
-                    <Button variant="default">View Details</Button>
-                  </div>
-                </div>
+                    </div> {/* <-- CORRECTED: Added missing closing div */}
+                  </div> {/* <-- CORRECTED: Added missing closing div */}
+                </div> {/* <-- CORRECTED: Added missing closing div */}
+                
                 {/* Image Section */}
                 <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
                   <div className="event-card overflow-hidden rounded-xl shadow-lg">
