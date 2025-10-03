@@ -53,18 +53,18 @@ export default function EntrepreneurshipPage() {
               </div>
             </div>
             <div className="relative group">
-              <div className="relative h-[400px] sm:h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-105">
+              <div className="relative h-[300px] sm:h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-105">
                 <img 
                   src="/main.png" 
                   alt="E-cell Members" 
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-3xl font-bold text-white mb-2">
                     <span className="text-white">E-cell</span> <span className="text-purple-400">Members</span>
                   </h3>
-                  <p className="text-white/90 text-sm sm:text-base">
+                  <p className="text-white/90 text-xs sm:text-base">
                     Passionate students driving innovation and entrepreneurship
                   </p>
                 </div>
