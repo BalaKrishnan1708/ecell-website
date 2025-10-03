@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MessageCircle, Send, X, Bot, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { contentAnalyzer } from "@/lib/contentAnalyzer";
+import { generateEnhancedResponse } from "@/lib/qaKnowledgeBase";
 
 interface Message {
   id: string;
@@ -26,7 +26,7 @@ const AIAssistant = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   const generateResponse = (query: string): string => {
-    return contentAnalyzer.generateResponse(query);
+    return generateEnhancedResponse(query);
   };
 
   const handleSend = () => {

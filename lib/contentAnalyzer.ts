@@ -29,7 +29,12 @@ Slideshow Content:
 - Slide 2: Welcome to E-cell SVCE - Empowering the next generation of entrepreneurs
 - Slide 3: Our Mission - Fostering innovation and entrepreneurship among students
 
-Hero Section: Empowering the next generation of entrepreneurs through innovation, mentorship, and real-world experience.`,
+Hero Section: Empowering the next generation of entrepreneurs through innovation, mentorship, and real-world experience.
+
+Recent Events from Home Page:
+- IIT Madras E-Summit 2025 & E-Auction (March 1, 2025) - SVCE E-Cell Team participated in E-Auction
+- MSME Idea Hackathon 4.0 (October 29, 2024) - 18 proposals from SVCE forwarded for incubation
+- MoU with E-Cell MANIT Bhopal (October 14, 2024) - Official partnership established`,
     type: 'page'
   },
   {
@@ -37,35 +42,29 @@ Hero Section: Empowering the next generation of entrepreneurs through innovation
     title: 'About Us - E-cell SVCE',
     content: `E-cell SVCE is dedicated to empowering students to become future entrepreneurs and leaders.
 
-Who We Are: We are a student-run organization at Sri Venkateswara College of Engineering, committed to fostering entrepreneurship and innovation.
+Who We Are: The Entrepreneurship Cell (E-cell) at Sri Venkateswara College of Engineering is a vibrant, student-driven community that nurtures innovation, creativity, and leadership. Our mission is to inspire and support students in transforming their ideas into impactful ventures.
 
-Our Journey:
-- 2015: E-cell SVCE was founded with a vision to promote entrepreneurship
-- 2018: Launched our first incubation program
-- 2020: Expanded to include virtual events and online mentorship
-- 2022: Reached 100+ successful startup launches
-- 2024: Introduced AI-powered mentorship programs
+Since 2015, E-cell SVCE has championed entrepreneurship through hands-on events, workshops, and mentorship. We believe entrepreneurship is a mindset—one that values curiosity, resilience, and collaboration.
 
-Our Core Values:
-1. Innovation - We believe in pushing boundaries and thinking outside the box
-2. Collaboration - We foster teamwork and collective growth
-3. Excellence - We strive for the highest standards in everything we do
-4. Integrity - We maintain honesty and transparency in all our dealings
-5. Impact - We focus on creating meaningful change in society
-6. Learning - We promote continuous learning and development
+What We Do:
+- Fostering innovation and entrepreneurial thinking
+- Providing resources, mentorship, and networking
+- Organizing workshops, seminars, and competitions
+- Connecting students with industry experts and investors
+
+Our Mission: To create a vibrant entrepreneurial ecosystem within the college that nurtures innovation, creativity, and leadership among students. We strive to bridge the gap between academic knowledge and practical application by facilitating interactions with industry experts, successful entrepreneurs, and investors.
+
+Our Vision: To be recognized as a premier student-run entrepreneurship cell that fosters innovation and entrepreneurship across the region. We aspire to see our college as a hub for startups and innovations, where students think beyond conventional career paths.
+
+Our Achievements:
+- 20+ Events Organized
+- 1000+ Students Impacted
+- 15+ Startups Incubated
+- 50+ Industry Collaborations
 
 Leadership Team: Our team consists of passionate students from various engineering disciplines who work together to create opportunities for fellow students.
 
-Impact Stories: We have helped numerous students launch successful startups and develop entrepreneurial skills that have shaped their careers.
-
-Timeline Milestones:
-- 2015: Foundation of E-cell SVCE
-- 2018: First incubation program launch
-- 2020: Virtual events and online mentorship
-- 2022: 100+ successful startup launches
-- 2024: AI-powered mentorship programs
-
-Testimonials: Students share their success stories and how E-cell SVCE helped them achieve their entrepreneurial goals.`,
+Impact Stories: We have helped numerous students launch successful startups and develop entrepreneurial skills that have shaped their careers.`,
     type: 'page'
   },
   {
@@ -80,11 +79,28 @@ Event Categories:
 4. Guest Lectures - Learn from successful entrepreneurs and industry leaders
 5. Conferences - Annual entrepreneurship summit and other major events
 
-Recent Events:
-- Entrepreneurship Workshop Series (Monthly)
-- Pitch Perfect Competition (Quarterly)
-- Innovation Hackathon (Bi-annually)
-- Annual Entrepreneurship Summit (Yearly)
+2025 Events:
+- IIT Madras E-Summit 2025 & E-Auction (March 1, 2025) - SVCE E-Cell Team participated in E-Auction, simulating real-world investment and startup valuation scenarios
+
+2024 Events:
+- MSME Idea Hackathon 4.0 (October 29, 2024) - 18 proposals from SVCE forwarded for incubation
+- MoU with E-Cell MANIT Bhopal (October 14, 2024) - Official partnership established, SVCE E-Cell named official outreach partner for MANIT Bhopal's E-Summit 2025
+- IIT Madras EDD Cohort – Growth Track (April 1, 2024) - 2024-2025 Cohort program
+- Entrepreneurship Pitching League (EPL) (March 18, 2024) - Winners: Johin Gill & Kavi Raj E (AE, 2nd Year), N. Jegatheesh & Giridharan S N (ECE A, 1st Year)
+- Meme Marketing Competition (March 17, 2024) - Winners: Infant Rohith A (IT A, 1st Year), Nihil Rayen P (AIDS, 1st Year)
+- Pitch Palooza – Women's Day Competition (March 11, 2024) - Business pitch competition for women entrepreneurs
+- Pitch Perfect Workshop (February 29, 2024) - Led by Gurunathraj E (Founder of Metal Protection in EPIC)
+- IP & Patent Filing Seminar (February 5, 2024) - Conducted by Dr. R. Senthil (Professor, ECE)
+
+2023 Events:
+- Entrepreneurship Workshop (March 15, 2023) - 120 participants, Main Auditorium SVCE
+- Startup Pitch Competition (February 28, 2023) - 50 teams, Seminar Hall SVCE
+- Industry Expert Talk Series (January 10, 2023) - 200+ attendees, Virtual Event
+
+2022 Events:
+- Hackathon 2023 (December 5, 2022) - 30 teams, Computer Science Block SVCE
+- Business Plan Workshop (November 20, 2022) - 80 participants, MBA Department SVCE
+- E-Summit 2022 (October 15, 2022) - 500+ attendees, SVCE Campus
 
 Event Features:
 - Expert speakers and mentors
@@ -93,20 +109,7 @@ Event Features:
 - Certificate of participation
 - Industry connections
 
-How to Participate: Check our events page regularly for updates on upcoming events and registration details.
-
-Event History:
-- 2010: First entrepreneurship workshop
-- 2022: Major events and competitions
-- 2023: Expanded event calendar
-- 2024: Virtual and hybrid events
-
-Event Types:
-- Monthly workshops on entrepreneurship topics
-- Quarterly pitch competitions with prizes
-- Bi-annual hackathons for innovation
-- Annual summit with industry leaders
-- Guest lectures from successful entrepreneurs`,
+How to Participate: Check our events page regularly for updates on upcoming events and registration details.`,
     type: 'page'
   },
   {
@@ -117,15 +120,42 @@ Event Types:
 E-cell Members: Passionate students driving innovation and entrepreneurship.
 
 Team Structure:
-1. Core Team - President, Vice President, Secretary, Treasurer
-2. Marketing Team - Responsible for outreach and promotion
-3. Events Team - Organizes and manages all events
-4. Technical Team - Handles website and digital platforms
-5. Content Team - Creates educational materials and content
+1. Core Leadership - President, Vice President, Secretary, Joint Secretary
+2. Executive Committee - CEO, COO, CFO, CMO, CTO
+3. Department Heads - Tech Head, Execution Head, Content Head, Design Head, Marketing Head, Community Manager
+4. Executive Team - Various executive team members from different departments
+5. Tech Team/Developers - Technical team handling website and digital platforms
+6. Design Team - Creative team for visual content and design
+7. Marketing Team - Responsible for outreach and promotion
+8. Content Team - Creates educational materials and content
+9. Community Managers - Social media and community management
+10. LinkedIn Managers - LinkedIn content and engagement
 
-Team Members: Our team consists of dedicated students from various engineering disciplines who bring diverse skills and perspectives to the organization.
+Key Team Members:
+Core Leadership:
+- Roshan - President - Leadership
+- R. Dharshini - Vice President - Leadership
+- Manojkumar - Secretary - Leadership
+- Sree Varshini - Joint Secretary - Leadership
 
-Domains: Tech, Content, Market, Design, Outreach, Operations
+Executive Committee:
+- Pradeep - CEO - Executive
+- Bhargavi - COO - Executive
+- Nithish - CFO - Executive
+- Roobuck - CMO - Executive
+- Karthik R - CTO - Executive
+
+Department Heads:
+- Janani T - Tech Head - Technology
+- Sankaranarayanan - Execution Head - Operations
+- Meyyappan - Content Head - Content
+- Vikaash B G - Design Head - Design
+- Daksha S - Marketing Head - Marketing
+- Balapranav - Community Manager - Community
+
+Team Members: Our team consists of dedicated students from various engineering disciplines (CSE, ECE, IT, AIDS, Mech, EEE, Biotech, Chem, etc.) who bring diverse skills and perspectives to the organization.
+
+Domains: Leadership, Executive, Technology, Operations, Content, Design, Marketing, Community
 
 Contact: You can reach out to any team member through their LinkedIn or email for collaboration opportunities.
 
@@ -135,14 +165,7 @@ Team Features:
 - Domain expertise areas
 - Social media links
 - Professional profiles
-
-Member Information:
-- John Doe - President - Core Team - Tech
-- Jane Smith - Vice President - Core Team - Content
-- Michael Johnson - Secretary - Core Team - Market
-- Emily Brown - Treasurer - Core Team - Design
-- David Wilson - Marketing Lead - Marketing Team - Outreach
-- Sarah Lee - Events Coordinator - Events Team - Operations`,
+- Department and year information`,
     type: 'page'
   },
   {
@@ -255,6 +278,31 @@ Community Benefits:
     title: 'Entrepreneurship - E-cell SVCE',
     content: `Our entrepreneurship program provides comprehensive support for aspiring entrepreneurs.
 
+What is Entrepreneurship: Entrepreneurship is the process of designing, launching, and running a new business, which is typically initially a small business. It involves taking risks, being innovative, and creating value in the market.
+
+At E-cell SVCE, we believe entrepreneurship is not just about starting a business—it's about developing a mindset that embraces challenges, seeks opportunities, and creates positive impact in society.
+
+Key Areas We Cover:
+1. Business Planning - Learn to create comprehensive business plans, market analysis, and financial projections
+2. Team Building - Master the art of building and leading high-performing teams
+3. Market Research - Understand your target market, analyze competition, and identify opportunities
+4. Growth Strategy - Develop sustainable growth strategies that scale your business
+5. Innovation - Foster a culture of innovation and creativity to stay ahead of competition
+6. Execution - Learn to execute your ideas effectively, manage resources, and overcome obstacles
+
+Our Programs:
+1. Beginner's Bootcamp - 4-week intensive program covering fundamentals of entrepreneurship
+   - Business idea validation
+   - Basic financial planning
+   - Market research techniques
+   - Pitching fundamentals
+
+2. Advanced Workshop - For students with existing business ideas
+   - Advanced business modeling
+   - Funding strategies
+   - Legal and compliance
+   - Scaling techniques
+
 Program Features:
 - Personalized mentorship programs
 - Business model canvas workshops
@@ -262,24 +310,12 @@ Program Features:
 - Market research and validation support
 - Networking with industry experts
 
-Learning Path:
-1. Ideation Phase - Brainstorming and idea validation
-2. Planning Phase - Business model development
-3. Execution Phase - Implementation and testing
-4. Growth Phase - Scaling and expansion
-
 Resources Available:
 - Mentorship from successful entrepreneurs
 - Access to industry networks
 - Funding opportunities
 - Legal and regulatory guidance
 - Technology support
-
-Program Structure:
-- Beginner level: Introduction to entrepreneurship
-- Intermediate level: Business development skills
-- Advanced level: Startup launch and growth
-- Expert level: Scaling and expansion
 
 Support Services:
 - One-on-one mentorship
@@ -294,31 +330,32 @@ Support Services:
     title: 'Incubation Center - E-cell SVCE',
     content: `Our incubation center provides a supportive environment for startups to grow and scale.
 
-Facilities:
-- Co-working spaces and facilities
-- Seed funding and investment connections
-- Legal and regulatory guidance
-- Technology and infrastructure support
-- Access to investor networks
+What is Our Incubation Center: Our Incubation Center is a dedicated space designed to nurture and accelerate early-stage startups. We provide comprehensive support including mentorship, resources, funding opportunities, and a collaborative environment for entrepreneurs to grow their businesses.
 
-Incubation Process:
-1. Application and screening
-2. Initial assessment and selection
-3. Incubation program (6-12 months)
-4. Mentorship and support
-5. Demo day and graduation
+Through our MSME (Micro, Small & Medium Enterprises) focused approach, we help students and young entrepreneurs develop sustainable business models and connect with industry experts and investors.
 
-Benefits:
-- Free workspace
-- Mentorship from industry experts
-- Access to funding opportunities
-- Legal and business support
-- Networking opportunities
+Services We Provide:
+1. Mentorship - Connect with experienced entrepreneurs, industry experts, and business leaders
+2. Workspace - Access to modern co-working spaces, meeting rooms, and infrastructure
+3. Business Development - Strategic planning, market research, and business model development
+4. Funding Support - Assistance in securing funding through grants, investors, and government schemes
+5. Legal Support - Help with company registration, IP protection, compliance, and legal requirements
+6. Networking - Connect with fellow entrepreneurs, customers, and industry partners
 
-Success Stories: Many startups have successfully graduated from our incubation program and are now thriving businesses.
+Incubation Process (6-month program):
+1. Application & Selection - Submit business idea and go through selection process
+2. Onboarding - Get introduced to ecosystem, meet mentors, set up workspace
+3. Development Phase - Intensive development of product/service with mentor check-ins
+4. Testing & Iteration - Launch MVP, gather user feedback, iterate based on market response
+5. Scaling Preparation - Prepare for scaling with financial planning and team building
+6. Graduation - Graduate with market-ready business and ongoing alumni support
+
+Success Stories:
+- TechStart Solutions - AI-powered waste management system, now serving 50+ cities with 200+ employees
+- EduTech Innovations - Online learning platform for rural students, raised $2M and serves 10,000+ students
 
 Program Details:
-- Duration: 6-12 months
+- Duration: 6 months
 - Support: Mentorship, funding, legal guidance
 - Facilities: Co-working spaces, technology access
 - Network: Investor connections, industry partnerships
@@ -336,32 +373,32 @@ Eligibility:
     title: 'Our Services - E-cell SVCE',
     content: `We offer a comprehensive suite of services designed to support every stage of your entrepreneurial journey.
 
-Service Categories:
-1. Education and Training
-   - Entrepreneurship workshops
-   - Business planning sessions
-   - Skill development programs
-   - Industry expert talks
+What We Offer:
+1. Workshops & Training - Regular workshops covering business fundamentals, advanced strategies, and industry-specific knowledge
+2. Mentorship Program - One-on-one mentorship with successful entrepreneurs and industry experts
+3. Events & Competitions - Participate in hackathons, pitch competitions, and networking events
+4. Incubation Support - Comprehensive incubation program to help develop and launch startups
+5. Recognition & Awards - Get recognized for innovative ideas and achievements
+6. Career Guidance - Expert guidance on career paths and job opportunities
 
-2. Mentorship and Guidance
-   - One-on-one mentorship
-   - Group mentoring sessions
-   - Industry expert consultations
-   - Peer learning groups
+Specialized Programs:
+1. Innovation Lab - Dedicated space for students to experiment with new ideas and prototype solutions
+   - 3D printing and prototyping facilities
+   - Software development tools
+   - Design thinking workshops
+   - Collaborative workspace
 
-3. Resources and Support
-   - Co-working spaces
-   - Technology access
-   - Legal and regulatory guidance
-   - Funding connections
+2. Startup Accelerator - Intensive 3-month program for advanced startups ready to scale
+   - Seed funding opportunities
+   - Investor pitch preparation
+   - Market expansion strategies
+   - Legal and compliance support
 
-4. Networking and Community
-   - Industry events
-   - Peer networking
-   - Alumni connections
-   - Partnership opportunities
-
-How to Access: Contact us through our website or visit our office to learn more about our services.
+Resources & Tools:
+1. Business Templates - Ready-to-use templates for business plans, financial projections, and pitch decks
+2. Market Research - Access to industry reports, market analysis tools, and competitive intelligence
+3. Legal Resources - Guides for company registration, IP protection, and compliance requirements
+4. Funding Database - Comprehensive database of funding opportunities, grants, and investor contacts
 
 Service Features:
 - Personalized approach
@@ -375,7 +412,9 @@ Target Audience:
 - Aspiring business owners
 - Innovation enthusiasts
 - Tech developers
-- Business students`,
+- Business students
+
+How to Access: Contact us through our website or visit our office to learn more about our services.`,
     type: 'page'
   }
 ];
@@ -473,23 +512,42 @@ Program Structure:
       return `Our team consists of passionate students from various engineering disciplines who work together to create opportunities for fellow students.
 
 Team Structure:
-• Core Team: President, Vice President, Secretary, Treasurer
+• Core Leadership: President, Vice President, Secretary, Joint Secretary
+• Executive Committee: CEO, COO, CFO, CMO, CTO
+• Department Heads: Tech Head, Execution Head, Content Head, Design Head, Marketing Head, Community Manager
+• Executive Team: Various executive team members from different departments
+• Tech Team/Developers: Technical team handling website and digital platforms
+• Design Team: Creative team for visual content and design
 • Marketing Team: Responsible for outreach and promotion
-• Events Team: Organizes and manages all events
-• Technical Team: Handles website and digital platforms
 • Content Team: Creates educational materials and content
+• Community Managers: Social media and community management
+• LinkedIn Managers: LinkedIn content and engagement
 
 E-cell Members: Passionate students driving innovation and entrepreneurship.
 
 Key Team Members:
-• John Doe - President - Core Team - Tech
-• Jane Smith - Vice President - Core Team - Content
-• Michael Johnson - Secretary - Core Team - Market
-• Emily Brown - Treasurer - Core Team - Design
-• David Wilson - Marketing Lead - Marketing Team - Outreach
-• Sarah Lee - Events Coordinator - Events Team - Operations
+Core Leadership:
+• Roshan - President - Leadership
+• R. Dharshini - Vice President - Leadership
+• Manojkumar - Secretary - Leadership
+• Sree Varshini - Joint Secretary - Leadership
 
-Domains: Tech, Content, Market, Design, Outreach, Operations
+Executive Committee:
+• Pradeep - CEO - Executive
+• Bhargavi - COO - Executive
+• Nithish - CFO - Executive
+• Roobuck - CMO - Executive
+• Karthik R - CTO - Executive
+
+Department Heads:
+• Janani T - Tech Head - Technology
+• Sankaranarayanan - Execution Head - Operations
+• Meyyappan - Content Head - Content
+• Vikaash B G - Design Head - Design
+• Daksha S - Marketing Head - Marketing
+• Balapranav - Community Manager - Community
+
+Domains: Leadership, Executive, Technology, Operations, Content, Design, Marketing, Community
 
 Contact: You can reach out to any team member through their LinkedIn or email for collaboration opportunities.`;
     }
@@ -504,11 +562,28 @@ Event Categories:
 • Guest Lectures - Learn from successful entrepreneurs and industry leaders
 • Conferences - Annual entrepreneurship summit and other major events
 
-Recent Events:
-• Entrepreneurship Workshop Series (Monthly)
-• Pitch Perfect Competition (Quarterly)
-• Innovation Hackathon (Bi-annually)
-• Annual Entrepreneurship Summit (Yearly)
+2025 Events:
+• IIT Madras E-Summit 2025 & E-Auction (March 1, 2025) - SVCE E-Cell Team participated in E-Auction, simulating real-world investment and startup valuation scenarios
+
+2024 Events:
+• MSME Idea Hackathon 4.0 (October 29, 2024) - 18 proposals from SVCE forwarded for incubation
+• MoU with E-Cell MANIT Bhopal (October 14, 2024) - Official partnership established
+• IIT Madras EDD Cohort – Growth Track (April 1, 2024) - 2024-2025 Cohort program
+• Entrepreneurship Pitching League (EPL) (March 18, 2024) - Winners: Johin Gill & Kavi Raj E (AE, 2nd Year), N. Jegatheesh & Giridharan S N (ECE A, 1st Year)
+• Meme Marketing Competition (March 17, 2024) - Winners: Infant Rohith A (IT A, 1st Year), Nihil Rayen P (AIDS, 1st Year)
+• Pitch Palooza – Women's Day Competition (March 11, 2024) - Business pitch competition for women entrepreneurs
+• Pitch Perfect Workshop (February 29, 2024) - Led by Gurunathraj E (Founder of Metal Protection in EPIC)
+• IP & Patent Filing Seminar (February 5, 2024) - Conducted by Dr. R. Senthil (Professor, ECE)
+
+2023 Events:
+• Entrepreneurship Workshop (March 15, 2023) - 120 participants, Main Auditorium SVCE
+• Startup Pitch Competition (February 28, 2023) - 50 teams, Seminar Hall SVCE
+• Industry Expert Talk Series (January 10, 2023) - 200+ attendees, Virtual Event
+
+2022 Events:
+• Hackathon 2023 (December 5, 2022) - 30 teams, Computer Science Block SVCE
+• Business Plan Workshop (November 20, 2022) - 80 participants, MBA Department SVCE
+• E-Summit 2022 (October 15, 2022) - 500+ attendees, SVCE Campus
 
 Event Features:
 • Expert speakers and mentors
@@ -517,12 +592,6 @@ Event Features:
 • Certificate of participation
 • Industry connections
 
-Event History:
-• 2010: First entrepreneurship workshop
-• 2022: Major events and competitions
-• 2023: Expanded event calendar
-• 2024: Virtual and hybrid events
-
 How to Participate: Check our events page regularly for updates on upcoming events and registration details.`;
     }
     
@@ -530,20 +599,24 @@ How to Participate: Check our events page regularly for updates on upcoming even
       return `You can contact E-cell SVCE through multiple channels:
 
 Contact Information:
-• Email: ecell@svce.ac.in
+• Email: bala.ramyaram@gmail.com
+• Phone: +91 98765 43210
 • College: Sri Venkateswara College of Engineering
-• Full Address: Post Bag No.1, Pennalur Village, Chennai - Bengaluru High Road, Sriperumbudur Tk, Tamil Nadu 602117
+• Full Address: Sri Venkateswara College of Engineering, Tamil Nadu 602117
 
 Social Media:
 • Instagram: @ecellsvce
 • LinkedIn: E-cell SVCE
 
 Office Details:
-• Office Hours: Monday to Friday, 9:00 AM to 5:00 PM
+• Office Hours: Monday to Friday, 9:00 AM to 6:00 PM
+• Saturday: 10:00 AM to 2:00 PM
+• Sunday: Closed
 • Response Time: We typically respond to inquiries within 24-48 hours
 
 Contact Methods:
-• Email: ecell@svce.ac.in
+• Email: bala.ramyaram@gmail.com
+• Phone: +91 98765 43210
 • Office visit during business hours
 • Social media messaging
 • Website contact form
@@ -552,7 +625,10 @@ Location Details:
 • State: Tamil Nadu
 • PIN: 602117
 • City: Sriperumbudur
-• Highway: Chennai - Bengaluru High Road`;
+• Highway: Chennai - Bengaluru High Road
+• College: Premier institution known for academic excellence and innovative research
+
+How to Reach: We are conveniently located along the Chennai–Bengaluru Highway. Public transport and ride-hailing services are easily available. Ample parking space is also available for visitors.`;
     }
     
     if (normalizedQuery.includes('incubation')) {
