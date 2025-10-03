@@ -39,22 +39,22 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
   )
 }
 
-// BLOG CONTENT GENERATOR
-const numStageOne = 50
-const numStageTwo = 97
-const totalImages = numStageOne + numStageTwo
-const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"]
+// BLOG CONTENT GENERATOR (stage one: 1-50, stage two: 1-135)
+const numStageOne = 50;
+const numStageTwo = 135;
+const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function generateBlogPosts() {
-  const startDate = new Date(2025, 3, 6)
-  const blogPosts: any[] = []
-  for (let i = 0; i < totalImages; i++) {
-    const date = new Date(startDate.getTime())
-    date.setDate(startDate.getDate() + i)
-    const month = date.toLocaleString("en-US", { month: "long" })
-    const day = date.getDate()
-    const year = date.getFullYear()
-    const image = i < numStageOne ? `/stage one/${i + 1}.png` : `/stage two/${i - numStageOne + 1}.png`
+  // April 6, 2025 is the start date for 1.png (stage one)
+  const startDate = new Date(2025, 3, 6); // Month is 0-indexed, so 3 = April
+  const blogPosts: any[] = [];
+  for (let i = 0; i < numStageOne; i++) {
+    const date = new Date(startDate.getTime());
+    date.setDate(startDate.getDate() + i);
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const image = `/stage one/${i + 1}.png`;
     blogPosts.push({
       date,
       dateString: `${month} ${day}, ${year}`,
@@ -62,9 +62,29 @@ function generateBlogPosts() {
       year,
       image,
       content: `Blog ${month} ${day}, ${year}`,
-    })
+    });
   }
-  return blogPosts
+  // Continue with stage two: 1-135
+  // The next day after the last stage one image
+  let stageTwoStartDate = new Date(startDate.getTime());
+  stageTwoStartDate.setDate(startDate.getDate() + numStageOne);
+  for (let i = 1; i <= numStageTwo; i++) {
+    const date = new Date(stageTwoStartDate.getTime());
+    date.setDate(stageTwoStartDate.getDate() + (i - 1));
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const image = `/stage two/${i}.png`;
+    blogPosts.push({
+      date,
+      dateString: `${month} ${day}, ${year}`,
+      month,
+      year,
+      image,
+      content: `Blog ${month} ${day}, ${year}`,
+    });
+  }
+  return blogPosts;
 }
 
 function groupPostsByMonth(blogPosts: any[]) {
