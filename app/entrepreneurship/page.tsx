@@ -53,20 +53,9 @@ export default function EntrepreneurshipPage() {
               </div>
             </div>
             <div className="relative group">
-              <div className="relative h-[300px] sm:h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-105">
-                <img 
-                  src="/main.png" 
-                  alt="E-cell Members" 
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-center">
-                  <h3 className="text-lg sm:text-3xl font-bold text-white mb-2">
-                    <span className="text-white">E-cell</span> <span className="text-purple-400">Members</span>
-                  </h3>
-                  <p className="text-white/90 text-xs sm:text-base">
-                    Passionate students driving innovation and entrepreneurship
-                  </p>
+              <div className="relative h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 flex items-center justify-center">
+                  <Lightbulb className="w-32 h-32 text-indigo-400 opacity-50" />
                 </div>
               </div>
             </div>
@@ -189,6 +178,52 @@ export default function EntrepreneurshipPage() {
               <Button className="btn-primary w-full">
                 Apply Now
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* E-cell Members Section */}
+      <section className="page-content">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <AnimatedHeading className="text-brand-primary text-3xl mb-4">E-cell Members</AnimatedHeading>
+              <p className="text-brand-secondary text-lg leading-relaxed">
+                Meet our passionate team of students driving innovation and entrepreneurship at SVCE. 
+                Our diverse group of members brings together different perspectives, skills, and experiences 
+                to create a vibrant entrepreneurial ecosystem.
+              </p>
+              <p className="text-brand-secondary text-lg leading-relaxed">
+                From first-year students exploring their first business ideas to final-year students 
+                launching their startups, our members represent the full spectrum of the entrepreneurial journey.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button className="btn-primary">
+                  Meet the Team
+                </Button>
+                <Button className="btn-secondary">
+                  Join Us
+                </Button>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="relative h-[400px] sm:h-[500px] w-full overflow-hidden rounded-xl shadow-xl transform transition duration-700 group-hover:scale-105">
+                <img 
+                  src="/main.png" 
+                  alt="E-cell Members - Passionate students driving innovation and entrepreneurship" 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    <span className="text-white">E-cell</span> <span className="text-purple-400">Members</span>
+                  </h3>
+                  <p className="text-white/90 text-sm sm:text-base">
+                    Passionate students driving innovation and entrepreneurship
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

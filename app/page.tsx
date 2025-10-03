@@ -92,26 +92,49 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Slide 2: Welcome message */}
-        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 1 ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-indigo-900"></div>
-          <div className="absolute inset-0 flex items-center justify-center z-40">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-                Welcome to <span className="text-indigo-400">E-cell SVCE</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
-                Empowering the next generation of entrepreneurs and innovators
-              </p>
+{/* Slide 2: Welcome message */}
+        <div className={`absolute inset-0 z-0 ${currentSlide === 1 ? 'block' : 'hidden'}`}>
+          
+          <div className="relative w-full h-full">
+
+            {/* Background Image */}
+            <Image
+              src="/our mission.jpg" // Or your correct image path
+              alt="E-cell Members"
+              fill
+              className="object-cover brightness-75"
+              priority
+            />
+
+            {/* Content Layer: Changed justify-center to justify-end and added padding */}
+            <div className="relative h-full flex flex-col items-center justify-end z-10 pb-20 md:pb-24">
+              <div className="text-center">
+               
+                <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
+                  We strive to bridge the gap between academic knowledge and practical application by facilitating interactions with industry experts, successful entrepreneurs, and investors
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        {/* Slide 3: Mission and Vision */}
-        <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${currentSlide === 2 ? 'opacity-100' : 'opacity-0'}`}>
+
+{/* Slide 3: Mission and Vision (Low Center Layout) */}
+        <div className={`absolute inset-0 z-0 ${currentSlide === 2 ? 'block' : 'hidden'}`}>
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-gray-900"></div>
-          <div className="absolute inset-0 flex items-center justify-center z-40">
+          
+          {/* Content Layer: Positioned at the low center */}
+          <div className="relative w-full h-full flex flex-col items-center justify-end z-10 pb-20 md:pb-24">
             <div className="text-center max-w-4xl mx-auto px-4">
+
+                          <Image
+              src="/vision.jpg" // Or your correct image path
+              alt="E-cell Members"
+              fill
+              className="object-cover brightness-75"
+              priority
+            />
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg">
                 Our <span className="text-purple-400">Mission</span>
               </h1>
