@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 
-// Animation variants for Framer Motion to keep the code clean
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -27,7 +26,6 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
     },
   },
 }
@@ -194,54 +192,7 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Contact Info Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
-          >
-            <div className="card-secondary">
-              <AnimatedHeading className="text-brand-primary text-2xl mb-6">Contact Information</AnimatedHeading>
-              <motion.div
-                className="space-y-6"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                {[
-                  { icon: <MapPin />, text: "Sri Venkateswara College of Engineering, Tamil Nadu 602117" },
-                  { icon: <Mail />, text: "bala.ramyaram@gmail.com" },
-                  { icon: <Phone />, text: "+91 98765 43210" },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="flex items-start gap-4 p-3 rounded-lg transition-colors duration-300 hover:bg-gray-800"
-                  >
-                    <span className="text-brand-primary mt-1 flex-shrink-0">{item.icon}</span>
-                    <span>{item.text}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
 
-            <div className="card-secondary">
-              <AnimatedHeading className="text-brand-primary text-xl mb-4">Working Hours</AnimatedHeading>
-              <div className="space-y-2 text-brand-muted">
-                <p>
-                  <strong>Mon–Fri:</strong> 9:00 AM – 6:00 PM
-                </p>
-                <p>
-                  <strong>Sat:</strong> 10:00 AM – 2:00 PM
-                </p>
-                <p>
-                  <strong>Sun:</strong> Closed
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

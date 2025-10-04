@@ -9,7 +9,6 @@ import { motion } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading"
 
-// Define a type for a team member for better type safety
 type TeamMember = {
   id: number
   name: string
@@ -21,9 +20,7 @@ type TeamMember = {
   email?: string
 }
 
-// Team member data with domains
 const teamMembers: TeamMember[] = [
-  // Core Leadership
   {
     id: 1,
     name: "Roshan",
@@ -64,7 +61,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "sreevarshini@ecell.svce.ac.in",
   },
-  // Executive Committee
   {
     id: 5,
     name: "Pradeep",
@@ -115,7 +111,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "karthik@ecell.svce.ac.in",
   },
-  // Department Heads
   {
     id: 10,
     name: "Janani T",
@@ -176,7 +171,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "balapranav@ecell.svce.ac.in",
   },
-  // Executive Team
   {
     id: 16,
     name: "Thirumurugan S",
@@ -247,7 +241,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "yogavarthanee@ecell.svce.ac.in",
   },
-  // Tech Team/Developers
   {
     id: 23,
     name: "Bala Krishnan R",
@@ -308,7 +301,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "janani.tech@ecell.svce.ac.in",
   },
-  // Design Team
   {
     id: 29,
     name: "Divya Shree M",
@@ -369,7 +361,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "srinidhi@ecell.svce.ac.in",
   },
-  // Marketing Team
   {
     id: 35,
     name: "Neha Ranganesh",
@@ -420,7 +411,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "daksha.marketing@ecell.svce.ac.in",
   },
-  // Content Team
   {
     id: 40,
     name: "Sankara Narayanan S",
@@ -461,7 +451,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "vaishnavi@ecell.svce.ac.in",
   },
-  // Community Managers / Social Media Team
   {
     id: 44,
     name: "Nitish N",
@@ -502,7 +491,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com",
     email: "murgesh@ecell.svce.ac.in",
   },
-  // LinkedIn Managers
   {
     id: 48,
     name: "Sanjana",
@@ -525,7 +513,6 @@ const teamMembers: TeamMember[] = [
   },
 ]
 
-// Grouping logic
 const groupedTeamMembers = teamMembers.reduce(
   (acc, member) => {
     if (!acc[member.team]) {
@@ -537,7 +524,6 @@ const groupedTeamMembers = teamMembers.reduce(
   {} as Record<string, TeamMember[]>,
 )
 
-// Component for the Flipping Card
 function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isFlipped: boolean; onFlip: () => void }) {
   const cardVariants = {
     flipped: { rotateY: 180 },
@@ -553,7 +539,6 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
         animate={isFlipped ? "flipped" : "unflipped"}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        {/* Card Front */}
         <div className="absolute w-full h-full [backface-visibility:hidden]">
           <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
             <div className="aspect-square relative">
@@ -569,7 +554,6 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
           </div>
         </div>
 
-        {/* Card Back */}
         <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <div className="bg-[#0b1b34] text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col items-center justify-center p-3 sm:p-4">
             <h3 className="text-lg sm:text-xl font-bold mb-1 text-center">{member.name}</h3>
@@ -597,16 +581,13 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
 }
 
 export default function TeamPage() {
-  // State for team page
   const [flippedCardId, setFlippedCardId] = useState<number | null>(null)
   const pageRef = useRef<HTMLDivElement>(null)
 
-  // Handler for flipping cards
   const handleCardFlip = (memberId: number) => {
     setFlippedCardId((prevId) => (prevId === memberId ? null : memberId))
   }
 
-  // Effect to close card when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (pageRef.current && !pageRef.current.contains(event.target as Node)) {
@@ -634,14 +615,12 @@ export default function TeamPage() {
       }}
       onClick={() => setFlippedCardId(null)}
     >
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="page-hero relative z-20 py-12 sm:py-16 md:py-20"
       >
-        {/* Constellation dots */}
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-30">
           <div className="w-full h-full bg-[radial-gradient(circle_at_10%_20%,rgba(59,130,246,0.15),transparent_25%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(59,130,246,0.1),transparent_35%)]" />
         </div>
@@ -672,7 +651,6 @@ export default function TeamPage() {
         </div>
       </motion.section>
 
-      {/* Team Members Section */}
       <section className="page-content py-8 sm:py-12" ref={pageRef}>
         <div className="container mx-auto px-4 sm:px-6">
           {Object.entries(groupedTeamMembers).map(([team, members]) => (
@@ -691,7 +669,6 @@ export default function TeamPage() {
               </div>
             </div>
           ))}
-          {/* Mobile scroll indicator */}
           <div className="block sm:hidden mt-8 text-center">
             <p className="text-sm text-gray-500 mb-4">Tap cards to flip and learn more</p>
             <div className="w-8 h-1 bg-gray-300 rounded-full mx-auto"></div>

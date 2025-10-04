@@ -8,14 +8,12 @@ import { AnimatedHeading } from "@/components/ui/AnimatedHeading"
 export default function AboutPage() {
   return (
     <div className="min-h-screen relative font-sans overflow-x-hidden">
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="page-hero"
       >
-        {/* subtle wave bottom */}
         <svg aria-hidden viewBox="0 0 1440 100" className="absolute bottom-0 left-0 w-full h-16 opacity-10">
           <path
             fill="currentColor"
@@ -36,7 +34,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* About Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +91,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Mission & Vision */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +136,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Achievements */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -174,7 +169,6 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Animations */}
       <style jsx global>{`
         @keyframes fade-in-up-scale {
           0% {

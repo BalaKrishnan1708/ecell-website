@@ -17,7 +17,7 @@ const AIAssistant = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hello! I'm the E-cell SVCE AI assistant. I can help you with information about our programs, events, team, services, and anything related to entrepreneurship. What would you like to know?",
+  text: "Hello! I'm the E - Cell SVCE AI assistant. I can help you with information about our programs, events, team, services, and anything related to entrepreneurship. What would you like to know?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -43,7 +43,6 @@ const AIAssistant = () => {
     setInputText("");
     setIsTyping(true);
 
-    // Simulate AI response delay
     setTimeout(() => {
       const aiResponse = generateResponse(inputText);
       const aiMessage: Message = {
@@ -66,7 +65,7 @@ const AIAssistant = () => {
 
   return (
     <>
-      {/* Floating Button */}
+      
       <motion.button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
@@ -76,7 +75,7 @@ const AIAssistant = () => {
         <MessageCircle size={24} />
       </motion.button>
 
-      {/* Chat Modal */}
+      
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -93,11 +92,11 @@ const AIAssistant = () => {
               className="bg-white rounded-lg shadow-xl w-full max-w-md h-[600px] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
+              
               <div className="bg-indigo-600 text-white p-4 rounded-t-lg flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Bot size={20} />
-                  <span className="font-semibold">E-cell SVCE Assistant</span>
+                  <span className="font-semibold">E - Cell SVCE Assistant</span>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
@@ -107,7 +106,7 @@ const AIAssistant = () => {
                 </button>
               </div>
 
-              {/* Messages */}
+              
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
                 {messages.map((message) => (
                   <motion.div
@@ -132,7 +131,7 @@ const AIAssistant = () => {
                   </motion.div>
                 ))}
 
-                {/* Typing Indicator */}
+                
                 {isTyping && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -151,7 +150,7 @@ const AIAssistant = () => {
                 )}
               </div>
 
-              {/* Input */}
+              
               <div className="p-4 border-t bg-gray-50">
                 <div className="flex gap-2">
                   <input
@@ -159,7 +158,7 @@ const AIAssistant = () => {
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask me anything about E-cell SVCE..."
+                    placeholder="Ask me anything about E - Cell SVCE..."
                     className="flex-1 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-800 bg-white"
                     autoFocus
                   />

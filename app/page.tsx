@@ -9,10 +9,8 @@ import { useState } from "react"
 import ServiceModal from "@/components/ServiceModal"
 
 export default function Home() {
-  // State for service modal
   const [selectedService, setSelectedService] = useState<number | null>(null)
 
-  // Service data
   const services = [
     {
       title: "Entrepreneurship",
@@ -57,22 +55,22 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden page-hero z-20">
-        {/* Static Hero Content */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/main.png"
-            alt="E-cell Members"
-            fill
-            className="object-cover brightness-75"
-            priority
-          />
+<div className="flex flex-col min-h-screen">
+  {/* The gradient is now the background of the section.
+    Flex properties are used to center the text content both vertically and horizontally.
+  */}
+  <section className="h-[90vh] flex items-center justify-center bg-gradient-to-br from-indigo-900 to-gray-900">
+    <div className="text-center">
+    </div>
+  </section>
+</div>
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-transparent to-gray-900/80 opacity-80"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-end z-40 pb-20 md:pb-24">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-                E-cell <span className="text-indigo-400">Members</span>
+                E - Cell <span className="text-indigo-400">SVCE</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
                 Passionate students driving innovation and entrepreneurship
@@ -80,9 +78,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        
       </section>
 
-      {/* Services Section */}
       <section className="page-content">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -114,7 +113,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Events Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -126,10 +124,10 @@ export default function Home() {
                 id: 20,
                 title: "IIT Madras E-Summit 2025 & E-Auction",
                 category: "Summit",
-                description: "SVCE E-Cell members participated in the E-Auction, simulating real-world investment and startup valuation scenarios, testing financial decision-making, negotiation, and strategic thinking.",
+                description: "SVCE E - Cell members participated in the E-Auction, simulating real-world investment and startup valuation scenarios, testing financial decision-making, negotiation, and strategic thinking.",
                 date: "March 1, 2025",
                 location: "IIT Madras",
-                participantsInfo: "SVCE E-Cell Team",
+                participantsInfo: "SVCE E - Cell Team",
                 image: "/placeholder.svg?height=600&width=800",
                 color: "primary",
               },
@@ -146,9 +144,9 @@ export default function Home() {
               },
               {
                 id: 18,
-                title: "MoU with E-Cell MANIT Bhopal",
+                title: "MoU with E - Cell MANIT Bhopal",
                 category: "Collaboration",
-                description: "A collaboration to promote joint events and mutual support. SVCE E-Cell was named the official outreach partner for MANIT Bhopal's E-Summit 2025.",
+                description: "A collaboration to promote joint events and mutual support. SVCE E - Cell was named the official outreach partner for MANIT Bhopal's E-Summit 2025.",
                 date: "October 14, 2024",
                 location: "SVCE & MANIT Bhopal",
                 participantsInfo: "Official Partnership",
@@ -162,7 +160,6 @@ export default function Home() {
                   index % 2 !== 0 ? "md:grid-flow-dense" : ""
                 }`}
               >
-                {/* Text Section */}
                 <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
                   <div className="p-6">
                     <span
@@ -195,7 +192,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                {/* Image Section */}
                 <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
                   <div className="event-card overflow-hidden rounded-xl shadow-lg">
                     <Image
@@ -220,7 +216,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Modal */}
       {selectedService !== null && (
         <ServiceModal
           isOpen={selectedService !== null}

@@ -4,14 +4,13 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Calendar, MapPin, Users } from "lucide-react"
 
-// --- Helper Types & Data ---
 
 type Participant = {
   id: number
   name: string
   studentClass: string
-  idea?: string // Made optional as some participants are winners, not pitchers
-  description?: string // Made optional
+  idea?: string
+  description?: string
 }
 
 type Event = {
@@ -33,8 +32,6 @@ const colorVariants = {
   accent: "bg-teal-900/30 text-teal-300",
 }
 
-// --- Mock Components (for completeness) ---
-// In a real app, you would import these from your component library.
 
 const AnimatedHeading = ({
   className,
@@ -59,10 +56,8 @@ const Button = ({
   </button>
 )
 
-// --- Combined & Corrected Event List ---
 
 const events: Event[] = [
-  // 2025 Events
   {
     id: 20,
     title: "IIT Madras E-Summit 2025 & E-Auction",
@@ -75,7 +70,6 @@ const events: Event[] = [
     image: "/placeholder.svg?height=600&width=800",
     color: "primary",
   },
-  // 2024 Events
   {
     id: 19,
     title: "MSME Idea Hackathon 4.0",
@@ -179,7 +173,6 @@ const events: Event[] = [
     image: "/placeholder.svg?height=600&width=800",
     color: "accent",
   },
-  // 2023 Events
   {
     id: 1,
     title: "Entrepreneurship Workshop",
@@ -216,7 +209,6 @@ const events: Event[] = [
     image: "/placeholder.svg?height=600&width=800",
     color: "accent",
   },
-  // 2022 Events
   {
     id: 4,
     title: "Hackathon 2023",
@@ -285,7 +277,6 @@ const events: Event[] = [
   },
 ]
 
-// Group events by year
 const eventsByYear = events.reduce(
   (acc: Record<string, Event[]>, event) => {
     const year = new Date(event.date).getFullYear().toString()
@@ -296,7 +287,6 @@ const eventsByYear = events.reduce(
   {}
 )
 
-// --- Page Component ---
 
 export default function EventsPage() {
   const [openEventId, setOpenEventId] = useState<number | null>(null)
@@ -307,7 +297,6 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen relative font-sans overflow-x-hidden">
-      {/* Hero */}
       <motion.section
         className="page-hero"
         initial={{ opacity: 0, y: 40 }}
@@ -334,11 +323,9 @@ export default function EventsPage() {
         </div>
       </motion.section>
 
-      {/* Events grouped by year */}
       <section className="page-content">
         <div className="container mx-auto px-4 space-y-20">
           {Object.keys(eventsByYear)
-            .sort((a, b) => Number(b) - Number(a)) // Sort years descending
             .map(year => (
               <div key={year} className="space-y-12">
                 <AnimatedHeading className="text-brand-primary text-3xl mb-4">
@@ -351,7 +338,6 @@ export default function EventsPage() {
                       index % 2 !== 0 ? "md:grid-flow-dense" : ""
                     }`}
                   >
-                    {/* Text Section */}
                     <div
                       className={
                         index % 2 === 0 ? "order-2 md:order-1" : "order-2"
@@ -424,7 +410,6 @@ export default function EventsPage() {
                           )}
                       </div>
                     </div>
-                    {/* Image Section */}
                     <div
                       className={
                         index % 2 === 0 ? "order-1 md:order-2" : "order-1"

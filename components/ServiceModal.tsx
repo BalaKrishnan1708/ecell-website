@@ -26,20 +26,17 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
         >
-          {/* Backdrop */}
           <div 
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={onClose}
           />
           
-          {/* Modal */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl border border-gray-700 max-w-md w-full max-h-[80vh] overflow-y-auto"
           >
-            {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
@@ -55,7 +52,6 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
               </button>
             </div>
             
-            {/* Content */}
             <div className="p-6 space-y-4">
               <p className="text-gray-300 text-lg leading-relaxed">
                 {service.description}
@@ -80,7 +76,6 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
               </div>
             </div>
             
-            {/* Footer */}
             <div className="p-6 border-t border-gray-700">
               <button
                 onClick={onClose}

@@ -9,7 +9,6 @@ import Link from "next/link"
 export default function IncubationCenterPage() {
   return (
     <div className="min-h-screen relative font-sans overflow-x-hidden">
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,7 +28,6 @@ export default function IncubationCenterPage() {
         </div>
       </motion.section>
 
-      {/* What is Incubation Section */}
       <section className="page-content">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -64,7 +62,6 @@ export default function IncubationCenterPage() {
         </div>
       </section>
 
-      {/* Services We Provide Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -138,7 +135,6 @@ export default function IncubationCenterPage() {
         </div>
       </section>
 
-      {/* Incubation Process Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -212,7 +208,6 @@ export default function IncubationCenterPage() {
         </div>
       </section>
 
-      {/* Success Stories Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -250,7 +245,6 @@ export default function IncubationCenterPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="page-section">
         <div className="container mx-auto px-4 text-center">
           <div className="card-secondary max-w-4xl mx-auto">

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
 
-// Dummy data for demonstration; replace with real data source or fetch logic
 const teamMembers = [
   { id: 1, name: "John Doe", position: "President", team: "Core Team", image: "/placeholder.svg?height=400&width=400", linkedin: "https://linkedin.com", email: "john@example.com" },
   { id: 2, name: "Jane Smith", position: "Vice President", team: "Core Team", image: "/placeholder.svg?height=400&width=400", linkedin: "https://linkedin.com", email: "jane@example.com" },

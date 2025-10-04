@@ -1,5 +1,3 @@
-// Comprehensive Q&A Knowledge Base for E-cell SVCE
-// Direct question-answer mapping for accurate responses
 
 export interface QAEntry {
   question: string;
@@ -10,7 +8,6 @@ export interface QAEntry {
 }
 
 export const qaKnowledgeBase: QAEntry[] = [
-  // Leadership & Team Questions
   {
     question: "who is the cfo",
     answer: "The CFO of E-cell SVCE is Nithish from the Executive Committee. He handles financial matters and budgeting for the organization.",
@@ -75,7 +72,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["who is the ceo", "tech team", "executive committee", "technology"]
   },
 
-  // Department Heads
   {
     question: "who is the tech head",
     answer: "The Tech Head of E-cell SVCE is Janani T from the Department Heads team. She leads the technical team and handles website and digital platforms.",
@@ -119,7 +115,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["community managers", "social media", "department heads", "engagement"]
   },
 
-  // Events Questions
   {
     question: "what events does e-cell organize",
     answer: "E-cell SVCE organizes various events including workshops, competitions, hackathons, seminars, and networking events. Recent events include IIT Madras E-Summit 2025, MSME Idea Hackathon 4.0, Entrepreneurship Pitching League, and various workshops on pitching, IP filing, and business development.",
@@ -142,7 +137,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["events", "training", "learning", "seminars"]
   },
 
-  // Services Questions
   {
     question: "what services does e-cell provide",
     answer: "E-cell SVCE provides comprehensive services including: 1) Workshops & Training on business fundamentals, 2) Mentorship Program with industry experts, 3) Events & Competitions like hackathons and pitch competitions, 4) Incubation Support for startups, 5) Recognition & Awards, 6) Career Guidance, plus specialized programs like Innovation Lab and Startup Accelerator.",
@@ -165,7 +159,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["business", "startup", "innovation", "programs"]
   },
 
-  // Contact Questions
   {
     question: "how can i contact e-cell",
     answer: "You can contact E-cell SVCE through: Email: bala.ramyaram@gmail.com, Phone: +91 98765 43210, Office: Sri Venkateswara College of Engineering, Tamil Nadu 602117. Office hours: Monday-Friday 9:00 AM-6:00 PM, Saturday 10:00 AM-2:00 PM, Sunday closed. We're also on Instagram @ecellsvce and LinkedIn.",
@@ -188,7 +181,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["contact", "email", "address", "office hours"]
   },
 
-  // General Questions
   {
     question: "what is e-cell svce",
     answer: "E-cell SVCE is the Entrepreneurship Cell of Sri Venkateswara College of Engineering. We are a vibrant, student-driven community that nurtures innovation, creativity, and leadership. Our mission is to inspire and support students in transforming their ideas into impactful ventures. We've organized 20+ events, impacted 1000+ students, incubated 15+ startups, and have 50+ industry collaborations.",
@@ -218,7 +210,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["success stories", "impact", "partnerships", "growth"]
   },
 
-  // Builders Guild Questions
   {
     question: "what is builders guild",
     answer: "The Builders Guild is our technical community focused on building innovative solutions. It's a community of student developers and tech enthusiasts who focus on building real-world projects, collaborating on open-source projects, and learning technical knowledge. Activities include weekly coding sessions, project showcases, hackathons, and mentorship programs.",
@@ -227,7 +218,6 @@ export const qaKnowledgeBase: QAEntry[] = [
     relatedQuestions: ["tech team", "development", "coding", "projects"]
   },
 
-  // Program Questions
   {
     question: "how can i join e-cell",
     answer: "To join E-cell SVCE, watch our website and social media for recruitment announcements. No prior experience is required - just enthusiasm and willingness to learn. You can also participate in our events and workshops to get involved. Contact us at bala.ramyaram@gmail.com for more information about joining opportunities.",
@@ -244,18 +234,15 @@ export const qaKnowledgeBase: QAEntry[] = [
   }
 ];
 
-// Function to find the best matching Q&A entry
 export function findBestMatch(query: string): QAEntry | null {
   const normalizedQuery = query.toLowerCase().trim();
   
-  // First, try exact question matches
   let bestMatch = qaKnowledgeBase.find(entry => 
     entry.question.toLowerCase() === normalizedQuery
   );
   
   if (bestMatch) return bestMatch;
   
-  // Then try keyword matching
   const queryWords = normalizedQuery.split(/\s+/).filter(word => word.length > 2);
   
   let bestScore = 0;
@@ -264,21 +251,18 @@ export function findBestMatch(query: string): QAEntry | null {
   for (const entry of qaKnowledgeBase) {
     let score = 0;
     
-    // Check keywords
     for (const keyword of entry.keywords) {
       if (normalizedQuery.includes(keyword.toLowerCase())) {
         score += 2;
       }
     }
     
-    // Check question similarity
     for (const word of queryWords) {
       if (entry.question.toLowerCase().includes(word)) {
         score += 1;
       }
     }
     
-    // Check related questions
     for (const relatedQ of entry.relatedQuestions) {
       if (normalizedQuery.includes(relatedQ.toLowerCase())) {
         score += 1;
@@ -294,7 +278,6 @@ export function findBestMatch(query: string): QAEntry | null {
   return bestScore > 0 ? bestEntry : null;
 }
 
-// Enhanced response generator
 export function generateEnhancedResponse(query: string): string {
   const match = findBestMatch(query);
   
@@ -302,7 +285,6 @@ export function generateEnhancedResponse(query: string): string {
     return match.answer;
   }
   
-  // Fallback responses based on query type
   const normalizedQuery = query.toLowerCase();
   
   if (normalizedQuery.includes('hello') || normalizedQuery.includes('hi') || normalizedQuery.includes('hey')) {

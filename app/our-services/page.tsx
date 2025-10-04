@@ -9,7 +9,6 @@ import Link from "next/link"
 export default function OurServicesPage() {
   return (
     <div className="min-h-screen relative font-sans overflow-x-hidden">
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,7 +28,6 @@ export default function OurServicesPage() {
         </div>
       </motion.section>
 
-      {/* Main Services Section */}
       <section className="page-content">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -121,7 +119,6 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      {/* Specialized Programs Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -179,7 +176,6 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      {/* Resources Section */}
       <section className="page-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -221,7 +217,6 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="page-section">
         <div className="container mx-auto px-4 text-center">
           <div className="card-secondary max-w-4xl mx-auto">

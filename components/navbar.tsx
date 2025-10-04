@@ -49,12 +49,11 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo/Brand */}
         <div className="flex items-center gap-2">
           <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
             <Image
               src="/logo.png"
-              alt="E-cell SVCE Logo"
+              alt="E - Cell SVCE Logo"
               width={scrolled ? 170 : 100}
               height={scrolled ? 50 : 30}
               className={`object-contain transition-all duration-500 ${
@@ -69,7 +68,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-2 items-center">
           {navLinks.map((link) => (
             <Link
@@ -88,7 +86,6 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           className={`md:hidden text-brand-primary z-50 transition-all duration-500 ${
             scrolled ? "p-2" : "p-1"
@@ -100,7 +97,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-black border-b border-indigo-700/50 shadow-lg transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-y-full"

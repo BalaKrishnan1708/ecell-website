@@ -1,7 +1,5 @@
-// Test file for AI Page Analyzer
 import { aiPageAnalyzer } from './aiPageAnalyzer';
 
-// Test queries to verify AI functionality
 const testQueries = [
   "What is E-cell SVCE?",
   "Tell me about the events",
@@ -29,7 +27,6 @@ export function testAISystem() {
   console.log("✅ AI System testing completed!");
 }
 
-// Run tests if this file is executed directly
 if (typeof window === 'undefined') {
   testAISystem();
 }

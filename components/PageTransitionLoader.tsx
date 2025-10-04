@@ -14,8 +14,8 @@ export default function PageTransitionLoader() {
     setShow(true);
     const timer = setTimeout(() => {
       setLoading(false);
-      setTimeout(() => setShow(false), 300); // fade out
-    }, 500); // 0.5 second
+  setTimeout(() => setShow(false), 300);
+  }, 500);
     return () => clearTimeout(timer);
   }, [pathname]);
 

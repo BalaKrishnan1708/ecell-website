@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading"
 
-// Image modal with zoom & fade animation
 function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
   return (
     <AnimatePresence>
@@ -39,7 +38,6 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
   )
 }
 
-// BLOG CONTENT GENERATOR (stage one: 1-50, stage two: 1-135)
 const numStageOne = 50;
 const numStageTwo = 135;
 const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -128,7 +126,6 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden mt-24">
-      {/* Video Background */}
       <video
         autoPlay
         loop
@@ -140,7 +137,6 @@ export default function BlogPage() {
         <source src="/your-ai-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {/* Deep blue overlay + scanline effect */}
       <div className="fixed inset-0 z-10 bg-[#0b1b34]/60 pointer-events-none" />
       <div className="fixed inset-0 z-10 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:100%_3px] pointer-events-none" />
 
@@ -159,7 +155,6 @@ export default function BlogPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7 }}
                 >
-                  {/* Month Toggle */}
                   <motion.button
                     className={`w-full text-left text-3xl font-bold px-4 py-3 rounded-lg transition-all duration-300 mb-2 border-b-2 ${openMonth === month ? "bg-white/10 text-blue-300 border-blue-500" : "bg-black/30 text-blue-200 border-blue-900/60"}`}
                     onClick={() => setOpenMonth(openMonth === month ? null : month)}
@@ -169,7 +164,6 @@ export default function BlogPage() {
                     {month} 2025
                   </motion.button>
 
-                  {/* Accordion Animation */}
                   <AnimatePresence initial={false}>
                     {openMonth === month && (
                       <motion.div
@@ -179,7 +173,6 @@ export default function BlogPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                       >
-                        {/* Day buttons */}
                         <div className="flex flex-wrap gap-2 py-4">
                           {postsByMonth[month]?.map((post, idx) => (
                             <motion.button
@@ -194,7 +187,6 @@ export default function BlogPage() {
                           ))}
                         </div>
 
-                        {/* Selected Day Card */}
                         <AnimatePresence>
                           {selectedDay?.month === month && (
                             <motion.div
@@ -217,7 +209,6 @@ export default function BlogPage() {
                                 </span>
                               </div>
 
-                              {/* Blog Image */}
                               <motion.div
                                 className="w-full h-96 bg-gray-800/60 rounded-lg flex items-center justify-center mb-6 overflow-hidden cursor-zoom-in"
                                 onClick={() =>
@@ -251,7 +242,6 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* Image Modal */}
       {modalImg && (
         <ImageModal src={modalImg.src || "/placeholder.svg"} alt={modalImg.alt} onClose={() => setModalImg(null)} />
       )}
