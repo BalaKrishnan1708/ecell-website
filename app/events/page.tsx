@@ -59,6 +59,78 @@ const Button = ({
 
 const events: Event[] = [
   {
+    id: 26,
+    title: "E-Cell Inauguration Ceremony 2024-2025",
+    category: "Inauguration",
+    description:
+      "Official inauguration of SVCE E-Cell for AY 2024-2025 featuring keynote address by Mr. T. Vignesh (Associate Business Facilitating Officer, Bureau for facilitating MSME) and Guest of Honour Dr. T.J. Jeyaprabha. The event marked the beginning of a new chapter in fostering innovation and entrepreneurship at SVCE.",
+    date: "October 29, 2024",
+    location: "Function Hall, SVCE",
+    participantsInfo: "E-Cell Members & Faculty",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop&crop=center",
+    color: "primary",
+  },
+  {
+    id: 25,
+    title: "IITM Research Park Hack Day - Hardware Meetup",
+    category: "Meetup",
+    description:
+      "Exclusive hardware enthusiasts meetup featuring speaker sessions, ideathon, and open discussions on hardware innovation. E-Cell members Subash Chandra Bose, Madhad Krishna, and Bala Pranav represented SVCE, gaining invaluable insights from startup founders and industry experts.",
+    date: "October 2024",
+    location: "IITM Research Park",
+    participantsInfo: "SVCE E-Cell Representatives",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    color: "accent",
+  },
+  {
+    id: 24,
+    title: "Calibrations 2024 - Pitch Wars",
+    category: "Competition",
+    description:
+      "High-energy pitching competition where teams were assigned the same product but developed distinct marketing and business strategies. Teams presented their approaches persuasively, showcasing understanding of business models, target markets, and brand positioning with audience voting.",
+    date: "September 2024",
+    location: "SVCE",
+    participantsInfo: "Multiple Teams",
+    image: "/events/pitchwars.jpg",
+    color: "secondary",
+  },
+  {
+    id: 23,
+    title: "Calibrations 2024 - Decode X",
+    category: "Competition",
+    description:
+      "Multi-round competition testing creativity, pattern recognition, and quick decision-making skills through engaging puzzles, visual challenges, and logic-based tasks requiring adaptability and strategic thinking.",
+    date: "September 2024",
+    location: "SVCE",
+    participantsInfo: "Multiple Participants",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center",
+    color: "accent",
+  },
+  {
+    id: 22,
+    title: "Women's Day Stalls/Bazaars",
+    category: "Marketplace",
+    description:
+      "Exclusive marketplace supporting Women Empowerment Cell where young women entrepreneurs showcased and sold products including food, accessories, clothing, handmade crafts, Mehendi services, and interactive games, fostering female entrepreneurship.",
+    date: "March 8, 2024",
+    location: "SVCE Campus",
+    participantsInfo: "Women Entrepreneurs",
+    image: "/events/womenbazzar.jpg",
+    color: "primary",
+  },
+  {
+    id: 21,
+    title: "Community Meetups (Weekly)",
+    category: "Meetup",
+    description:
+      "Weekly community meetups every Thursday from 3:15 PM to 4:15 PM, providing hands-on mentorship, open discussions about entrepreneurial ideas, expert guidance on business development, funding strategies, and networking opportunities with professionals and potential collaborators.",
+    date: "Ongoing (Every Thursday)",
+    location: "SVCE Campus",
+    participantsInfo: "Open to all students",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&crop=center",
+    color: "primary",
+  },
+  {
     id: 20,
     title: "IIT Madras E-Summit 2025 & E-Auction",
     category: "Summit",
@@ -67,7 +139,7 @@ const events: Event[] = [
     date: "March 1, 2025",
     location: "IIT Madras",
     participantsInfo: "SVCE E-Cell Team",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/iit_2025.jpg",
     color: "primary",
   },
   {
@@ -79,7 +151,7 @@ const events: Event[] = [
     date: "October 29, 2024",
     location: "Library Conference Hall, SVCE",
     participantsInfo: "18 Proposals Selected",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/msme.JPG",
     color: "secondary",
   },
   {
@@ -87,11 +159,11 @@ const events: Event[] = [
     title: "MoU with E-Cell MANIT Bhopal",
     category: "Collaboration",
     description:
-      "A collaboration to promote joint events and mutual support. SVCE E-Cell was named the official outreach partner for MANIT Bhopal’s E-Summit 2025.",
+      "A collaboration to promote joint events and mutual support. SVCE E-Cell was named the official outreach partner for MANIT Bhopal's E-Summit 2025.",
     date: "October 14, 2024",
     location: "SVCE & MANIT Bhopal",
     participantsInfo: "Official Partnership",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/bhopal.jpg",
     color: "accent",
   },
   {
@@ -103,7 +175,7 @@ const events: Event[] = [
     date: "April 1, 2024",
     location: "IIT Madras & SVCE",
     participantsInfo: "2024-2025 Cohort",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/iitmadras.jpg",
     color: "primary",
   },
   {
@@ -115,7 +187,7 @@ const events: Event[] = [
     date: "March 18, 2024",
     location: "SVCE (Highways 2024)",
     participantsInfo: "Winners Announced",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/epl.jpg",
     color: "secondary",
     participants: [
       { id: 1, name: "Johin Gill & Kavi Raj E", studentClass: "AE, 2nd Year" },
@@ -130,7 +202,7 @@ const events: Event[] = [
     date: "March 17, 2024",
     location: "SVCE (Highways 2024)",
     participantsInfo: "Winners Announced",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
     color: "accent",
     participants: [
       { id: 1, name: "Infant Rohith A", studentClass: "IT A, 1st Year" },
@@ -139,14 +211,14 @@ const events: Event[] = [
   },
   {
     id: 14,
-    title: "Pitch Palooza – Women’s Day Competition",
+    title: "Pitch Palooza – Women's Day Competition",
     category: "Competition",
     description:
       "A business pitch competition for women entrepreneurs to showcase innovative ideas and receive mentorship from judges.",
     date: "March 11, 2024",
     location: "Library Seminar Hall, SVCE",
     participantsInfo: "Multiple Teams",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/events/pitch paloza.jpg",
     color: "primary",
   },
   {
@@ -158,19 +230,19 @@ const events: Event[] = [
     date: "February 29, 2024",
     location: "Online (E-Lobby Webinar Series)",
     participantsInfo: "Open to all students",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center",
     color: "secondary",
   },
   {
     id: 12,
-    title: "IP & Patent Filing Seminar",
-    category: "Seminar",
+    title: "From Rookie to All Star - LinkedIn Profile Building",
+    category: "Webinar",
     description:
-      "An expert session on intellectual property rights and the patent filing process, conducted by Dr. R. Senthil (Professor, ECE).",
+      "The 1st E-Lobby Webinar Series session focused on LinkedIn Profile Building, led by Subash (E-Cell Executive Member). Participants learned professional networking, personal branding, profile optimization, and strategies for career growth through LinkedIn.",
     date: "February 5, 2024",
     location: "Online (E-Lobby Webinar Series)",
     participantsInfo: "Open to all students",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center",
     color: "accent",
   },
   {
@@ -182,7 +254,7 @@ const events: Event[] = [
     date: "March 15, 2023",
     location: "Main Auditorium, SVCE",
     participantsInfo: "120 Participants",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop&crop=center",
     color: "primary",
   },
   {
@@ -194,7 +266,7 @@ const events: Event[] = [
     date: "February 28, 2023",
     location: "Seminar Hall, SVCE",
     participantsInfo: "50 Teams",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop&crop=center",
     color: "secondary",
   },
   {
@@ -206,7 +278,7 @@ const events: Event[] = [
     date: "January 10, 2023",
     location: "Virtual Event",
     participantsInfo: "200+ Attendees",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center",
     color: "accent",
   },
   {
@@ -218,7 +290,7 @@ const events: Event[] = [
     date: "December 5, 2022",
     location: "Computer Science Block, SVCE",
     participantsInfo: "30 Teams",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
     color: "primary",
     participants: [
       {
@@ -260,7 +332,7 @@ const events: Event[] = [
     date: "November 20, 2022",
     location: "MBA Department, SVCE",
     participantsInfo: "80 Participants",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
     color: "secondary",
   },
   {
@@ -272,7 +344,7 @@ const events: Event[] = [
     date: "October 15, 2022",
     location: "SVCE Campus",
     participantsInfo: "500+ Attendees",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
     color: "accent",
   },
 ]
@@ -433,4 +505,4 @@ export default function EventsPage() {
       </section>
     </div>
   )
-}git remote add origin https://github.com/ecell-svce/website.git
+}
