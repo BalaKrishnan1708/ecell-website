@@ -67,7 +67,7 @@ const events: Event[] = [
     date: "October 29, 2024",
     location: "Function Hall, SVCE",
     participantsInfo: "E-Cell Members & Faculty",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop&crop=center",
+    image: "/events/inguarartion.jpg",
     color: "primary",
   },
   {
@@ -79,7 +79,7 @@ const events: Event[] = [
     date: "October 2024",
     location: "IITM Research Park",
     participantsInfo: "SVCE E-Cell Representatives",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    image: "/events/researchpark.jpg",
     color: "accent",
   },
   {
@@ -103,7 +103,7 @@ const events: Event[] = [
     date: "September 2024",
     location: "SVCE",
     participantsInfo: "Multiple Participants",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center",
+    image: "/events/decodex.jpg",
     color: "accent",
   },
   {
@@ -127,7 +127,7 @@ const events: Event[] = [
     date: "Ongoing (Every Thursday)",
     location: "SVCE Campus",
     participantsInfo: "Open to all students",
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&crop=center",
+    image: "/events/communitymeetup.jpg",
     color: "primary",
   },
   {
@@ -202,7 +202,7 @@ const events: Event[] = [
     date: "March 17, 2024",
     location: "SVCE (Highways 2024)",
     participantsInfo: "Winners Announced",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    image: "/events/mememarketing.jpg",
     color: "accent",
     participants: [
       { id: 1, name: "Infant Rohith A", studentClass: "IT A, 1st Year" },
@@ -230,7 +230,7 @@ const events: Event[] = [
     date: "February 29, 2024",
     location: "Online (E-Lobby Webinar Series)",
     participantsInfo: "Open to all students",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center",
+    image: "/events/ptchperfect.jpg",
     color: "secondary",
   },
   {
@@ -254,7 +254,7 @@ const events: Event[] = [
     date: "March 15, 2023",
     location: "Main Auditorium, SVCE",
     participantsInfo: "120 Participants",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop&crop=center",
+    image: "/events/enterpenurworkshop.jpg",
     color: "primary",
   },
   {
@@ -266,7 +266,7 @@ const events: Event[] = [
     date: "February 28, 2023",
     location: "Seminar Hall, SVCE",
     participantsInfo: "50 Teams",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop&crop=center",
+    image: "/events/startup.jpg",
     color: "secondary",
   },
   {
@@ -278,7 +278,7 @@ const events: Event[] = [
     date: "January 10, 2023",
     location: "Virtual Event",
     participantsInfo: "200+ Attendees",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center",
+    image: "/events/industrytalk.jpg",
     color: "accent",
   },
   {
@@ -290,7 +290,7 @@ const events: Event[] = [
     date: "December 5, 2022",
     location: "Computer Science Block, SVCE",
     participantsInfo: "30 Teams",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    image: "/events/hackathon 2023.jpg",
     color: "primary",
     participants: [
       {
@@ -332,7 +332,7 @@ const events: Event[] = [
     date: "November 20, 2022",
     location: "MBA Department, SVCE",
     participantsInfo: "80 Participants",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    image: "/events/businnessplan.jpg",
     color: "secondary",
   },
   {
@@ -344,7 +344,7 @@ const events: Event[] = [
     date: "October 15, 2022",
     location: "SVCE Campus",
     participantsInfo: "500+ Attendees",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&crop=center",
+    image: "/events/esummit.jpg",
     color: "accent",
   },
 ]

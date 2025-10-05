@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users } from "lucide-react"
 import { useState } from "react"
 import ServiceModal from "@/components/ServiceModal"
+import StartupSimulatorGame from "@/components/StartupSimulatorGame"
 
 export default function Home() {
   const [selectedService, setSelectedService] = useState<number | null>(null)
@@ -55,31 +56,27 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden page-hero z-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden page-hero z-20">
         <div className="absolute inset-0 z-0">
-<div className="flex flex-col min-h-screen">
-  {/* The gradient is now the background of the section.
-    Flex properties are used to center the text content both vertically and horizontally.
-  */}
-  <section className="h-[90vh] flex items-center justify-center bg-gradient-to-br from-indigo-900 to-gray-900">
-    <div className="text-center">
-    </div>
-  </section>
-</div>
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-transparent to-gray-900/80 opacity-80"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-end z-40 pb-20 md:pb-24">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-                E - Cell <span className="text-indigo-400">SVCE</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 drop-shadow">
-                Passionate students driving innovation and entrepreneurship
-              </p>
-            </div>
+        </div>
+        
+        <div className="relative z-40 w-full max-w-7xl mx-auto px-4 py-12">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
+              E - Cell <span className="text-indigo-400">SVCE</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 drop-shadow mb-6">
+              Passionate students driving innovation and entrepreneurship
+            </p>
+          </div>
+          
+          {/* Interactive Game */}
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+            <StartupSimulatorGame />
           </div>
         </div>
-
-        
       </section>
 
       <section className="page-content">
