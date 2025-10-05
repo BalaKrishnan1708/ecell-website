@@ -433,4 +433,4 @@ export default function EventsPage() {
       </section>
     </div>
   )
-}
+}git remote add origin https://github.com/ecell-svce/website.git
