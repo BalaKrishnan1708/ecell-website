@@ -128,7 +128,7 @@ export default function Home() {
                 date: "March 1, 2025",
                 location: "IIT Madras",
                 participantsInfo: "SVCE E - Cell Team",
-                image: "/placeholder.svg?height=600&width=800",
+                image: "/events/iit_2025.jpg",
                 color: "primary",
               },
               {
@@ -139,7 +139,7 @@ export default function Home() {
                 date: "October 29, 2024",
                 location: "Library Conference Hall, SVCE",
                 participantsInfo: "18 Proposals Selected",
-                image: "/placeholder.svg?height=600&width=800",
+                image: "/events/msme.JPG",
                 color: "secondary",
               },
               {
@@ -150,7 +150,7 @@ export default function Home() {
                 date: "October 14, 2024",
                 location: "SVCE & MANIT Bhopal",
                 participantsInfo: "Official Partnership",
-                image: "/placeholder.svg?height=600&width=800",
+                image: "/events/bhopal.jpg",
                 color: "accent",
               },
             ].map((event, index) => (
