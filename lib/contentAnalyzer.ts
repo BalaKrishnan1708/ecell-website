@@ -449,7 +449,7 @@ export class ContentAnalyzer {
     
     // Handle help requests
     if (normalizedQuery.includes('help') || normalizedQuery.includes('what can you do') || normalizedQuery.includes('what do you know')) {
-      return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with:\n\n📚 **Programs & Services:**\n• Entrepreneurship development programs\n• Incubation center details\n• Mentorship opportunities\n• Skill development workshops\n\n🎯 **Events & Activities:**\n• Upcoming workshops and competitions\n• Event schedules and registration\n• Past event highlights\n• Networking opportunities\n\n👥 **Team & Leadership:**\n• Team member information\n• Leadership structure\n• Contact details\n• Collaboration opportunities\n\n📞 **Contact & Location:**\n• Full contact information\n• Office location and hours\n• Social media links\n• Response times\n\n💡 **General Questions:**\n• About entrepreneurship\n• Business advice\n• Career guidance\n• Technical questions\n\nJust ask me anything - I'm here to help!";
+      return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with:\n\n**Programs & Services:**\n• Entrepreneurship development programs\n• Incubation center details\n• Mentorship opportunities\n• Skill development workshops\n\n**Events & Activities:**\n• Upcoming workshops and competitions\n• Event schedules and registration\n• Past event highlights\n• Networking opportunities\n\n**Team & Leadership:**\n• Team member information\n• Leadership structure\n• Contact details\n• Collaboration opportunities\n\n**Contact & Location:**\n• Full contact information\n• Office location and hours\n• Social media links\n• Response times\n\n**General Questions:**\n• About entrepreneurship\n• Business advice\n• Career guidance\n• Technical questions\n\nJust ask me anything - I'm here to help!";
     }
     
     // Handle specific question types with detailed responses
@@ -508,48 +508,86 @@ Program Structure:
 • Expert level: Scaling and expansion`;
     }
     
+    // Handle individual name queries first
+    const teamMemberNames = [
+      'roshan', 'dharshni', 'manojkumar', 'shree varshini', 'bhargavi', 'nitish', 'daksha', 'janani', 'vikaash',
+      'bala krishna', 'sankara narayanan', 'harshith', 'divya shree', 'baarath', 'balapranav', 'tharun',
+      'sudish', 'abijith', 'buvaneswaran', 'divya bharathi', 'santhoshkumar', 'gokul', 'kayal nethra', 'mhadhurra', 'logeshwari',
+      'jefina', 'irfanaa', 'haritha', 'thoufikur', 'yogendra', 'prathiba', 'seyed mohamed', 'vaishali',
+      'hariis', 'kamalina', 'chalakesh', 'rasiga', 'sri bharathi', 'mayooritha', 'ajay', 'shreenidhi',
+      'jefina giftlin', 'irfanaa parveen', 's v haritha', 'thoufikur rahaman', 'prathiba m s k', 'hariis p', 'kamalina k', 'chalakesh s k'
+    ];
+    
+    const matchedName = teamMemberNames.find(name => normalizedQuery.includes(name.toLowerCase()));
+    if (matchedName) {
+      return `I can provide detailed information about ${matchedName}. Please ask specifically about them, such as "Who is ${matchedName}?" or "Tell me about ${matchedName}" and I'll give you their complete details including their role, department, contact information, and academic background.`;
+    }
+
     if (normalizedQuery.includes('team') || normalizedQuery.includes('members')) {
-      return `Our team consists of passionate students from various engineering disciplines who work together to create opportunities for fellow students.
+      return `**E-cell SVCE Team Members:**
 
-Team Structure:
-• Core Leadership: President, Vice President, Secretary, Joint Secretary
-• Executive Committee: CEO, COO, CFO, CMO, CTO
-• Department Heads: Tech Head, Execution Head, Content Head, Design Head, Marketing Head, Community Manager
-• Executive Team: Various executive team members from different departments
-• Tech Team/Developers: Technical team handling website and digital platforms
-• Design Team: Creative team for visual content and design
-• Marketing Team: Responsible for outreach and promotion
-• Content Team: Creates educational materials and content
-• Community Managers: Social media and community management
-• LinkedIn Managers: LinkedIn content and engagement
+**Core Leadership (3 members):**
+- **Roshan M** - President (ECE - 4th Year) | Email: 2022ec0448@svce.ac.in | Phone: 9841092274
+- **R. Dharshni** - Vice President (Biotech - 4th Year) | Email: dharshni@ecell.svce.ac.in
+- **Manojkumar A** - Secretary (ECE - 4th Year) | Email: manojkumar@ecell.svce.ac.in | Phone: 7418434691
 
-E-cell Members: Passionate students driving innovation and entrepreneurship.
+**Executive Committee (6 members):**
+- **Shree Varshini M** - Chief Executive Officer (ECE - 3rd Year) | Email: shreevarshini@ecell.svce.ac.in | Phone: 9360239715
+- **Bhargavi** - COO (Chemical - 4th Year) | Email: bhargavi@ecell.svce.ac.in
+- **N.Nitish** - CFO (AIDS - 3rd Year) | Email: nitish@ecell.svce.ac.in | Phone: 8428557498
+- **Daksha** - CMO (Biotech - 2nd Year) | Email: daksha@ecell.svce.ac.in
+- **Janani** - CTO (CSE - 3rd Year) | Email: janani@ecell.svce.ac.in
+- **Vikaash** - CDO (ECE - 4th Year) | Email: vikaash@ecell.svce.ac.in
 
-Key Team Members:
-Core Leadership:
-• Roshan - President - Leadership
-• R. Dharshini - Vice President - Leadership
-• Manojkumar - Secretary - Leadership
-• Sree Varshini - Joint Secretary - Leadership
+**Department Heads (7 members):**
+- **Bala Krishna** - Tech Head (AI&DS - 3rd Year) | Email: balakrishna@ecell.svce.ac.in
+- **Sankara Narayanan S** - Execution Head (Biotechnology - 3rd Year) | Email: sankaranarayanan@ecell.svce.ac.in | Phone: 8610049372
+- **Harshith B** - Content Head (Mechanical and Automation - 3rd Year) | Email: harshith@ecell.svce.ac.in | Phone: 8608786089
+- **Divya Shree M** - Design Lead (Information Technology - 2nd Year) | Email: divyashree@ecell.svce.ac.in | Phone: 8015848971
+- **Baarath Arumugaraja** - Operation Lead (CSE - 3rd Year) | Email: baarath@ecell.svce.ac.in | Phone: 9952436835
+- **Balapranav** - Community Captain (EEE - 2nd Year) | Email: balapranav@ecell.svce.ac.in
+- **THARUN S** - Creative Lead (Mechanical and Automation - 2nd Year) | Email: tharun@ecell.svce.ac.in | Phone: 9342526239
 
-Executive Committee:
-• Pradeep - CEO - Executive
-• Bhargavi - COO - Executive
-• Nithish - CFO - Executive
-• Roobuck - CMO - Executive
-• Karthik R - CTO - Executive
+**Executive Members (5 members):**
+- **P.Rasiga** - Executive Member (Chemical - 2nd Year) | Email: 2024ch0405@svce.ac.in | Phone: 9500240988
+- **Sri Bharathi R** - Executive Member (Mech & Auto - 2nd Year) | Email: 2024mn0785@svce.ac.in | Phone: 7397103127
+- **Mayooritha P** - Executive Member (CSC - 2nd Year) | Email: 2024cs0480@svce.ac.in | Phone: 9677809044
+- **Ajay M** - Executive Member (CSC - 3rd Year) | Email: ajay@ecell.svce.ac.in
+- **G.Shreenidhi** - Executive Member (EEE - 2nd Year) | Email: 2024EE0011@svce.ac.in | Phone: 9962010822
 
-Department Heads:
-• Janani T - Tech Head - Technology
-• Sankaranarayanan - Execution Head - Operations
-• Meyyappan - Content Head - Content
-• Vikaash B G - Design Head - Design
-• Daksha S - Marketing Head - Marketing
-• Balapranav - Community Manager - Community
+**Marketing Team (5 members):**
+- **Santhoshkumar C** - Marketing Team (EEE - 2nd Year) | Email: 2024ee0189@svce.ac.in | Phone: 9080083869
+- **Gokul S** - Marketing Team (Biotech - 2nd Year) | Email: 2024bt0848@svce.ac.in | Phone: 9884463837
+- **Kayal nethra K** - Marketing Team (CSC - 2nd Year) | Email: team@ecell.svce.ac.in
+- **Mhadhurra Chandran** - Marketing Team (CSC - 3rd Year) | Email: 2023CS0956@svce.ac.in | Phone: 9840646632
+- **Logeshwari N** - Marketing Team (Biotech - 2nd Year) | Email: 2024bt0388@svce.ac.in | Phone: 9360737534
 
-Domains: Leadership, Executive, Technology, Operations, Content, Design, Marketing, Community
+**Tech Team (4 members):**
+- **Sudish M** - Tech Team (CSC - 3rd Year) | Email: 2023cs0508@svce.ac.in | Phone: 9150195835
+- **ABIJITH P** - Tech Team (CSC - 3rd Year) | Email: abijithmark095@gmail.com | Phone: 6374997429
+- **K Buvaneswaran** - Tech Team (ECE - 2nd Year) | Email: 2024ec0673@svce.ac.in | Phone: 9380867566
+- **Divya Bharathi R** - Tech Team (CSC - 3rd Year) | Email: 2023CS0098@SVCE.AC.IN | Phone: 9840658454
 
-Contact: You can reach out to any team member through their LinkedIn or email for collaboration opportunities.`;
+**Content Team (3 members):**
+- **Jefina Giftlin J** - Content Team (Biotech - 2nd Year) | Email: team@ecell.svce.ac.in
+- **Irfanaa Parveen M** - Content Team (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
+- **S V Haritha** - Content Team (CSC - 3rd Year) | Email: team@ecell.svce.ac.in
+
+**Design Team (5 members):**
+- **THOUFIKUR RAHAMAN Y** - Design Team (EEE - 2nd Year) | Email: team@ecell.svce.ac.in
+- **Yogendra** - Design Team (Mech - 2nd Year) | Email: team@ecell.svce.ac.in
+- **PRATHIBA M S K** - Design Team (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
+- **Seyed Mohamed** - Design Team (Mech & Auto - 3rd Year) | Email: team@ecell.svce.ac.in
+- **Vaishali** - Design Team (CSC - 2nd Year) | Email: team@ecell.svce.ac.in
+
+**Community Managers (3 members):**
+- **Hariis P** - Community Manager (CSC - 3rd Year) | Email: team@ecell.svce.ac.in
+- **Kamalina K** - Community Manager (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
+- **CHALAKESH S K** - Community Manager (Chemical - 2nd Year) | Email: team@ecell.svce.ac.in
+
+**Total Team Size:** 41 members across 8 different teams
+
+For specific information about any team member, please ask "Who is [name]?" and I'll provide detailed information including contact details and social media links.`;
     }
     
     if (normalizedQuery.includes('events')) {
@@ -789,22 +827,22 @@ Join Us: Open to all students interested in technology and building solutions.`;
     
     // Handle business and career questions
     if (normalizedQuery.includes('business') || normalizedQuery.includes('startup') || normalizedQuery.includes('career') || normalizedQuery.includes('job')) {
-      return "Great question! E-cell SVCE is perfect for business and career development:\n\n🚀 **Startup Support:**\n• Incubation program for early-stage startups\n• Mentorship from successful entrepreneurs\n• Funding connections and opportunities\n• Legal and regulatory guidance\n\n💼 **Career Development:**\n• Entrepreneurship skills training\n• Industry networking opportunities\n• Leadership development programs\n• Professional mentorship\n\n📈 **Business Growth:**\n• Business model development workshops\n• Market research and validation support\n• Pitching and presentation training\n• Investor network access\n\nContact us at ecell@svce.ac.in to learn more about our programs!";
+      return "Great question! E-cell SVCE is perfect for business and career development:\n\n**Startup Support:**\n• Incubation program for early-stage startups\n• Mentorship from successful entrepreneurs\n• Funding connections and opportunities\n• Legal and regulatory guidance\n\n**Career Development:**\n• Entrepreneurship skills training\n• Industry networking opportunities\n• Leadership development programs\n• Professional mentorship\n\n**Business Growth:**\n• Business model development workshops\n• Market research and validation support\n• Pitching and presentation training\n• Investor network access\n\nContact us at ecell@svce.ac.in to learn more about our programs!";
     }
     
     // Handle technical questions
     if (normalizedQuery.includes('tech') || normalizedQuery.includes('programming') || normalizedQuery.includes('coding') || normalizedQuery.includes('development')) {
-      return "E-cell SVCE has great technical opportunities through our Builders Guild:\n\n💻 **Builders Guild:**\n• Community of student developers and tech enthusiasts\n• Focus on building real-world projects and solutions\n• Collaboration on open-source projects\n• Learning and sharing technical knowledge\n\n🛠️ **Technical Focus Areas:**\n• Web development\n• Mobile app development\n• AI and machine learning\n• Blockchain technology\n• IoT projects\n• Open source contributions\n\n🎯 **Activities:**\n• Weekly coding sessions\n• Project showcases\n• Hackathons and competitions\n• Mentorship programs\n• Industry partnerships\n\nJoin our technical community and build amazing solutions!";
+      return "E-cell SVCE has great technical opportunities through our Builders Guild:\n\n**Builders Guild:**\n• Community of student developers and tech enthusiasts\n• Focus on building real-world projects and solutions\n• Collaboration on open-source projects\n• Learning and sharing technical knowledge\n\n**Technical Focus Areas:**\n• Web development\n• Mobile app development\n• AI and machine learning\n• Blockchain technology\n• IoT projects\n• Open source contributions\n\n**Activities:**\n• Weekly coding sessions\n• Project showcases\n• Hackathons and competitions\n• Mentorship programs\n• Industry partnerships\n\nJoin our technical community and build amazing solutions!";
     }
     
     // Handle event and activity questions
     if (normalizedQuery.includes('event') || normalizedQuery.includes('workshop') || normalizedQuery.includes('competition') || normalizedQuery.includes('meeting')) {
-      return "E-cell SVCE offers amazing events and activities:\n\n📅 **Event Categories:**\n• Workshops - Hands-on entrepreneurial sessions\n• Competitions - Pitch competitions and hackathons\n• Networking Events - Meet industry experts\n• Guest Lectures - Learn from successful entrepreneurs\n• Conferences - Annual entrepreneurship summit\n\n🎯 **Recent Events:**\n• Entrepreneurship Workshop Series (Monthly)\n• Pitch Perfect Competition (Quarterly)\n• Innovation Hackathon (Bi-annually)\n• Annual Entrepreneurship Summit (Yearly)\n\n🏆 **Event Features:**\n• Expert speakers and mentors\n• Networking opportunities\n• Prize money and recognition\n• Certificate of participation\n• Industry connections\n\nCheck our events page for upcoming activities!";
+      return "E-cell SVCE offers amazing events and activities:\n\n**Event Categories:**\n• Workshops - Hands-on entrepreneurial sessions\n• Competitions - Pitch competitions and hackathons\n• Networking Events - Meet industry experts\n• Guest Lectures - Learn from successful entrepreneurs\n• Conferences - Annual entrepreneurship summit\n\n**Recent Events:**\n• Entrepreneurship Workshop Series (Monthly)\n• Pitch Perfect Competition (Quarterly)\n• Innovation Hackathon (Bi-annually)\n• Annual Entrepreneurship Summit (Yearly)\n\n**Event Features:**\n• Expert speakers and mentors\n• Networking opportunities\n• Prize money and recognition\n• Certificate of participation\n• Industry connections\n\nCheck our events page for upcoming activities!";
     }
     
     // Handle general questions about college or education
     if (normalizedQuery.includes('college') || normalizedQuery.includes('university') || normalizedQuery.includes('education') || normalizedQuery.includes('student')) {
-      return "E-cell SVCE is part of Sri Venkateswara College of Engineering (SVCE):\n\n🏫 **About SVCE:**\n• Premier engineering college in Tamil Nadu\n• Located in Sriperumbudur\n• Offers various engineering programs\n• Strong focus on innovation and entrepreneurship\n\n🎓 **Student Opportunities:**\n• Entrepreneurship development programs\n• Incubation center access\n• Industry mentorship\n• Skill development workshops\n• Networking with professionals\n\n📍 **Location:**\nSri Venkateswara College of Engineering\nPost Bag No.1, Pennalur Village\nChennai - Bengaluru High Road\nSriperumbudur Tk, Tamil Nadu 602117\n\nContact: ecell@svce.ac.in";
+      return "E-cell SVCE is part of Sri Venkateswara College of Engineering (SVCE):\n\n**About SVCE:**\n• Premier engineering college in Tamil Nadu\n• Located in Sriperumbudur\n• Offers various engineering programs\n• Strong focus on innovation and entrepreneurship\n\n**Student Opportunities:**\n• Entrepreneurship development programs\n• Incubation center access\n• Industry mentorship\n• Skill development workshops\n• Networking with professionals\n\n**Location:**\nSri Venkateswara College of Engineering\nPost Bag No.1, Pennalur Village\nChennai - Bengaluru High Road\nSriperumbudur Tk, Tamil Nadu 602117\n\nContact: ecell@svce.ac.in";
     }
     
     // Handle unrelated questions with helpful responses
@@ -813,7 +851,7 @@ Join Us: Open to all students interested in technology and building solutions.`;
     }
     
     if (normalizedQuery.includes('joke') || normalizedQuery.includes('funny')) {
-      return "Here's an entrepreneurship joke: Why don't entrepreneurs ever get cold? Because they're always starting up! 😄 Now, how can I help you with E-cell SVCE or entrepreneurship?";
+      return "Here's an entrepreneurship joke: Why don't entrepreneurs ever get cold? Because they're always starting up! Now, how can I help you with E-cell SVCE or entrepreneurship?";
     }
     
     if (normalizedQuery.includes('thank') || normalizedQuery.includes('thanks')) {
@@ -836,7 +874,7 @@ Join Us: Open to all students interested in technology and building solutions.`;
       return answer;
     }
     
-    return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with a wide range of topics:\n\n🎯 **What I can help with:**\n• E-cell SVCE programs and services\n• Entrepreneurship guidance and advice\n• Team information and leadership\n• Events, workshops, and competitions\n• Incubation center details\n• Contact information and location\n• Technical questions (Builders Guild)\n• Business and career advice\n• College and education information\n• And much more!\n\n💡 **Just ask me anything!** I'm trained to provide detailed, helpful responses on all these topics. What would you like to know?";
+    return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with a wide range of topics:\n\n**What I can help with:**\n• E-cell SVCE programs and services\n• Entrepreneurship guidance and advice\n• Team information and leadership\n• Events, workshops, and competitions\n• Incubation center details\n• Contact information and location\n• Technical questions (Builders Guild)\n• Business and career advice\n• College and education information\n• And much more!\n\n**Just ask me anything!** I'm trained to provide detailed, helpful responses on all these topics. What would you like to know?";
   }
 }
 

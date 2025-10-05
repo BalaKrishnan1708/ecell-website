@@ -10,23 +10,23 @@ export interface QAEntry {
 export const qaKnowledgeBase: QAEntry[] = [
   {
     question: "who is the cfo",
-    answer: "The CFO of E-cell SVCE is Nithish from the Executive Committee. He handles financial matters and budgeting for the organization.",
+    answer: "The CFO of E-cell SVCE is N.Nitish from the Executive Committee. He is a 3rd year AIDS student and handles financial matters and budgeting for the organization. You can contact him via LinkedIn, email at nitish@ecell.svce.ac.in, Instagram at nitish_31x, or phone at 8428557498.",
     category: "team",
-    keywords: ["cfo", "chief financial officer", "finance", "budget", "nithish"],
+    keywords: ["cfo", "chief financial officer", "finance", "budget", "nithish", "n.nitish"],
     relatedQuestions: ["who is the ceo", "who is the president", "executive committee", "leadership team"]
   },
   {
     question: "who is the ceo",
-    answer: "The CEO of E-cell SVCE is Pradeep from the Executive Committee. He leads the overall strategic direction of the organization.",
+    answer: "The CEO of E-cell SVCE is Shree Varshini M from the Executive Committee. She is a 3rd year ECE student and leads the overall strategic direction of the organization. You can contact her via LinkedIn, email at shreevarshini@ecell.svce.ac.in, or phone at 9360239715.",
     category: "team",
-    keywords: ["ceo", "chief executive officer", "pradeep", "executive", "leader"],
+    keywords: ["ceo", "chief executive officer", "shree varshini", "varshini", "executive", "leader"],
     relatedQuestions: ["who is the cfo", "who is the president", "executive committee", "leadership team"]
   },
   {
     question: "who is the president",
-    answer: "The President of E-cell SVCE is Roshan from the Core Leadership team. He leads the overall vision and direction of the organization.",
+    answer: "The President of E-cell SVCE is Roshan M from the Core Leadership team. He is a 4th year ECE student and leads the overall vision and direction of the organization. You can contact him via LinkedIn or email at 2022ec0448@svce.ac.in, or phone at 9841092274.",
     category: "team",
-    keywords: ["president", "roshan", "core leadership", "leader", "head"],
+    keywords: ["president", "roshan", "roshan m", "core leadership", "leader", "head"],
     relatedQuestions: ["who is the ceo", "who is the cfo", "core leadership", "leadership team"]
   },
   {
@@ -66,17 +66,17 @@ export const qaKnowledgeBase: QAEntry[] = [
   },
   {
     question: "who is the cto",
-    answer: "The CTO (Chief Technology Officer) of E-cell SVCE is Karthik R from the Executive Committee. He leads all technical initiatives and digital platforms.",
+    answer: "The CTO (Chief Technology Officer) of E-cell SVCE is Janani from the Executive Committee. She is a 3rd year CSE student and leads all technical initiatives and digital platforms. You can contact her via email at janani@ecell.svce.ac.in.",
     category: "team",
-    keywords: ["cto", "chief technology officer", "karthik", "technology", "tech", "executive"],
+    keywords: ["cto", "chief technology officer", "janani", "technology", "tech", "executive"],
     relatedQuestions: ["who is the ceo", "tech team", "executive committee", "technology"]
   },
 
   {
     question: "who is the tech head",
-    answer: "The Tech Head of E-cell SVCE is Janani T from the Department Heads team. She leads the technical team and handles website and digital platforms.",
+    answer: "The Tech Head of E-cell SVCE is Bala Krishna from the Department Heads team. He is a 3rd year AI&DS student and leads the technical team handling website and digital platforms. You can contact him via email at balakrishna@ecell.svce.ac.in.",
     category: "team",
-    keywords: ["tech head", "janani", "technology", "department heads", "technical"],
+    keywords: ["tech head", "bala krishna", "technology", "department heads", "technical"],
     relatedQuestions: ["tech team", "department heads", "technology", "website"]
   },
   {
@@ -231,6 +231,390 @@ export const qaKnowledgeBase: QAEntry[] = [
     category: "services",
     keywords: ["programs", "bootcamp", "workshop", "incubation", "accelerator"],
     relatedQuestions: ["services", "training", "mentorship", "incubation"]
+  },
+
+  // Comprehensive Team Member Information
+  {
+    question: "who are all the team members",
+    answer: "E-cell SVCE has a comprehensive team structure with 41 members across different departments:\n\n**Core Leadership:**\n• Roshan M - President (ECE - 4th Year)\n• R. Dharshni - Vice President (Biotech - 4th Year)\n• Manojkumar A - Secretary (ECE - 4th Year)\n\n**Executive Committee:**\n• Shree Varshini M - CEO (ECE - 3rd Year)\n• Bhargavi - COO (Chemical - 4th Year)\n• N.Nitish - CFO (AIDS - 3rd Year)\n• Daksha - CMO (Biotech - 2nd Year)\n• Janani - CTO (CSE - 3rd Year)\n• Vikaash - CDO (ECE - 4th Year)\n\n**Department Heads:**\n• Bala Krishna - Tech Head (AI&DS - 3rd Year)\n• Sankara Narayanan S - Execution Head (Biotechnology - 3rd Year)\n• Harshith B - Content Head (Mechanical and Automation - 3rd Year)\n• Divya Shree M - Design Lead (Information Technology - 2nd Year)\n• Baarath Arumugaraja - Operation Lead (CSE - 3rd Year)\n• Balapranav - Community Captain (EEE - 2nd Year)\n• THARUN S - Creative Lead (Mechanical and Automation - 2nd Year)\n\n**Executive Members:**\n• P.Rasiga (Chemical - 2nd Year)\n• Sri Bharathi R (Mech & Auto - 2nd Year)\n• Mayooritha P (CSC - 2nd Year)\n• Ajay M (CSC - 3rd Year)\n• G.Shreenidhi (EEE - 2nd Year)\n\n**Marketing Team:**\n• Santhoshkumar C (EEE - 2nd Year)\n• Gokul S (Biotech - 2nd Year)\n• Kayal nethra K (CSC - 2nd Year)\n• Mhadhurra Chandran (CSC - 3rd Year)\n• Logeshwari N (Biotech - 2nd Year)\n\n**Tech Team:**\n• Sudish M (CSC - 3rd Year)\n• ABIJITH P (CSC - 3rd Year)\n• K Buvaneswaran (ECE - 2nd Year)\n• Divya Bharathi R (CSC - 3rd Year)\n\n**Content Team:**\n• Jefina Giftlin J (Biotech - 2nd Year)\n• Irfanaa Parveen M (ECE - 2nd Year)\n• S V Haritha (CSC - 3rd Year)\n\n**Design Team:**\n• THOUFIKUR RAHAMAN Y (EEE - 2nd Year)\n• Yogendra (Mech - 2nd Year)\n• PRATHIBA M S K (ECE - 2nd Year)\n• Seyed Mohamed (Mech & Auto - 3rd Year)\n• Vaishali (CSC - 2nd Year)\n\n**Community Managers:**\n• Hariis P (CSC - 3rd Year)\n• Kamalina K (ECE - 2nd Year)\n• CHALAKESH S K (Chemical - 2nd Year)",
+    category: "team",
+    keywords: ["team members", "all members", "complete team", "team list", "everyone"],
+    relatedQuestions: ["team structure", "who is in the team", "team composition", "members list"]
+  },
+  {
+    question: "who is roshan",
+    answer: "Roshan M is the President of E-cell SVCE from the Core Leadership team. He is a 4th year ECE student and leads the overall vision and direction of the organization. You can contact him via LinkedIn or email at 2022ec0448@svce.ac.in.",
+    category: "team",
+    keywords: ["roshan", "president", "roshan m", "core leadership"],
+    relatedQuestions: ["who is the president", "core leadership", "leadership team"]
+  },
+  {
+    question: "who is dharshni",
+    answer: "R. Dharshni is the Vice President of E-cell SVCE from the Core Leadership team. She is a 4th year Biotech student and supports the President in leading the organization. You can contact her via email at dharshni@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["dharshni", "r. dharshni", "vice president", "core leadership"],
+    relatedQuestions: ["who is the vice president", "core leadership", "leadership team"]
+  },
+  {
+    question: "who is manojkumar",
+    answer: "Manojkumar A is the Secretary of E-cell SVCE from the Core Leadership team. He is a 4th year ECE student and handles administrative duties and documentation. You can contact him via email at manojkumar@ecell.svce.ac.in or phone at 7418434691.",
+    category: "team",
+    keywords: ["manojkumar", "manojkumar a", "secretary", "core leadership"],
+    relatedQuestions: ["who is the secretary", "core leadership", "leadership team"]
+  },
+  {
+    question: "who is shree varshini",
+    answer: "Shree Varshini M is the Chief Executive Officer (CEO) of E-cell SVCE from the Executive Committee. She is a 3rd year ECE student and leads the overall strategic direction of the organization. You can contact her via LinkedIn or email at shreevarshini@ecell.svce.ac.in or phone at 9360239715.",
+    category: "team",
+    keywords: ["shree varshini", "varshini", "ceo", "chief executive officer", "executive committee"],
+    relatedQuestions: ["who is the ceo", "executive committee", "leadership team"]
+  },
+  {
+    question: "who is bhargavi",
+    answer: "Bhargavi is the Chief Operating Officer (COO) of E-cell SVCE from the Executive Committee. She is a 4th year Chemical student and manages day-to-day operations of the organization. You can contact her via email at bhargavi@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["bhargavi", "coo", "chief operating officer", "executive committee"],
+    relatedQuestions: ["who is the coo", "executive committee", "operations"]
+  },
+  {
+    question: "who is nitish",
+    answer: "N.Nitish is the Chief Financial Officer (CFO) of E-cell SVCE from the Executive Committee. He is a 3rd year AIDS student and handles financial matters and budgeting for the organization. You can contact him via LinkedIn, email at nitish@ecell.svce.ac.in, Instagram at nitish_31x, or phone at 8428557498.",
+    category: "team",
+    keywords: ["nitish", "n.nitish", "cfo", "chief financial officer", "executive committee"],
+    relatedQuestions: ["who is the cfo", "executive committee", "finance"]
+  },
+  {
+    question: "who is daksha",
+    answer: "Daksha is the Chief Marketing Officer (CMO) of E-cell SVCE from the Executive Committee. She is a 2nd year Biotech student and leads all marketing and outreach activities. You can contact her via email at daksha@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["daksha", "cmo", "chief marketing officer", "executive committee"],
+    relatedQuestions: ["who is the cmo", "marketing", "executive committee"]
+  },
+  {
+    question: "who is janani",
+    answer: "Janani is the Chief Technology Officer (CTO) of E-cell SVCE from the Executive Committee. She is a 3rd year CSE student and leads all technical initiatives and digital platforms. You can contact her via email at janani@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["janani", "cto", "chief technology officer", "executive committee"],
+    relatedQuestions: ["who is the cto", "technology", "executive committee"]
+  },
+  {
+    question: "who is vikaash",
+    answer: "Vikaash is the Chief Design Officer (CDO) of E-cell SVCE from the Executive Committee. He is a 4th year ECE student and leads design initiatives. You can contact him via email at vikaash@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["vikaash", "cdo", "chief design officer", "executive committee"],
+    relatedQuestions: ["who is the cdo", "design", "executive committee"]
+  },
+  {
+    question: "who is bala krishna",
+    answer: "Bala Krishna is the Tech Head of E-cell SVCE from the Department Heads team. He is a 3rd year AI&DS student and leads the technical team handling website and digital platforms. You can contact him via email at balakrishna@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["bala krishna", "tech head", "technology", "department heads"],
+    relatedQuestions: ["tech team", "department heads", "technology"]
+  },
+  {
+    question: "who is sankara narayanan",
+    answer: "Sankara Narayanan S is the Execution Head of E-cell SVCE from the Department Heads team. He is a 3rd year Biotechnology student and leads operational activities and event execution. You can contact him via LinkedIn, email at sankaranarayanan@ecell.svce.ac.in, Instagram at s4nk4r, or phone at 8610049372.",
+    category: "team",
+    keywords: ["sankara narayanan", "execution head", "operations", "department heads"],
+    relatedQuestions: ["department heads", "operations", "event execution"]
+  },
+  {
+    question: "who is harshith",
+    answer: "Harshith B is the Content Head of E-cell SVCE from the Department Heads team. He is a 3rd year Mechanical and Automation student and leads content creation and educational materials. You can contact him via LinkedIn, email at harshith@ecell.svce.ac.in, Instagram at Harshith.007, or phone at 8608786089.",
+    category: "team",
+    keywords: ["harshith", "harshith b", "content head", "content", "department heads"],
+    relatedQuestions: ["content team", "department heads", "content creation"]
+  },
+  {
+    question: "who is divya shree",
+    answer: "Divya Shree M is the Design Lead of E-cell SVCE from the Department Heads team. She is a 2nd year Information Technology student and leads the creative team for visual content and design. You can contact her via LinkedIn, email at divyashree@ecell.svce.ac.in, Instagram at _divya03shree_, or phone at 8015848971.",
+    category: "team",
+    keywords: ["divya shree", "design lead", "design", "department heads"],
+    relatedQuestions: ["design team", "department heads", "creative"]
+  },
+  {
+    question: "who is baarath",
+    answer: "Baarath Arumugaraja is the Operation Lead of E-cell SVCE from the Department Heads team. He is a 3rd year CSE student and leads operational activities. You can contact him via LinkedIn, email at baarath@ecell.svce.ac.in, Instagram at baarathraja, or phone at 9952436835.",
+    category: "team",
+    keywords: ["baarath", "baarath arumugaraja", "operation lead", "operations", "department heads"],
+    relatedQuestions: ["department heads", "operations", "executive team"]
+  },
+  {
+    question: "who is balapranav",
+    answer: "Balapranav is the Community Captain of E-cell SVCE from the Department Heads team. He is a 2nd year EEE student and manages community engagement and social media. You can contact him via email at balapranav@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["balapranav", "community captain", "community", "department heads"],
+    relatedQuestions: ["community managers", "social media", "department heads"]
+  },
+  {
+    question: "who is tharun",
+    answer: "THARUN S is the Creative Lead of E-cell SVCE from the Department Heads team. He is a 2nd year Mechanical and Automation student and leads creative initiatives. You can contact him via LinkedIn, email at tharun@ecell.svce.ac.in, Instagram at @tharunehhhh, or phone at 9342526239.",
+    category: "team",
+    keywords: ["tharun", "tharun s", "creative lead", "creative", "department heads"],
+    relatedQuestions: ["design team", "department heads", "creative"]
+  },
+
+  // Additional Team Members for Name Recognition
+  {
+    question: "who is sudish",
+    answer: "Sudish M is a member of the Tech Team at E-cell SVCE. He is a 3rd year CSC student and handles technical development and digital platforms. You can contact him via email at 2023cs0508@svce.ac.in, Instagram at _._sudish, or phone at 9150195835.",
+    category: "team",
+    keywords: ["sudish", "sudish m", "tech team", "technical"],
+    relatedQuestions: ["tech team", "technical", "development"]
+  },
+  {
+    question: "who is abijith",
+    answer: "ABIJITH P is a member of the Tech Team at E-cell SVCE. He is a 3rd year CSC student and works on technical projects and digital solutions. You can contact him via email at abijithmark095@gmail.com, Instagram at 0__abi__1, or phone at 6374997429.",
+    category: "team",
+    keywords: ["abijith", "abijith p", "tech team", "technical"],
+    relatedQuestions: ["tech team", "technical", "development"]
+  },
+  {
+    question: "who is buvaneswaran",
+    answer: "K Buvaneswaran is a member of the Tech Team at E-cell SVCE. He is a 2nd year ECE student and contributes to technical development. You can contact him via email at 2024ec0673@svce.ac.in, Instagram at _buvi_2006, or phone at 9380867566.",
+    category: "team",
+    keywords: ["buvaneswaran", "k buvaneswaran", "tech team", "technical"],
+    relatedQuestions: ["tech team", "technical", "development"]
+  },
+  {
+    question: "who is divya bharathi",
+    answer: "Divya Bharathi R is a member of the Tech Team at E-cell SVCE. She is a 3rd year CSC student and works on technical projects. You can contact her via email at 2023CS0098@SVCE.AC.IN, Instagram at divya_bharathi_18, or phone at 9840658454.",
+    category: "team",
+    keywords: ["divya bharathi", "divya bharathi r", "tech team", "technical"],
+    relatedQuestions: ["tech team", "technical", "development"]
+  },
+  {
+    question: "who is santhoshkumar",
+    answer: "Santhoshkumar C is a member of the Marketing Team at E-cell SVCE. He is a 2nd year EEE student and handles marketing and outreach activities. You can contact him via email at 2024ee0189@svce.ac.in, Instagram at _.mashysandy._, or phone at 9080083869.",
+    category: "team",
+    keywords: ["santhoshkumar", "santhoshkumar c", "marketing team", "marketing"],
+    relatedQuestions: ["marketing team", "marketing", "outreach"]
+  },
+  {
+    question: "who is gokul",
+    answer: "Gokul S is a member of the Marketing Team at E-cell SVCE. He is a 2nd year Biotech student and contributes to marketing initiatives. You can contact him via email at 2024bt0848@svce.ac.in, Instagram at _.s.gokul._, or phone at 9884463837.",
+    category: "team",
+    keywords: ["gokul", "gokul s", "marketing team", "marketing"],
+    relatedQuestions: ["marketing team", "marketing", "outreach"]
+  },
+  {
+    question: "who is kayal nethra",
+    answer: "Kayal nethra K is a member of the Marketing Team at E-cell SVCE. She is a 2nd year CSC student and handles marketing activities. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["kayal nethra", "kayal nethra k", "marketing team", "marketing"],
+    relatedQuestions: ["marketing team", "marketing", "outreach"]
+  },
+  {
+    question: "who is mhadhurra",
+    answer: "Mhadhurra Chandran is a member of the Marketing Team at E-cell SVCE. He is a 3rd year CSC student and contributes to marketing efforts. You can contact him via email at 2023CS0956@svce.ac.in, Instagram at mhadhu_06, or phone at 9840646632.",
+    category: "team",
+    keywords: ["mhadhurra", "mhadhurra chandran", "marketing team", "marketing"],
+    relatedQuestions: ["marketing team", "marketing", "outreach"]
+  },
+  {
+    question: "who is logeshwari",
+    answer: "Logeshwari N is a member of the Marketing Team at E-cell SVCE. She is a 2nd year Biotech student and handles marketing activities. You can contact her via email at 2024bt0388@svce.ac.in, Instagram at blue_.moonx_, or phone at 9360737534.",
+    category: "team",
+    keywords: ["logeshwari", "logeshwari n", "marketing team", "marketing"],
+    relatedQuestions: ["marketing team", "marketing", "outreach"]
+  },
+  {
+    question: "who is jefina",
+    answer: "Jefina Giftlin J is a member of the Content Team at E-cell SVCE. She is a 2nd year Biotech student and creates educational content and materials. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["jefina", "jefina giftlin", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is irfanaa",
+    answer: "Irfanaa Parveen M is a member of the Content Team at E-cell SVCE. She is a 2nd year ECE student and contributes to content creation. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["irfanaa", "irfanaa parveen", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is haritha",
+    answer: "S V Haritha is a member of the Content Team at E-cell SVCE. She is a 3rd year CSC student and creates educational materials. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["haritha", "s v haritha", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is thoufikur",
+    answer: "THOUFIKUR RAHAMAN Y is a member of the Design Team at E-cell SVCE. He is a 2nd year EEE student and contributes to visual design and creative content. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["thoufikur", "thoufikur rahaman", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is yogendra",
+    answer: "Yogendra is a member of the Design Team at E-cell SVCE. He is a 2nd year Mech student and works on visual design projects. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["yogendra", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is prathiba",
+    answer: "PRATHIBA M S K is a member of the Design Team at E-cell SVCE. She is a 2nd year ECE student and contributes to creative design work. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["prathiba", "prathiba m s k", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is seyed mohamed",
+    answer: "Seyed Mohamed is a member of the Design Team at E-cell SVCE. He is a 3rd year Mech & Auto student and works on design projects. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["seyed mohamed", "mohamed", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is vaishali",
+    answer: "Vaishali is a member of the Design Team at E-cell SVCE. She is a 2nd year CSC student and contributes to visual design work. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["vaishali", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is hariis",
+    answer: "Hariis P is a Community Manager at E-cell SVCE. He is a 3rd year CSC student and manages community engagement and social media. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["hariis", "hariis p", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is kamalina",
+    answer: "Kamalina K is a Community Manager at E-cell SVCE. She is a 2nd year ECE student and handles community engagement activities. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["kamalina", "kamalina k", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is chalakesh",
+    answer: "CHALAKESH S K is a Community Manager at E-cell SVCE. He is a 2nd year Chemical student and manages community activities. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["chalakesh", "chalakesh s k", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is rasiga",
+    answer: "P.Rasiga is an Executive Member at E-cell SVCE. He is a 2nd year Chemical student and contributes to various organizational activities. You can contact him via email at 2024ch0405@svce.ac.in or phone at 9500240988.",
+    category: "team",
+    keywords: ["rasiga", "p.rasiga", "executive member", "executive"],
+    relatedQuestions: ["executive members", "executive", "team members"]
+  },
+  {
+    question: "who is sri bharathi",
+    answer: "Sri Bharathi R is an Executive Member at E-cell SVCE. She is a 2nd year Mech & Auto student and participates in organizational activities. You can contact her via email at 2024mn0785@svce.ac.in, Instagram at Sribharathi666, or phone at 7397103127.",
+    category: "team",
+    keywords: ["sri bharathi", "sri bharathi r", "executive member", "executive"],
+    relatedQuestions: ["executive members", "executive", "team members"]
+  },
+  {
+    question: "who is mayooritha",
+    answer: "Mayooritha P is an Executive Member at E-cell SVCE. She is a 2nd year CSC student and contributes to various team activities. You can contact her via email at 2024cs0480@svce.ac.in, Instagram at mayooritha_, or phone at 9677809044.",
+    category: "team",
+    keywords: ["mayooritha", "mayooritha p", "executive member", "executive"],
+    relatedQuestions: ["executive members", "executive", "team members"]
+  },
+  {
+    question: "who is ajay",
+    answer: "Ajay M is an Executive Member at E-cell SVCE. He is a 3rd year CSC student and participates in organizational activities. You can contact him via email at ajay@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["ajay", "ajay m", "executive member", "executive"],
+    relatedQuestions: ["executive members", "executive", "team members"]
+  },
+  {
+    question: "who is shreenidhi",
+    answer: "G.Shreenidhi is an Executive Member at E-cell SVCE. She is a 2nd year EEE student and contributes to team activities. You can contact her via email at 2024EE0011@svce.ac.in or phone at 9962010822.",
+    category: "team",
+    keywords: ["shreenidhi", "g.shreenidhi", "executive member", "executive"],
+    relatedQuestions: ["executive members", "executive", "team members"]
+  },
+
+  // Additional Team Members for Complete Coverage
+  {
+    question: "who is jefina giftlin",
+    answer: "Jefina Giftlin J is a member of the Content Team at E-cell SVCE. She is a 2nd year Biotech student and creates educational content and materials. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["jefina giftlin", "jefina", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is irfanaa parveen",
+    answer: "Irfanaa Parveen M is a member of the Content Team at E-cell SVCE. She is a 2nd year ECE student and contributes to content creation. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["irfanaa parveen", "irfanaa", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is s v haritha",
+    answer: "S V Haritha is a member of the Content Team at E-cell SVCE. She is a 3rd year CSC student and creates educational materials. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["s v haritha", "haritha", "content team", "content"],
+    relatedQuestions: ["content team", "content", "educational"]
+  },
+  {
+    question: "who is thoufikur rahaman",
+    answer: "THOUFIKUR RAHAMAN Y is a member of the Design Team at E-cell SVCE. He is a 2nd year EEE student and contributes to visual design and creative content. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["thoufikur rahaman", "thoufikur", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is yogendra",
+    answer: "Yogendra is a member of the Design Team at E-cell SVCE. He is a 2nd year Mech student and works on visual design projects. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["yogendra", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is prathiba m s k",
+    answer: "PRATHIBA M S K is a member of the Design Team at E-cell SVCE. She is a 2nd year ECE student and contributes to creative design work. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["prathiba m s k", "prathiba", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is seyed mohamed",
+    answer: "Seyed Mohamed is a member of the Design Team at E-cell SVCE. He is a 3rd year Mech & Auto student and works on design projects. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["seyed mohamed", "mohamed", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is vaishali",
+    answer: "Vaishali is a member of the Design Team at E-cell SVCE. She is a 2nd year CSC student and contributes to visual design work. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["vaishali", "design team", "design"],
+    relatedQuestions: ["design team", "design", "creative"]
+  },
+  {
+    question: "who is hariis p",
+    answer: "Hariis P is a Community Manager at E-cell SVCE. He is a 3rd year CSC student and manages community engagement and social media. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["hariis p", "hariis", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is kamalina k",
+    answer: "Kamalina K is a Community Manager at E-cell SVCE. She is a 2nd year ECE student and handles community engagement activities. You can contact her via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["kamalina k", "kamalina", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is chalakesh s k",
+    answer: "CHALAKESH S K is a Community Manager at E-cell SVCE. He is a 2nd year Chemical student and manages community activities. You can contact him via email at team@ecell.svce.ac.in.",
+    category: "team",
+    keywords: ["chalakesh s k", "chalakesh", "community manager", "community"],
+    relatedQuestions: ["community managers", "community", "social media"]
+  },
+  {
+    question: "who is balakrishnan",
+    answer: "Balakrishnan is the Tech Head of E-cell SVCE from the Department Heads team. He is a 3rd year AIDS student and leads the technical team handling website and digital platforms. You can contact him via email at 2023ad0681@svce.ac.in, Instagram at iambalakrishnan.r, phone at 9444543801, or GitHub at https://github.com/BalaKrishnan1708.",
+    category: "team",
+    keywords: ["balakrishnan", "bala krishna", "tech head", "technology", "department heads"],
+    relatedQuestions: ["tech team", "department heads", "technology", "website"]
   }
 ];
 
@@ -292,7 +676,7 @@ export function generateEnhancedResponse(query: string): string {
   }
   
   if (normalizedQuery.includes('help') || normalizedQuery.includes('what can you do')) {
-    return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with:\n\n🎯 **Team & Leadership:**\n• President, CEO, CFO, and all leadership positions\n• Department heads and team structure\n• Contact information for team members\n\n📅 **Events & Programs:**\n• Recent and upcoming events\n• Workshops and competitions\n• Entrepreneurship programs\n\n💼 **Services:**\n• Incubation center details\n• Mentorship programs\n• Career guidance\n\n📞 **Contact:**\n• Email, phone, and office information\n• Office hours and location\n\nJust ask me anything about E-cell SVCE!";
+    return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with:\n\n**Team & Leadership:**\n• President, CEO, CFO, and all leadership positions\n• Department heads and team structure\n• Contact information for team members\n\n**Events & Programs:**\n• Recent and upcoming events\n• Workshops and competitions\n• Entrepreneurship programs\n\n**Services:**\n• Incubation center details\n• Mentorship programs\n• Career guidance\n\n**Contact:**\n• Email, phone, and office information\n• Office hours and location\n\nJust ask me anything about E-cell SVCE!";
   }
   
   if (normalizedQuery.includes('thank') || normalizedQuery.includes('thanks')) {
@@ -305,5 +689,8 @@ export function generateEnhancedResponse(query: string): string {
   
   return "I'm your comprehensive E-cell SVCE AI assistant! I can help you with team information, events, services, programs, and contact details. Could you please rephrase your question or ask about something specific like 'Who is the CFO?' or 'What events does E-cell organize?'";
 }
+
+
+
 
 
