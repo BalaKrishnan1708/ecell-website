@@ -535,6 +535,7 @@ Program Structure:
     
     // Handle individual name queries with detailed information
     const teamMemberDetails = {
+      // Core Leadership Team
       'roshan': {
         name: 'Roshan M',
         position: 'President',
@@ -545,6 +546,107 @@ Program Structure:
         linkedin: 'https://www.linkedin.com/in/roshan-m-711a95292',
         instagram: '@roshan.m.forever',
         github: ''
+      },
+      'dharshini': {
+        name: 'R. Dharshini',
+        position: 'Vice President',
+        team: 'Core Leadership',
+        domain: 'Biotech - 4th Year',
+        email: '2022bt0547@svce.ac.in',
+        phone: '8056071990',
+        linkedin: 'https://www.linkedin.com/in/dharshni-ramesh-a72934286',
+        instagram: 'dharshni6434',
+        github: ''
+      },
+      'manojkumar': {
+        name: 'Manojkumar A',
+        position: 'Secretary',
+        team: 'Core Leadership',
+        domain: 'ECE - 4th Year',
+        email: '2024ec0448@svce.ac.in',
+        phone: '7418434691',
+        linkedin: 'https://www.linkedin.com/in/manojkumar-anbuchezhian',
+        instagram: 'Manojkumaranbuchezhian',
+        github: 'https://github.com/Manojkumaranbuchezhian'
+      },
+      // Executive Committee
+      'shree varshini': {
+        name: 'Shree Varshini M',
+        position: 'CEO',
+        team: 'Executive Committee',
+        domain: 'ECE - 3rd Year',
+        email: '2024ec0448@svce.ac.in',
+        phone: '9360239715',
+        linkedin: 'https://www.linkedin.com/in/shree-varshini-m-533b08304',
+        instagram: '',
+        github: ''
+      },
+      'nitish': {
+        name: 'N.Nitish',
+        position: 'CFO',
+        team: 'Executive Committee',
+        domain: 'AIDS - 3rd Year',
+        email: '2023ad0681@svce.ac.in',
+        phone: '8428557498',
+        linkedin: 'https://www.linkedin.com/in/nitish-navaneeth',
+        instagram: 'nitish_31x',
+        github: ''
+      },
+      'bhargavi': {
+        name: 'Bhargavi TR',
+        position: 'COO',
+        team: 'Executive Committee',
+        domain: 'Chemical Eng - 4th Year',
+        email: '2022ch0775@svce.ac.in',
+        phone: '9360286533',
+        linkedin: 'https://www.linkedin.com/in/bhargavitr',
+        instagram: 'bhargavi.tr',
+        github: ''
+      },
+      'janani': {
+        name: 'Janani T',
+        position: 'CTO',
+        team: 'Executive Committee',
+        domain: 'CSE - 3rd Year',
+        email: '2023cs0309@svce.ac.in',
+        phone: '9150988305',
+        linkedin: 'https://www.linkedin.com/in/janani-t-bb507a29a',
+        instagram: 'janani_11_2005',
+        github: ''
+      },
+      'vikaash': {
+        name: 'VIKAASH B G',
+        position: 'CDO',
+        team: 'Executive Committee',
+        domain: 'ECE - 4th Year',
+        email: 'viklearner@gmail.com',
+        phone: '8525068831',
+        linkedin: 'https://www.linkedin.com/in/vikaash-b-g-79733830b',
+        instagram: '',
+        github: ''
+      },
+      'daksha': {
+        name: 'Daksha S',
+        position: 'CMO',
+        team: 'Executive Committee',
+        domain: 'Biotech - 2nd Year',
+        email: '2024bt0705@svce.ac.in',
+        phone: '9043590574',
+        linkedin: 'https://www.linkedin.com/in/daksha-suresh-0522b330a',
+        instagram: 'dakshasuresh25',
+        github: ''
+      },
+      // Department Heads
+      'balakrishnan': {
+        name: 'Balakrishnan R',
+        position: 'Tech Head',
+        team: 'Department Heads',
+        domain: 'AIDS - 3rd Year',
+        email: '2023ad0681@svce.ac.in',
+        phone: '9444543801',
+        linkedin: 'https://www.linkedin.com/in/balakrishnan-r-5a1006278',
+        instagram: 'iambalakrishnan.r',
+        github: 'https://github.com/BalaKrishnan1708'
       },
       'dharshni': {
         name: 'R. Dharshni',
@@ -1015,70 +1117,87 @@ ${member.name} is part of our diverse team of passionate students working togeth
     }
     
     if (normalizedQuery.includes('team') || normalizedQuery.includes('members')) {
-      return `**E-cell SVCE Team Members:**
+      return `**E-cell SVCE Team Structure (48 Members Total):**
 
-**Core Leadership (3 members):**
-- **Roshan M** - President (ECE - 4th Year) | Email: 2022ec0448@svce.ac.in | Phone: 9841092274
-- **R. Dharshni** - Vice President (Biotech - 4th Year) | Email: dharshni@ecell.svce.ac.in
-- **Manojkumar A** - Secretary (ECE - 4th Year) | Email: manojkumar@ecell.svce.ac.in | Phone: 7418434691
+**🏛️ CORE LEADERSHIP (3 members):**
+- **Roshan M** - President (ECE - 4th Year) | 📧 2022ec0448@svce.ac.in | 📱 9841092274 | 💼 LinkedIn: @roshan-m-711a95292 | 📸 @roshan.m.forever
+- **R. Dharshini** - Vice President (Biotech - 4th Year) | 📧 2022bt0547@svce.ac.in | 📱 8056071990 | 💼 LinkedIn: @dharshni-ramesh-a72934286 | 📸 dharshni6434
+- **Manojkumar A** - Secretary (ECE - 4th Year) | 📧 2024ec0448@svce.ac.in | 📱 7418434691 | 💼 LinkedIn: @manojkumar-anbuchezhian | 📸 Manojkumaranbuchezhian | 🐙 GitHub: Manojkumaranbuchezhian
 
-**Executive Committee (6 members):**
-- **Shree Varshini M** - Chief Executive Officer (ECE - 3rd Year) | Email: shreevarshini@ecell.svce.ac.in | Phone: 9360239715
-- **Bhargavi** - COO (Chemical - 4th Year) | Email: bhargavi@ecell.svce.ac.in
-- **N.Nitish** - CFO (AIDS - 3rd Year) | Email: nitish@ecell.svce.ac.in | Phone: 8428557498
-- **Daksha** - CMO (Biotech - 2nd Year) | Email: daksha@ecell.svce.ac.in
-- **Janani** - CTO (CSE - 3rd Year) | Email: janani@ecell.svce.ac.in
-- **Vikaash** - CDO (ECE - 4th Year) | Email: vikaash@ecell.svce.ac.in
+**👔 EXECUTIVE COMMITTEE (6 members):**
+- **Shree Varshini M** - CEO (ECE - 3rd Year) | 📧 2024ec0448@svce.ac.in | 📱 9360239715 | 💼 LinkedIn: @shree-varshini-m-533b08304
+- **N.Nitish** - CFO (AIDS - 3rd Year) | 📧 2023ad0681@svce.ac.in | 📱 8428557498 | 💼 LinkedIn: @nitish-navaneeth | 📸 nitish_31x
+- **Bhargavi TR** - COO (Chemical Eng - 4th Year) | 📧 2022ch0775@svce.ac.in | 📱 9360286533 | 💼 LinkedIn: @bhargavitr | 📸 bhargavi.tr
+- **Janani T** - CTO (CSE - 3rd Year) | 📧 2023cs0309@svce.ac.in | 📱 9150988305 | 💼 LinkedIn: @janani-t-bb507a29a | 📸 janani_11_2005
+- **VIKAASH B G** - CDO (ECE - 4th Year) | 📧 viklearner@gmail.com | 📱 8525068831 | 💼 LinkedIn: @vikaash-b-g-79733830b
+- **Daksha S** - CMO (Biotech - 2nd Year) | 📧 2024bt0705@svce.ac.in | 📱 9043590574 | 💼 LinkedIn: @daksha-suresh-0522b330a | 📸 dakshasuresh25
 
-**Department Heads (7 members):**
-- **Bala Krishna** - Tech Head (AI&DS - 3rd Year) | Email: balakrishna@ecell.svce.ac.in
-- **Sankara Narayanan S** - Execution Head (Biotechnology - 3rd Year) | Email: sankaranarayanan@ecell.svce.ac.in | Phone: 8610049372
-- **Harshith B** - Content Head (Mechanical and Automation - 3rd Year) | Email: harshith@ecell.svce.ac.in | Phone: 8608786089
-- **Divya Shree M** - Design Lead (Information Technology - 2nd Year) | Email: divyashree@ecell.svce.ac.in | Phone: 8015848971
-- **Baarath Arumugaraja** - Operation Lead (CSE - 3rd Year) | Email: baarath@ecell.svce.ac.in | Phone: 9952436835
-- **Balapranav** - Community Captain (EEE - 2nd Year) | Email: balapranav@ecell.svce.ac.in
-- **THARUN S** - Creative Lead (Mechanical and Automation - 2nd Year) | Email: tharun@ecell.svce.ac.in | Phone: 9342526239
+**🎯 DEPARTMENT HEADS (7 members):**
+- **Balakrishnan R** - Tech Head (AIDS - 3rd Year) | 📧 2023ad0681@svce.ac.in | 📱 9444543801 | 💼 LinkedIn: @balakrishnan-r-5a1006278 | 📸 iambalakrishnan.r | 🐙 GitHub: BalaKrishnan1708
+- **Sankara Narayanan S** - Execution Head (Biotech - 3rd Year) | 📧 2023bt0367@svce.ac.in | 📱 8610049372 | 💼 LinkedIn: @sankara-narayanan-s-biotech | 📸 s4nk4r
+- **Harshith B** - Content Head (Mech & Auto - 3rd Year) | 📧 harshith@ecell.svce.ac.in | 📱 8608786089 | 💼 LinkedIn: @harshith-bubalan-9b3588284 | 📸 Harshith.007
+- **Divya Shree M** - Design Lead (IT - 2nd Year) | 📧 2024it0765@svce.ac.in | 📱 8015848971 | 💼 LinkedIn: @divya-shree-m-09531631a | 📸 _divya03shree_
+- **Baarath Arumugaraja** - Operation Lead (CSE - 3rd Year) | 📧 2023cs0772@svce.ac.in | 📱 9952436835 | 💼 LinkedIn: @baarath-arumugaraja-7a8820329 | 📸 baarathraja
+- **Balapranav K** - Community Captain (EEE - 2nd Year) | 📧 2024ee0123@svce.ac.in | 📱 7397380056 | 💼 LinkedIn: @balapranav | 📸 balabranab
+- **THARUN S** - Creative Lead (Mech & Auto - 2nd Year) | 📧 tharun@ecell.svce.ac.in | 📱 9342526239 | 💼 LinkedIn: @tharun-somasundaram | 📸 @tharunehhhh
 
-**Executive Members (5 members):**
-- **P.Rasiga** - Executive Member (Chemical - 2nd Year) | Email: 2024ch0405@svce.ac.in | Phone: 9500240988
-- **Sri Bharathi R** - Executive Member (Mech & Auto - 2nd Year) | Email: 2024mn0785@svce.ac.in | Phone: 7397103127
-- **Mayooritha P** - Executive Member (CSC - 2nd Year) | Email: 2024cs0480@svce.ac.in | Phone: 9677809044
-- **Ajay M** - Executive Member (CSC - 3rd Year) | Email: ajay@ecell.svce.ac.in
-- **G.Shreenidhi** - Executive Member (EEE - 2nd Year) | Email: 2024EE0011@svce.ac.in | Phone: 9962010822
+**👥 EXECUTIVE MEMBERS (8 members):**
+- **Mahalakshmi L** - Executive Member (ECE - 2nd Year) | 📧 2024ec0167@svce.ac.in | 📱 8248228218 | 📸 Ival._.nila
+- **Dimple Kurugunda** - Executive Member (EEE - 2nd Year) | 📧 2024ee0945@svce.ac.in | 📱 9951661000 | 📸 dimple___chowdaey
+- **Yogavarthanee R** - Executive Member (Chemical - 2nd Year) | 📧 2024ch0915@svce.ac.in | 📱 7812815995 | 📸 yoga_2007__
+- **P.Rasiga** - Executive Member (Chemical - 2nd Year) | 📧 2024ch0405@svce.ac.in | 📱 9500240988 | 💼 LinkedIn: @rasigap28
+- **Sri Bharathi R** - Executive Member (Mech & Auto - 2nd Year) | 📧 2024mn0785@svce.ac.in | 📱 7397103127 | 📸 Sribharathi666
+- **Mayooritha P** - Executive Member (CSE - 2nd Year) | 📧 2024cs0480@svce.ac.in | 📱 9677809044 | 📸 mayooritha_
+- **Ajay M** - Executive Member (CSE - 3rd Year) | 📧 2023cs0477@svce.ac.in | 📱 8925323250 | 📸 ajay.tel
+- **G.Shreenidhi** - Executive Member (EEE - 2nd Year) | 📧 2024EE0011@svce.ac.in | 📱 9962010822 | 💼 LinkedIn: @.G.Shreenidhi
 
-**Marketing Team (5 members):**
-- **Santhoshkumar C** - Marketing Team (EEE - 2nd Year) | Email: 2024ee0189@svce.ac.in | Phone: 9080083869
-- **Gokul S** - Marketing Team (Biotech - 2nd Year) | Email: 2024bt0848@svce.ac.in | Phone: 9884463837
-- **Kayal nethra K** - Marketing Team (CSC - 2nd Year) | Email: team@ecell.svce.ac.in
-- **Mhadhurra Chandran** - Marketing Team (CSC - 3rd Year) | Email: 2023CS0956@svce.ac.in | Phone: 9840646632
-- **Logeshwari N** - Marketing Team (Biotech - 2nd Year) | Email: 2024bt0388@svce.ac.in | Phone: 9360737534
+**📢 MARKETING TEAM (6 members):**
+- **Bharathraj R** - Marketing Executive (ECE - 3rd Year) | 📧 2023ec0327@svce.ac.in | 📱 8148582517 | 📸 bharath_krish12
+- **Santhoshkumar C** - Marketing Team (EEE - 2nd Year) | 📧 2024ee0189@svce.ac.in | 📱 9080083869 | 📸 _.mashysandy._
+- **Gokul S** - Marketing Team (Biotech - 2nd Year) | 📧 2024bt0848@svce.ac.in | 📱 9884463837 | 📸 _._s.gokul._
+- **Kayal Nethra K** - Marketing Executive (CSE - 2nd Year) | 📧 2024cs0492@svce.ac.in | 📱 9444311421 | 📸 _kayaln_
+- **Mhadhurra Chandran** - Marketing Team (CSE - 3rd Year) | 📧 2023CS0956@svce.ac.in | 📱 9840646632 | 📸 mhadhu_06
+- **Logeshwari N** - Marketing Team (Biotech - 2nd Year) | 📧 2024bt0388@svce.ac.in | 📱 9360737534 | 📸 blue_.moonx_
 
-**Tech Team (4 members):**
-- **Sudish M** - Tech Team (CSC - 3rd Year) | Email: 2023cs0508@svce.ac.in | Phone: 9150195835
-- **ABIJITH P** - Tech Team (CSC - 3rd Year) | Email: abijithmark095@gmail.com | Phone: 6374997429
-- **K Buvaneswaran** - Tech Team (ECE - 2nd Year) | Email: 2024ec0673@svce.ac.in | Phone: 9380867566
-- **Divya Bharathi R** - Tech Team (CSC - 3rd Year) | Email: 2023CS0098@SVCE.AC.IN | Phone: 9840658454
+**💻 TECH TEAM (4 members):**
+- **Sudish M** - Tech Team (CSE - 3rd Year) | 📧 2023cs0508@svce.ac.in | 📱 9150195835 | 📸 _._sudish
+- **ABIJITH P** - Tech Team (CSE - 3rd Year) | 📧 abijithmark095@gmail.com | 📱 6374997429 | 📸 0__abi__1
+- **K Buvaneswaran** - Tech Team (ECE - 2nd Year) | 📧 2024ec0673@svce.ac.in | 📱 9380867566 | 📸 _buvi_2006
+- **Divya Bharathi R** - Tech Team (CSE - 3rd Year) | 📧 2023CS0098@SVCE.AC.IN | 📱 9840658454 | 📸 divya_bharathi_18
 
-**Content Team (3 members):**
-- **Jefina Giftlin J** - Content Team (Biotech - 2nd Year) | Email: team@ecell.svce.ac.in
-- **Irfanaa Parveen M** - Content Team (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
-- **S V Haritha** - Content Team (CSC - 3rd Year) | Email: team@ecell.svce.ac.in
+**✍️ CONTENT TEAM (3 members):**
+- **Jefina Giftlin J** - Content Team (Biotech - 2nd Year) | 📧 team@ecell.svce.ac.in
+- **Irfanaa Parveen M** - Content Executive (ECE - 2nd Year) | 📧 2024ec0149@svce.ac.in | 📱 9047871059 | 💼 LinkedIn: @irfanaa-parveen-786106318
+- **S V Haritha** - Content Executive (CSE - 3rd Year) | 📧 2023cs0438@svce.ac.in | 📱 9344096900 | 📸 harrithaaaaa
 
-**Design Team (5 members):**
-- **THOUFIKUR RAHAMAN Y** - Design Team (EEE - 2nd Year) | Email: team@ecell.svce.ac.in
-- **Yogendra** - Design Team (Mech - 2nd Year) | Email: team@ecell.svce.ac.in
-- **PRATHIBA M S K** - Design Team (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
-- **Seyed Mohamed** - Design Team (Mech & Auto - 3rd Year) | Email: team@ecell.svce.ac.in
-- **Vaishali** - Design Team (CSC - 2nd Year) | Email: team@ecell.svce.ac.in
+**🎨 DESIGN TEAM (6 members):**
+- **Sri Hari Roshan N** - Design Team (CSE - 2nd Year) | 📧 2024cs0480@svce.ac.in | 📱 9025130344 | 📸 r_3_o_s_h_1_a_n_7
+- **THOUFIKUR RAHAMAN Y** - Design Team (EEE - 2nd Year) | 📧 thoufikurrahaman@gmail.com | 📱 8098889409 | 📸 itx_thoufik_107
+- **Yogendra** - Design Team (Mech - 2nd Year) | 📧 yogendraasky@gmail.com | 📱 8838773569 | 📸 syncdesign2025
+- **PRATHIBA M S K** - Design Team (ECE - 2nd Year) | 📧 2024ec0664@svce.ac.in | 📱 6374977382 | 📸 prathi_075
+- **Seyed Mohamed** - Design Team (Mech & Auto - 3rd Year) | 📧 2023mn0363@svce.ac.in | 📱 7871499588 | 📸 s_e_y_e_d_07
+- **Vaishali V** - Design Team (CSE - 2nd Year) | 📧 2024cs0537@svce.ac.in | 📱 6379003163 | 📸 Vaish____1018
 
-**Community Managers (3 members):**
-- **Hariis P** - Community Manager (CSC - 3rd Year) | Email: team@ecell.svce.ac.in
-- **Kamalina K** - Community Manager (ECE - 2nd Year) | Email: team@ecell.svce.ac.in
-- **CHALAKESH S K** - Community Manager (Chemical - 2nd Year) | Email: team@ecell.svce.ac.in
+**🌐 COMMUNITY MANAGERS (4 members):**
+- **Sanjana Madankumar** - Community/LinkedIn Manager (IT - 3rd Year) | 📧 2023it0765@svce.ac.in | 📱 9176638977 | 📸 sanjanamadankumar
+- **Hariis P** - Community Manager (CSE - 3rd Year) | 📧 2023cs0127@svce.ac.in | 📱 6374593242 | 💼 LinkedIn: @hariis-p-aa7759374
+- **Kamalina K** - Community Manager (ECE - 2nd Year) | 📧 2024ec0448@svce.ac.in | 📱 8838814898 | 📸 yosantehe
+- **CHALAKESH S K** - Community Manager (Chemical - 2nd Year) | 📧 2024ch0915@svce.ac.in | 📱 6385251225 | 📸 chalakesh_.sk
 
-**Total Team Size:** 41 members across 8 different teams
+**📊 TEAM STATISTICS:**
+- **Total Members:** 48 students
+- **Departments:** 8 functional teams
+- **Engineering Disciplines:** ECE, CSE, IT, EEE, Mechanical, Chemical, Biotechnology, AIDS
+- **Academic Years:** 2nd, 3rd, and 4th year students
+- **Leadership Levels:** 3-tier structure (Core Leadership → Executive Committee → Department Heads)
 
-For specific information about any team member, please ask "Who is [name]?" and I'll provide detailed information including contact details and social media links.`;
+**🔗 CONNECT WITH US:**
+- **General Contact:** info@ecell.svce.ac.in
+- **LinkedIn:** Search for individual team members or E-cell SVCE
+- **Instagram:** Follow individual team members' handles
+- **GitHub:** Check out our tech projects and contributions
+
+For specific information about any team member, ask "Who is [name]?" and I'll provide detailed information including contact details and social media links!`;
     }
     
     if (normalizedQuery.includes('events')) {

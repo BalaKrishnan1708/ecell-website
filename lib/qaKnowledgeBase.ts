@@ -8,26 +8,255 @@ export interface QAEntry {
 }
 
 export const qaKnowledgeBase: QAEntry[] = [
+  // CORE LEADERSHIP TEAM
   {
-    question: "who is the cfo",
-    answer: "The CFO of E-cell SVCE is N.Nitish from the Executive Committee. He is a 3rd year AIDS student and handles financial matters and budgeting for the organization. You can contact him via LinkedIn, email at nitish@ecell.svce.ac.in, Instagram at nitish_31x, or phone at 8428557498.",
+    question: "who is the president",
+    answer: "The President of E-cell SVCE is Roshan M from the Core Leadership team. He is a 4th year ECE student and leads the overall vision and direction of the organization. You can contact him via LinkedIn at https://www.linkedin.com/in/roshan-m-711a95292, email at 2022ec0448@svce.ac.in, Instagram at @roshan.m.forever, or phone at 9841092274.",
     category: "team",
-    keywords: ["cfo", "chief financial officer", "finance", "budget", "nithish", "n.nitish"],
-    relatedQuestions: ["who is the ceo", "who is the president", "executive committee", "leadership team"]
+    keywords: ["president", "roshan", "roshan m", "core leadership", "leader", "head"],
+    relatedQuestions: ["who is the ceo", "who is the cfo", "core leadership", "leadership team"]
   },
   {
+    question: "who is the vice president",
+    answer: "The Vice President of E-cell SVCE is R. Dharshini from the Core Leadership team. She is a 4th year Biotechnology student and supports the President in leading the organization. You can contact her via LinkedIn at https://www.linkedin.com/in/dharshni-ramesh-a72934286, email at 2022bt0547@svce.ac.in, Instagram at dharshni6434, or phone at 8056071990.",
+    category: "team",
+    keywords: ["vice president", "r. dharshini", "dharshini", "core leadership", "deputy"],
+    relatedQuestions: ["who is the president", "core leadership", "leadership team"]
+  },
+  {
+    question: "who is the secretary",
+    answer: "The Secretary of E-cell SVCE is Manojkumar A from the Core Leadership team. He is a 4th year ECE student and handles administrative duties and documentation. You can contact him via LinkedIn at https://www.linkedin.com/in/manojkumar-anbuchezhian, email at 2024ec0448@svce.ac.in, Instagram at Manojkumaranbuchezhian, or phone at 7418434691.",
+    category: "team",
+    keywords: ["secretary", "manojkumar", "manojkumar a", "core leadership", "administration", "documentation"],
+    relatedQuestions: ["who is the president", "core leadership", "leadership team"]
+  },
+  
+  // EXECUTIVE COMMITTEE
+  {
     question: "who is the ceo",
-    answer: "The CEO of E-cell SVCE is Shree Varshini M from the Executive Committee. She is a 3rd year ECE student and leads the overall strategic direction of the organization. You can contact her via LinkedIn, email at shreevarshini@ecell.svce.ac.in, or phone at 9360239715.",
+    answer: "The CEO of E-cell SVCE is Shree Varshini M from the Executive Committee. She is a 3rd year ECE student and leads the overall strategic direction of the organization. You can contact her via LinkedIn at https://www.linkedin.com/in/shree-varshini-m-533b08304, email at 2024ec0448@svce.ac.in, or phone at 9360239715.",
     category: "team",
     keywords: ["ceo", "chief executive officer", "shree varshini", "varshini", "executive", "leader"],
     relatedQuestions: ["who is the cfo", "who is the president", "executive committee", "leadership team"]
   },
   {
-    question: "who is the president",
-    answer: "The President of E-cell SVCE is Roshan M from the Core Leadership team. He is a 4th year ECE student and leads the overall vision and direction of the organization. You can contact him via LinkedIn or email at 2022ec0448@svce.ac.in, or phone at 9841092274.",
+    question: "who is the cfo",
+    answer: "The CFO of E-cell SVCE is N.Nitish from the Executive Committee. He is a 3rd year AIDS student and handles financial matters and budgeting for the organization. You can contact him via LinkedIn at https://www.linkedin.com/in/nitish-navaneeth, email at 2023ad0681@svce.ac.in, Instagram at nitish_31x, or phone at 8428557498.",
     category: "team",
-    keywords: ["president", "roshan", "roshan m", "core leadership", "leader", "head"],
-    relatedQuestions: ["who is the ceo", "who is the cfo", "core leadership", "leadership team"]
+    keywords: ["cfo", "chief financial officer", "finance", "budget", "nithish", "n.nitish"],
+    relatedQuestions: ["who is the ceo", "who is the president", "executive committee", "leadership team"]
+  },
+  {
+    question: "who is the coo",
+    answer: "The COO of E-cell SVCE is Bhargavi TR from the Executive Committee. She is a 4th year Chemical Engineering student and handles operational matters. You can contact her via LinkedIn at https://www.linkedin.com/in/bhargavitr, email at 2022ch0775@svce.ac.in, Instagram at bhargavi.tr, or phone at 9360286533.",
+    category: "team",
+    keywords: ["coo", "chief operating officer", "operations", "bhargavi", "bhargavi tr"],
+    relatedQuestions: ["who is the ceo", "who is the cfo", "executive committee", "leadership team"]
+  },
+  {
+    question: "who is the cto",
+    answer: "The CTO of E-cell SVCE is Janani T from the Executive Committee. She is a 3rd year CSE student and leads all technology initiatives. You can contact her via LinkedIn at https://www.linkedin.com/in/janani-t-bb507a29a, email at 2023cs0309@svce.ac.in, Instagram at janani_11_2005, or phone at 9150988305.",
+    category: "team",
+    keywords: ["cto", "chief technology officer", "technology", "janani", "janani t"],
+    relatedQuestions: ["who is the ceo", "who is the cfo", "executive committee", "tech team"]
+  },
+  {
+    question: "who is the cdo",
+    answer: "The CDO of E-cell SVCE is VIKAASH B G from the Executive Committee. He is a 4th year ECE student and leads data and analytics initiatives. You can contact him via LinkedIn at https://www.linkedin.com/in/vikaash-b-g-79733830b, email at viklearner@gmail.com, or phone at 8525068831.",
+    category: "team",
+    keywords: ["cdo", "chief data officer", "data", "analytics", "vikaash", "vikaash b g"],
+    relatedQuestions: ["who is the ceo", "who is the cfo", "executive committee", "data team"]
+  },
+  {
+    question: "who is the cmo",
+    answer: "The CMO of E-cell SVCE is Daksha S from the Executive Committee. She is a 2nd year Biotech student and leads all marketing initiatives. You can contact her via LinkedIn at https://www.linkedin.com/in/daksha-suresh-0522b330a, email at 2024bt0705@svce.ac.in, Instagram at dakshasuresh25, or phone at 9043590574.",
+    category: "team",
+    keywords: ["cmo", "chief marketing officer", "marketing", "daksha", "daksha s"],
+    relatedQuestions: ["who is the ceo", "who is the cfo", "executive committee", "marketing team"]
+  },
+  
+  // DEPARTMENT HEADS
+  {
+    question: "who is the tech head",
+    answer: "The Tech Head of E-cell SVCE is Balakrishnan R from the Department Heads. He is a 3rd year AIDS student and leads the technology department. You can contact him via LinkedIn at https://www.linkedin.com/in/balakrishnan-r-5a1006278, email at 2023ad0681@svce.ac.in, Instagram at iambalakrishnan.r, GitHub at https://github.com/BalaKrishnan1708, or phone at 9444543801.",
+    category: "team",
+    keywords: ["tech head", "technology head", "balakrishnan", "balakrishnan r", "technology", "tech"],
+    relatedQuestions: ["who is the cto", "tech team", "department heads", "technology"]
+  },
+  {
+    question: "who is the execution head",
+    answer: "The Execution Head of E-cell SVCE is Sankara Narayanan S from the Department Heads. He is a 3rd year Biotechnology student and leads execution and implementation. You can contact him via LinkedIn at http://linkedin.com/in/sankara-narayanan-s-biotech, email at 2023bt0367@svce.ac.in, Instagram at s4nk4r, or phone at 8610049372.",
+    category: "team",
+    keywords: ["execution head", "execution", "sankara narayanan", "implementation", "department heads"],
+    relatedQuestions: ["department heads", "execution", "implementation"]
+  },
+  {
+    question: "who is the content head",
+    answer: "The Content Head of E-cell SVCE is Harshith B from the Department Heads. He is a 3rd year Mechanical and Automation student and leads content creation. You can contact him via LinkedIn at https://www.linkedin.com/in/harshith-bubalan-9b3588284, email at harshith@ecell.svce.ac.in, Instagram at Harshith.007, or phone at 8608786089.",
+    category: "team",
+    keywords: ["content head", "content", "harshith", "harshith b", "content creation", "department heads"],
+    relatedQuestions: ["department heads", "content team", "content creation"]
+  },
+  {
+    question: "who is the design lead",
+    answer: "The Design Lead of E-cell SVCE is Divya Shree M from the Department Heads. She is a 2nd year Information Technology student and leads the design team. You can contact her via LinkedIn at https://www.linkedin.com/in/divya-shree-m-09531631a, email at 2024it0765@svce.ac.in, Instagram at _divya03shree_, or phone at 8015848971.",
+    category: "team",
+    keywords: ["design lead", "design", "divya shree", "divya shree m", "design team", "department heads"],
+    relatedQuestions: ["department heads", "design team", "design"]
+  },
+  {
+    question: "who is the operation lead",
+    answer: "The Operation Lead of E-cell SVCE is Baarath Arumugaraja from the Department Heads. He is a 3rd year CSE student and leads operational activities. You can contact him via LinkedIn at https://www.linkedin.com/in/baarath-arumugaraja-7a8820329, email at 2023cs0772@svce.ac.in, Instagram at baarathraja, or phone at 9952436835.",
+    category: "team",
+    keywords: ["operation lead", "operations", "baarath", "baarath arumugaraja", "department heads"],
+    relatedQuestions: ["department heads", "operations", "operational"]
+  },
+  {
+    question: "who is the community captain",
+    answer: "The Community Captain of E-cell SVCE is Balapranav K from the Department Heads. He is a 2nd year EEE student and leads community engagement. You can contact him via LinkedIn at https://www.linkedin.com/in/balapranav, email at 2024ee0123@svce.ac.in, Instagram at balabranab, or phone at 7397380056.",
+    category: "team",
+    keywords: ["community captain", "community", "balapranav", "balapranav k", "department heads"],
+    relatedQuestions: ["department heads", "community managers", "community engagement"]
+  },
+  {
+    question: "who is the creative lead",
+    answer: "The Creative Lead of E-cell SVCE is THARUN S from the Department Heads. He is a 2nd year Mechanical and Automation student and leads creative initiatives. You can contact him via LinkedIn at https://www.linkedin.com/in/tharun-somasundaram, email at tharun@ecell.svce.ac.in, Instagram at @tharunehhhh, or phone at 9342526239.",
+    category: "team",
+    keywords: ["creative lead", "creative", "tharun", "tharun s", "department heads"],
+    relatedQuestions: ["department heads", "creative team", "creative"]
+  },
+  
+  // TEAM COMPONENTS AND STRUCTURE
+  {
+    question: "what are the team components",
+    answer: "E-cell SVCE has a comprehensive team structure with multiple components:\n\n**Core Leadership (3 members):**\n- President: Roshan M (ECE 4th year)\n- Vice President: R. Dharshini (Biotech 4th year)\n- Secretary: Manojkumar A (ECE 4th year)\n\n**Executive Committee (6 members):**\n- CEO: Shree Varshini M (ECE 3rd year)\n- CFO: N.Nitish (AIDS 3rd year)\n- COO: Bhargavi TR (Chemical Eng 4th year)\n- CTO: Janani T (CSE 3rd year)\n- CDO: VIKAASH B G (ECE 4th year)\n- CMO: Daksha S (Biotech 2nd year)\n\n**Department Heads (7 members):**\n- Tech Head: Balakrishnan R (AIDS 3rd year)\n- Execution Head: Sankara Narayanan S (Biotech 3rd year)\n- Content Head: Harshith B (Mechanical 3rd year)\n- Design Lead: Divya Shree M (IT 2nd year)\n- Operation Lead: Baarath Arumugaraja (CSE 3rd year)\n- Community Captain: Balapranav K (EEE 2nd year)\n- Creative Lead: THARUN S (Mechanical 2nd year)\n\n**Supporting Teams:**\n- Executive Members (8 members)\n- Marketing Team (6 members)\n- Design Team (6 members)\n- Community Managers (4 members)\n- Tech Team (4 members)\n- Content Team (3 members)\n\n**Total Team Size:** 48 members across all departments",
+    category: "team",
+    keywords: ["team components", "team structure", "departments", "organization", "leadership", "teams"],
+    relatedQuestions: ["who is the president", "executive committee", "department heads", "team members"]
+  },
+  {
+    question: "how many team members are there",
+    answer: "E-cell SVCE has a total of 48 team members across all departments and levels:\n\n- **Core Leadership:** 3 members\n- **Executive Committee:** 6 members\n- **Department Heads:** 7 members\n- **Executive Members:** 8 members\n- **Marketing Team:** 6 members\n- **Design Team:** 6 members\n- **Community Managers:** 4 members\n- **Tech Team:** 4 members\n- **Content Team:** 3 members\n- **Other Supporting Members:** 1 member\n\nThis diverse team represents students from various engineering disciplines including ECE, CSE, IT, EEE, Mechanical, Chemical, Biotechnology, and AIDS, ensuring comprehensive coverage of all aspects of entrepreneurship and innovation.",
+    category: "team",
+    keywords: ["team size", "how many members", "total members", "team count", "members"],
+    relatedQuestions: ["team components", "team structure", "departments"]
+  },
+  {
+    question: "what departments are there",
+    answer: "E-cell SVCE has the following departments and teams:\n\n**Leadership Departments:**\n- Core Leadership (President, Vice President, Secretary)\n- Executive Committee (CEO, CFO, COO, CTO, CDO, CMO)\n- Department Heads (Tech Head, Execution Head, Content Head, Design Lead, Operation Lead, Community Captain, Creative Lead)\n\n**Functional Teams:**\n- **Marketing Team:** Handles all marketing and promotional activities\n- **Design Team:** Manages visual design, graphics, and creative content\n- **Tech Team:** Develops and maintains technical infrastructure\n- **Content Team:** Creates written content, social media posts, and documentation\n- **Community Management:** Manages community engagement and social media\n\n**Supporting Roles:**\n- Executive Members: Support various organizational activities\n- Community Managers: Handle specific community engagement tasks\n\nEach department is led by experienced students and includes members from different academic years and engineering disciplines to ensure diverse perspectives and comprehensive coverage.",
+    category: "team",
+    keywords: ["departments", "teams", "organization structure", "functional teams", "leadership"],
+    relatedQuestions: ["team components", "team structure", "what teams are there"]
+  },
+  // INDIVIDUAL TEAM MEMBER QUERIES
+  {
+    question: "balakrishnan",
+    answer: "Balakrishnan R is the Tech Head of E-cell SVCE from the Department Heads. He is a 3rd year AIDS student and leads the technology department. You can contact him via LinkedIn at https://www.linkedin.com/in/balakrishnan-r-5a1006278, email at 2023ad0681@svce.ac.in, Instagram at iambalakrishnan.r, GitHub at https://github.com/BalaKrishnan1708, or phone at 9444543801.",
+    category: "team",
+    keywords: ["balakrishnan", "balakrishnan r", "tech head", "technology", "aids", "department heads"],
+    relatedQuestions: ["who is the tech head", "tech team", "department heads", "technology"]
+  },
+  {
+    question: "roshan",
+    answer: "Roshan M is the President of E-cell SVCE from the Core Leadership team. He is a 4th year ECE student and leads the overall vision and direction of the organization. You can contact him via LinkedIn at https://www.linkedin.com/in/roshan-m-711a95292, email at 2022ec0448@svce.ac.in, Instagram at @roshan.m.forever, or phone at 9841092274.",
+    category: "team",
+    keywords: ["roshan", "roshan m", "president", "core leadership", "ece", "leader"],
+    relatedQuestions: ["who is the president", "core leadership", "leadership team"]
+  },
+  {
+    question: "dharshini",
+    answer: "R. Dharshini is the Vice President of E-cell SVCE from the Core Leadership team. She is a 4th year Biotechnology student and supports the President in leading the organization. You can contact her via LinkedIn at https://www.linkedin.com/in/dharshni-ramesh-a72934286, email at 2022bt0547@svce.ac.in, Instagram at dharshni6434, or phone at 8056071990.",
+    category: "team",
+    keywords: ["dharshini", "r. dharshini", "vice president", "core leadership", "biotech", "deputy"],
+    relatedQuestions: ["who is the vice president", "core leadership", "leadership team"]
+  },
+  {
+    question: "manojkumar",
+    answer: "Manojkumar A is the Secretary of E-cell SVCE from the Core Leadership team. He is a 4th year ECE student and handles administrative duties and documentation. You can contact him via LinkedIn at https://www.linkedin.com/in/manojkumar-anbuchezhian, email at 2024ec0448@svce.ac.in, Instagram at Manojkumaranbuchezhian, or phone at 7418434691.",
+    category: "team",
+    keywords: ["manojkumar", "manojkumar a", "secretary", "core leadership", "ece", "administration"],
+    relatedQuestions: ["who is the secretary", "core leadership", "leadership team"]
+  },
+  {
+    question: "shree varshini",
+    answer: "Shree Varshini M is the CEO of E-cell SVCE from the Executive Committee. She is a 3rd year ECE student and leads the overall strategic direction of the organization. You can contact her via LinkedIn at https://www.linkedin.com/in/shree-varshini-m-533b08304, email at 2024ec0448@svce.ac.in, or phone at 9360239715.",
+    category: "team",
+    keywords: ["shree varshini", "shree varshini m", "ceo", "executive committee", "ece", "leader"],
+    relatedQuestions: ["who is the ceo", "executive committee", "leadership team"]
+  },
+  {
+    question: "nitish",
+    answer: "N.Nitish is the CFO of E-cell SVCE from the Executive Committee. He is a 3rd year AIDS student and handles financial matters and budgeting for the organization. You can contact him via LinkedIn at https://www.linkedin.com/in/nitish-navaneeth, email at 2023ad0681@svce.ac.in, Instagram at nitish_31x, or phone at 8428557498.",
+    category: "team",
+    keywords: ["nitish", "n.nitish", "cfo", "executive committee", "aids", "finance"],
+    relatedQuestions: ["who is the cfo", "executive committee", "finance", "budget"]
+  },
+  {
+    question: "bhargavi",
+    answer: "Bhargavi TR is the COO of E-cell SVCE from the Executive Committee. She is a 4th year Chemical Engineering student and handles operational matters. You can contact her via LinkedIn at https://www.linkedin.com/in/bhargavitr, email at 2022ch0775@svce.ac.in, Instagram at bhargavi.tr, or phone at 9360286533.",
+    category: "team",
+    keywords: ["bhargavi", "bhargavi tr", "coo", "executive committee", "chemical engineering", "operations"],
+    relatedQuestions: ["who is the coo", "executive committee", "operations"]
+  },
+  {
+    question: "janani",
+    answer: "Janani T is the CTO of E-cell SVCE from the Executive Committee. She is a 3rd year CSE student and leads all technology initiatives. You can contact her via LinkedIn at https://www.linkedin.com/in/janani-t-bb507a29a, email at 2023cs0309@svce.ac.in, Instagram at janani_11_2005, or phone at 9150988305.",
+    category: "team",
+    keywords: ["janani", "janani t", "cto", "executive committee", "cse", "technology"],
+    relatedQuestions: ["who is the cto", "executive committee", "tech team", "technology"]
+  },
+  {
+    question: "vikaash",
+    answer: "VIKAASH B G is the CDO of E-cell SVCE from the Executive Committee. He is a 4th year ECE student and leads data and analytics initiatives. You can contact him via LinkedIn at https://www.linkedin.com/in/vikaash-b-g-79733830b, email at viklearner@gmail.com, or phone at 8525068831.",
+    category: "team",
+    keywords: ["vikaash", "vikaash b g", "cdo", "executive committee", "ece", "data", "analytics"],
+    relatedQuestions: ["who is the cdo", "executive committee", "data team", "analytics"]
+  },
+  {
+    question: "daksha",
+    answer: "Daksha S is the CMO of E-cell SVCE from the Executive Committee. She is a 2nd year Biotech student and leads all marketing initiatives. You can contact her via LinkedIn at https://www.linkedin.com/in/daksha-suresh-0522b330a, email at 2024bt0705@svce.ac.in, Instagram at dakshasuresh25, or phone at 9043590574.",
+    category: "team",
+    keywords: ["daksha", "daksha s", "cmo", "executive committee", "biotech", "marketing"],
+    relatedQuestions: ["who is the cmo", "executive committee", "marketing team"]
+  },
+  
+  // TEAM ROLES AND RESPONSIBILITIES
+  {
+    question: "what does the president do",
+    answer: "The President of E-cell SVCE (Roshan M) is responsible for:\n- Leading the overall vision and direction of the organization\n- Representing E-cell SVCE in official capacities\n- Coordinating with faculty advisors and college administration\n- Making strategic decisions for the organization\n- Overseeing all major initiatives and events\n- Mentoring and guiding other team members\n- Building partnerships with external organizations\n- Ensuring the organization's mission and values are upheld\n\nAs the highest authority in the student leadership, the President works closely with the Vice President and Secretary to ensure smooth operations and growth of the entrepreneurship ecosystem at SVCE.",
+    category: "team",
+    keywords: ["president role", "president responsibilities", "what does president do", "leadership role"],
+    relatedQuestions: ["who is the president", "core leadership", "leadership responsibilities"]
+  },
+  {
+    question: "what does the ceo do",
+    answer: "The CEO of E-cell SVCE (Shree Varshini M) is responsible for:\n- Leading the overall strategic direction of the organization\n- Managing day-to-day operations and decision-making\n- Coordinating between different departments and teams\n- Implementing policies and procedures\n- Ensuring organizational goals are met\n- Building and maintaining relationships with stakeholders\n- Overseeing project execution and delivery\n- Supporting the President in strategic initiatives\n\nAs the Chief Executive Officer, she works closely with other C-level executives (CFO, COO, CTO, CDO, CMO) to ensure comprehensive coverage of all organizational functions.",
+    category: "team",
+    keywords: ["ceo role", "ceo responsibilities", "what does ceo do", "executive role"],
+    relatedQuestions: ["who is the ceo", "executive committee", "leadership responsibilities"]
+  },
+  {
+    question: "what does the tech head do",
+    answer: "The Tech Head of E-cell SVCE (Balakrishnan R) is responsible for:\n- Leading all technology initiatives and digital infrastructure\n- Managing the tech team and technical projects\n- Overseeing website development and maintenance\n- Implementing digital solutions for events and operations\n- Managing technical resources and tools\n- Coordinating with external tech partners\n- Ensuring cybersecurity and data protection\n- Supporting other departments with technical needs\n- Leading innovation in technology adoption\n\nAs the technology leader, he works closely with the CTO and tech team members to ensure E-cell SVCE stays at the forefront of digital innovation in entrepreneurship education.",
+    category: "team",
+    keywords: ["tech head role", "tech head responsibilities", "what does tech head do", "technology role"],
+    relatedQuestions: ["who is the tech head", "tech team", "technology", "balakrishnan"]
+  },
+  
+  // TEAM CONTACT INFORMATION
+  {
+    question: "how to contact the team",
+    answer: "You can contact the E-cell SVCE team through various channels:\n\n**General Contact:**\n- Email: info@ecell.svce.ac.in\n- Website: Visit our website for contact forms\n- Social Media: Follow us on Instagram, LinkedIn, and other platforms\n\n**Leadership Contact:**\n- President (Roshan M): 9841092274, 2022ec0448@svce.ac.in\n- CEO (Shree Varshini M): 9360239715, 2024ec0448@svce.ac.in\n- Tech Head (Balakrishnan R): 9444543801, 2023ad0681@svce.ac.in\n\n**Department-Specific Contact:**\n- Marketing: Contact CMO Daksha S (9043590574)\n- Technology: Contact Tech Head Balakrishnan R (9444543801)\n- Content: Contact Content Head Harshith B (8608786089)\n- Design: Contact Design Lead Divya Shree M (8015848971)\n- Operations: Contact Operation Lead Baarath Arumugaraja (9952436835)\n\n**Social Media:**\n- LinkedIn: Search for individual team members or E-cell SVCE\n- Instagram: Follow individual team members' handles\n- GitHub: Check out our tech projects and contributions\n\nAll team members are approachable and happy to help with queries related to entrepreneurship, events, or general information about E-cell SVCE.",
+    category: "team",
+    keywords: ["contact team", "how to contact", "team contact", "contact information", "reach out"],
+    relatedQuestions: ["team members", "contact information", "how to reach", "team details"]
+  },
+  {
+    question: "team email addresses",
+    answer: "Here are the email addresses of key E-cell SVCE team members:\n\n**Core Leadership:**\n- President (Roshan M): 2022ec0448@svce.ac.in\n- Vice President (R. Dharshini): 2022bt0547@svce.ac.in\n- Secretary (Manojkumar A): 2024ec0448@svce.ac.in\n\n**Executive Committee:**\n- CEO (Shree Varshini M): 2024ec0448@svce.ac.in\n- CFO (N.Nitish): 2023ad0681@svce.ac.in\n- COO (Bhargavi TR): 2022ch0775@svce.ac.in\n- CTO (Janani T): 2023cs0309@svce.ac.in\n- CDO (VIKAASH B G): viklearner@gmail.com\n- CMO (Daksha S): 2024bt0705@svce.ac.in\n\n**Department Heads:**\n- Tech Head (Balakrishnan R): 2023ad0681@svce.ac.in\n- Execution Head (Sankara Narayanan S): 2023bt0367@svce.ac.in\n- Content Head (Harshith B): harshith@ecell.svce.ac.in\n- Design Lead (Divya Shree M): 2024it0765@svce.ac.in\n- Operation Lead (Baarath Arumugaraja): 2023cs0772@svce.ac.in\n- Community Captain (Balapranav K): 2024ee0123@svce.ac.in\n- Creative Lead (THARUN S): tharun@ecell.svce.ac.in\n\n**General Contact:**\n- E-cell SVCE: info@ecell.svce.ac.in\n\nYou can reach out to any team member for specific queries related to their department or general E-cell information.",
+    category: "team",
+    keywords: ["email addresses", "team emails", "contact emails", "email list", "team contact"],
+    relatedQuestions: ["contact information", "how to contact", "team members", "reach out"]
   },
   {
     question: "who is the vice president",
