@@ -685,12 +685,12 @@ const teamMembers: TeamMember[] = [
     name: "Madhav",
     position: "Community Manager",
     team: "Community Managers",
-    domain: "EEE - 2nd Year",
+    domain: "CSE - 2nd Year",
     image: "/placeholder.svg?height=400&width=400",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/madhav-krishna-jps/",
     email: "",
     instagram: "",
-    phone: "",
+    phone: "8921856848",
     github: "",
   },
 ]
@@ -728,8 +728,8 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
                 src={member.image || "/placeholder.svg"} 
                 alt={member.name} 
                 fill 
-                className={`object-cover ${member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" || member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "THARUN S" || member.name === "Sri Bharathi R" || member.name === "Yogavarthanee R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Jefina Giftlin J" ? "object-top" : ""}`}
-                style={member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" || member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "THARUN S" || member.name === "Sri Bharathi R" || member.name === "Yogavarthanee R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Jefina Giftlin J" ? { objectPosition: "center 30%" } : {}}
+                className={`${member.name === "Dr.S.Ilaiyavel" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "THARUN S" || member.name === "Yogavarthanee R" ? "object-cover object-top" : member.name === "V.senthill velan" ? "object-cover object-center" : member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Sri Bharathi R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Jefina Giftlin J" || member.name === "Madhav" ? "object-cover object-top" : "object-cover"}`}
+                style={member.name === "Dr.S.Ilaiyavel" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "Yogavarthanee R" ? { objectPosition: "center 5%", transform: "scale(1.1)" } : member.name === "THARUN S" ? { objectPosition: "center 5%" } : member.name === "V.senthill velan" ? { objectPosition: "center 20%" } : member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Sri Bharathi R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Jefina Giftlin J" || member.name === "Madhav" ? { objectPosition: "center 30%" } : {}}
               />
             </div>
             <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">

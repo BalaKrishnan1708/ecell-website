@@ -196,6 +196,51 @@ const StartupSimulatorGame: React.FC = () => {
       effect: { users: { min: 100, max: 300 }, satisfaction: { min: 10, max: 30 }, innovation: { min: 20, max: 40 } },
       probability: 0.35,
       risk: 0.4
+    },
+    {
+      id: 16,
+      title: "Acquire Competitor",
+      description: "High-risk acquisition of a smaller competitor",
+      cost: 2000000,
+      effect: { users: { min: -100, max: 200 }, satisfaction: { min: -30, max: 20 }, innovation: { min: -20, max: 30 } },
+      probability: 0.25,
+      risk: 0.7
+    },
+    {
+      id: 17,
+      title: "Complete Platform Rebuild",
+      description: "Rebuild entire platform with new technology",
+      cost: 1500000,
+      effect: { users: { min: -200, max: 50 }, satisfaction: { min: -40, max: 40 }, innovation: { min: 30, max: 60 } },
+      probability: 0.4,
+      risk: 0.6
+    },
+    {
+      id: 18,
+      title: "Massive Layoffs",
+      description: "Cut costs by reducing team size significantly",
+      cost: 100000,
+      effect: { users: { min: -150, max: -50 }, satisfaction: { min: -50, max: -20 }, innovation: { min: -40, max: -10 } },
+      probability: 0.8,
+      risk: 0.3
+    },
+    {
+      id: 19,
+      title: "Desperate Funding Round",
+      description: "Accept unfavorable terms to get emergency funding",
+      cost: 50000,
+      effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 0, max: 0 }, money: { min: 1000000, max: 3000000 } },
+      probability: 0.6,
+      risk: 0.8
+    },
+    {
+      id: 20,
+      title: "Pivot to Completely New Market",
+      description: "Abandon current market and enter entirely new sector",
+      cost: 800000,
+      effect: { users: { min: -300, max: 100 }, satisfaction: { min: -60, max: 20 }, innovation: { min: 10, max: 50 } },
+      probability: 0.2,
+      risk: 0.9
     }
   ]
 
@@ -286,6 +331,97 @@ const StartupSimulatorGame: React.FC = () => {
       probability: 0.05,
       effect: { users: 120, satisfaction: 20, innovation: 10, money: 0 },
       message: "Your product got featured on major e-commerce platforms!"
+    },
+    // New challenging loss events
+    {
+      name: "Major Data Breach",
+      probability: 0.04,
+      effect: { users: -200, satisfaction: -40, innovation: -10, money: -500000 },
+      message: "A major data breach has severely damaged your reputation and user trust."
+    },
+    {
+      name: "Key Team Member Quits",
+      probability: 0.06,
+      effect: { users: -80, satisfaction: -25, innovation: -30, money: -100000 },
+      message: "Your lead developer quit to join a competitor, taking critical knowledge with them."
+    },
+    {
+      name: "Economic Recession",
+      probability: 0.05,
+      effect: { users: -150, satisfaction: -20, innovation: -15, money: -300000 },
+      message: "Economic downturn has reduced consumer spending and investor confidence."
+    },
+    {
+      name: "Regulatory Crackdown",
+      probability: 0.03,
+      effect: { users: -300, satisfaction: -50, innovation: 0, money: -1000000 },
+      message: "Government regulatory crackdown on your industry sector has forced major changes."
+    },
+    {
+      name: "Server Downtime Crisis",
+      probability: 0.08,
+      effect: { users: -100, satisfaction: -35, innovation: 0, money: -150000 },
+      message: "Extended server downtime has caused massive user frustration and loss."
+    },
+    {
+      name: "Patent Infringement Lawsuit",
+      probability: 0.02,
+      effect: { users: -50, satisfaction: -10, innovation: -20, money: -2000000 },
+      message: "A major corporation is suing you for patent infringement."
+    },
+    {
+      name: "Funding Round Failed",
+      probability: 0.07,
+      effect: { users: -60, satisfaction: -15, innovation: -10, money: -500000 },
+      message: "Your Series A funding round failed, forcing major cost cuts and layoffs."
+    },
+    {
+      name: "Competitor Price War",
+      probability: 0.09,
+      effect: { users: -120, satisfaction: -30, innovation: 0, money: -400000 },
+      message: "Competitors launched aggressive price wars, forcing you to slash prices."
+    },
+    {
+      name: "Supply Chain Disruption",
+      probability: 0.06,
+      effect: { users: -40, satisfaction: -25, innovation: 0, money: -300000 },
+      message: "Global supply chain issues are affecting your product delivery and costs."
+    },
+    {
+      name: "Customer Service Scandal",
+      probability: 0.05,
+      effect: { users: -180, satisfaction: -60, innovation: 0, money: -200000 },
+      message: "A customer service scandal went viral, severely damaging your brand reputation."
+    },
+    {
+      name: "Technology Obsolescence",
+      probability: 0.04,
+      effect: { users: -100, satisfaction: -20, innovation: -40, money: -600000 },
+      message: "Your core technology has become obsolete, requiring complete platform rebuild."
+    },
+    {
+      name: "Market Saturation",
+      probability: 0.08,
+      effect: { users: -80, satisfaction: -15, innovation: -25, money: -200000 },
+      message: "Your market segment has become oversaturated with competitors."
+    },
+    {
+      name: "Cybersecurity Attack",
+      probability: 0.03,
+      effect: { users: -250, satisfaction: -45, innovation: -15, money: -800000 },
+      message: "A sophisticated cyber attack has compromised your systems and user data."
+    },
+    {
+      name: "Talent Acquisition War",
+      probability: 0.07,
+      effect: { users: -30, satisfaction: -10, innovation: -20, money: -300000 },
+      message: "Big tech companies are poaching your talent with massive salary offers."
+    },
+    {
+      name: "Product Recall",
+      probability: 0.02,
+      effect: { users: -400, satisfaction: -70, innovation: -30, money: -1500000 },
+      message: "A critical product defect forced a massive recall, destroying user trust."
     }
   ]
 
@@ -299,11 +435,29 @@ const StartupSimulatorGame: React.FC = () => {
           newState.timeElapsed += 1
           newState.eventCooldown = Math.max(0, newState.eventCooldown - 1)
           
-          // Passive income from users (decreases with level for difficulty)
+          // Passive income from users (more variable and sometimes negative)
           if (newState.users > 0) {
-            const incomeMultiplier = Math.max(0.05, 0.1 - (newState.level * 0.01))
-            newState.money += Math.floor(newState.users * incomeMultiplier)
-            newState.score += Math.floor(newState.users * 0.05)
+            const baseMultiplier = Math.max(0.02, 0.08 - (newState.level * 0.01))
+            const randomFactor = 0.5 + Math.random() // 0.5 to 1.5 multiplier
+            const satisfactionFactor = newState.satisfaction / 100 // 0 to 1 based on satisfaction
+            const innovationFactor = newState.innovation / 100 // 0 to 1 based on innovation
+            
+            // Calculate income with variability
+            const incomeMultiplier = baseMultiplier * randomFactor * satisfactionFactor
+            const income = Math.floor(newState.users * incomeMultiplier)
+            
+            // Sometimes have negative income (operational losses)
+            const lossChance = Math.max(0.05, 0.15 - (newState.level * 0.01)) // Higher levels = more loss chance
+            if (Math.random() < lossChance) {
+              const lossAmount = Math.floor(newState.users * baseMultiplier * 0.3)
+              newState.money -= lossAmount
+              newState.lastEvent = `Operational losses: -${formatRupees(lossAmount)}`
+            } else {
+              newState.money += income
+            }
+            
+            // Score calculation with innovation bonus
+            newState.score += Math.floor(newState.users * 0.05 * innovationFactor)
           }
           
           // Decay effects (increase with level for difficulty)
@@ -430,12 +584,29 @@ const StartupSimulatorGame: React.FC = () => {
           score: prev.score + 100 + (userEffect > 0 ? userEffect * 2 : 0) + (moneyEffect > 0 ? Math.floor(moneyEffect / 1000) : 0)
         }))
       } else {
-        // Decision failed - still cost money but no benefits
+        // Decision failed - still cost money but no benefits, sometimes additional losses
+        const failurePenalty = Math.random() < 0.3 // 30% chance of additional penalty
+        let additionalLoss = 0
+        let additionalUserLoss = 0
+        let additionalSatisfactionLoss = 0
+        
+        if (failurePenalty) {
+          // Additional failure consequences
+          additionalLoss = Math.floor(decision.cost * 0.2) // 20% additional cost
+          additionalUserLoss = Math.floor(Math.random() * 20) + 5 // 5-25 user loss
+          additionalSatisfactionLoss = Math.floor(Math.random() * 15) + 5 // 5-20 satisfaction loss
+        }
+        
         setGameState(prev => ({
           ...prev,
-          money: prev.money - decision.cost,
-          decisions: [...prev.decisions, `${decision.title} (Failed)`],
-          score: prev.score - 50
+          money: prev.money - decision.cost - additionalLoss,
+          users: Math.max(0, prev.users - additionalUserLoss),
+          satisfaction: Math.max(0, prev.satisfaction - additionalSatisfactionLoss),
+          decisions: [...prev.decisions, `${decision.title} (Failed${failurePenalty ? ' - Major Loss' : ''})`],
+          score: prev.score - 50 - (failurePenalty ? 100 : 0),
+          lastEvent: failurePenalty ? 
+            `Decision failed catastrophically! Lost ${formatRupees(additionalLoss)} and ${additionalUserLoss} users` :
+            `Decision failed - lost ${formatRupees(decision.cost)}`
         }))
       }
     }
