@@ -29,7 +29,7 @@ const teamMembers: TeamMember[] = [
     id: 49,
     name: "Dr.S.Ilaiyavel",
     position: "Manager",
-    team: "Managers",
+    team: "Ecell Managers",
     domain: "Faculty",
     image: "/teams/managers/ilayavel.webp",
     linkedin: "",
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
     id: 50,
     name: "V.senthill velan",
     position: "Manager",
-    team: "Managers",
+    team: "Ecell Managers",
     domain: "Faculty",
     image: "/teams/managers/sentilvelan.webp",
     linkedin: "",
@@ -87,7 +87,7 @@ const teamMembers: TeamMember[] = [
     domain: "ECE - 4th Year",
     image: "/teams/core/general secratory.webp",
     linkedin: "https://www.linkedin.com/in/manojkumar-anbuchezhian?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    email: "2024ec0448@svce.ac.in",
+    email: "2022ec0231@svce.ac.in",
     instagram: "https://www.instagram.com/manojkumaranbuchezhian?igsh=MTZvNmJ2b3IybHVqeQ==",
     phone: "7418434691",
     github: "https://github.com/Manojkumaranbuchezhian",
@@ -338,7 +338,7 @@ const teamMembers: TeamMember[] = [
     position: "Executive Member",
     team: "Executive Members",
     domain: "ECE - 2nd Year",
-    image: "/teams/executive/MAHALAKSHMI .webp",
+    image: "/teams/executive/mahalashmmi.webp",
     linkedin: "https://www.linkedin.com/in/maha-lakshmi-l-756594329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "2024ec0167@svce.ac.in",
     instagram: "Ival._.nila",
@@ -485,7 +485,7 @@ const teamMembers: TeamMember[] = [
     position: "Tech Team Member",
     team: "Tech Team",
     domain: "ECE - 2nd Year",
-    image: "/teams/web/BUVANESWARAN.webp",
+    image: "/teams/web/bhuvaneswaran.webp",
     linkedin: "https://www.linkedin.com/in/k-buvaneswaran-ece",
     email: "2024ec0673@svce.ac.in",
     instagram: "_buvi_2006",
@@ -539,12 +539,12 @@ const teamMembers: TeamMember[] = [
     position: "Content Team Member",
     team: "Content Team",
     domain: "Biotech - 2nd Year",
-    image: "/placeholder.svg?height=400&width=400",
-    linkedin: "",
-    email: "",
-    instagram: "",
-    phone: "",
-    github: "",
+    image: "/teams/content/JEFINA.webp",
+    linkedin: "https://www.linkedin.com/in/jefina-giftlin-j-b1b696326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    email: "2024bt0694@svce.ac.in",
+    instagram: "https://www.instagram.com/jefina_2808?igsh=MXZpdmNjcmUxc2xoaQ==",
+    phone: "7200285674",
+    github: "https://github.com/Jefina08",
   },
 
   // Design Team
@@ -568,7 +568,7 @@ const teamMembers: TeamMember[] = [
     team: "Design Team",
     domain: "Mechanical - 2nd Year",
     image: "/teams/design/YOGENDRA.webp",
-    linkedin: "https://www.linkedin.com/in/yogendra",
+    linkedin: "https://www.linkedin.com/in/yogendra-b19ba032b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "yogendraasky@gmail.com",
     instagram: "syncdesign2025",
     phone: "8838773569",
@@ -728,8 +728,8 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
                 src={member.image || "/placeholder.svg"} 
                 alt={member.name} 
                 fill 
-                className={`object-cover ${member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" ? "object-top" : ""}`}
-                style={member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" ? { objectPosition: "center 20%" } : {}}
+                className={`object-cover ${member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" || member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "THARUN S" || member.name === "Sri Bharathi R" || member.name === "Yogavarthanee R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" ? "object-top" : ""}`}
+                style={member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" || member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "THARUN S" || member.name === "Sri Bharathi R" || member.name === "Yogavarthanee R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" ? { objectPosition: "center 30%" } : {}}
               />
             </div>
             <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
