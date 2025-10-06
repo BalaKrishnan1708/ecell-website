@@ -24,6 +24,34 @@ type TeamMember = {
 }
 
 const teamMembers: TeamMember[] = [
+  // Managers
+  {
+    id: 49,
+    name: "Dr.S.Ilaiyavel",
+    position: "Manager",
+    team: "Managers",
+    domain: "Faculty",
+    image: "/teams/managers/ilayavel.webp",
+    linkedin: "",
+    email: "",
+    instagram: "",
+    phone: "",
+    github: "",
+  },
+  {
+    id: 50,
+    name: "V.senthill velan",
+    position: "Manager",
+    team: "Managers",
+    domain: "Faculty",
+    image: "/teams/managers/sentilvelan.webp",
+    linkedin: "",
+    email: "",
+    instagram: "",
+    phone: "",
+    github: "",
+  },
+
   // Core Leadership
   {
     id: 1,
@@ -152,7 +180,7 @@ const teamMembers: TeamMember[] = [
     position: "Tech Head",
     team: "Department Heads",
     domain: "AI&DS - 3rd Year",
-    image: "/teams/heads/Tech1.webp",
+    image: "/teams/heads/Tech.webp",
     linkedin: "https://www.linkedin.com/in/balakrishnan-r-5a1006278",
     email: "2023ad0681@svce.ac.in",
     instagram: "iambalakrishnan.r",
@@ -178,7 +206,7 @@ const teamMembers: TeamMember[] = [
     position: "Content Head",
     team: "Department Heads",
     domain: "Mechanical and Automation- 3rd Year",
-    image: "/teams/heads/Content.webp",
+    image: "/teams/heads/Content1.webp",
     linkedin: "https://www.linkedin.com/in/harshith-bubalan-9b3588284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "2023mn0363@svce.ac.in",
     instagram: "Harshith.007",
@@ -336,7 +364,7 @@ const teamMembers: TeamMember[] = [
     position: "Executive Member",
     team: "Executive Members",
     domain: "EEE - 2nd Year",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/teams/executive/dimple.webp",
     linkedin: "https://www.linkedin.com/in/dimple-kurugunda",
     email: "2024ee0945@svce.ac.in",
     instagram: "dimple___chowdaey",
@@ -645,7 +673,7 @@ const teamMembers: TeamMember[] = [
     position: "Community/LinkedIn Manager",
     team: "Community Managers",
     domain: "IT - 3rd Year",
-    image: "/teams/Sanjana Madankumar.webp",
+    image: "/teams/community/Sanjana Madankumar.webp",
     linkedin: "https://www.linkedin.com/in/sanjana-madankumar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "2023it0765@svce.ac.in",
     instagram: "sanjanamadankumar",
@@ -696,7 +724,13 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
         <div className="absolute w-full h-full [backface-visibility:hidden]">
           <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
             <div className="aspect-square relative">
-              <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+              <Image 
+                src={member.image || "/placeholder.svg"} 
+                alt={member.name} 
+                fill 
+                className={`object-cover ${member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" ? "object-top" : ""}`}
+                style={member.name === "Dr.S.Ilaiyavel" || member.name === "V.senthill velan" ? { objectPosition: "center 20%" } : {}}
+              />
             </div>
             <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
               <h3 className="text-base sm:text-lg font-bold mb-1">{member.name}</h3>
