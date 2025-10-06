@@ -539,7 +539,7 @@ const teamMembers: TeamMember[] = [
     position: "Content Team Member",
     team: "Content Team",
     domain: "Biotech - 2nd Year",
-    image: "/teams/content/Jefina.webp",
+    image: "/teams/content/JEFINA.webp",
     linkedin: "https://www.linkedin.com/in/jefina-giftlin-j-b1b696326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "2024bt0694@svce.ac.in",
     instagram: "https://www.instagram.com/jefina_2808?igsh=MXZpdmNjcmUxc2xoaQ==",
