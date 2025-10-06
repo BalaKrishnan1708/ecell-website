@@ -539,7 +539,7 @@ const teamMembers: TeamMember[] = [
     position: "Content Team Member",
     team: "Content Team",
     domain: "Biotech - 2nd Year",
-    image: "/teams/content/JEFINA.webp",
+    image: "/teams/content/Jefina.webp",
     linkedin: "https://www.linkedin.com/in/jefina-giftlin-j-b1b696326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     email: "2024bt0694@svce.ac.in",
     instagram: "https://www.instagram.com/jefina_2808?igsh=MXZpdmNjcmUxc2xoaQ==",
@@ -729,7 +729,7 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
                 alt={member.name} 
                 fill 
                 className={`${member.name === "Dr.S.Ilaiyavel" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "Yogavarthanee R" ? "object-cover object-top" : member.name === "THARUN S" || member.name === "Jefina Giftlin J" ? "object-cover object-top" : member.name === "V.senthill velan" ? "object-cover object-center" : member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Sri Bharathi R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Madhav" ? "object-cover object-top" : "object-cover"}`}
-                style={member.name === "Dr.S.Ilaiyavel" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "Yogavarthanee R" ? { objectPosition: "center 5%", transform: "scale(1.1)" } : member.name === "THARUN S" || member.name === "Jefina Giftlin J" ? { objectPosition: "center 5%" } : member.name === "V.senthill velan" ? { objectPosition: "center 20%" } : member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Sri Bharathi R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Madhav" ? { objectPosition: "center 30%" } : {}}
+                style={member.name === "Dr.S.Ilaiyavel" || member.name === "Divya Shree M" || member.name === "Baarath Arumugaraja" || member.name === "Yogavarthanee R" ? { objectPosition: "center 5%", transform: "scale(1.1)" } : member.name === "THARUN S" ? { objectPosition: "center 5%" } : member.name === "Jefina Giftlin J" ? { objectPosition: "center 2%", transform: "scale(1.2)" } : member.name === "V.senthill velan" ? { objectPosition: "center 20%" } : member.name === "N.Nitish" || member.name === "VIKAASH B G" || member.name === "Sankara Narayanan S" || member.name === "Sri Bharathi R" || member.name === "K Buvaneswaran" || member.name === "ABIJITH P" || member.name === "Bhargavi TR" || member.name === "Dimple Kurugunda" || member.name === "Yogendra" || member.name === "THOUFIKUR RAHAMAN Y" || member.name === "Vaishali V" || member.name === "Sanjana Madankumar" || member.name === "Madhav" ? { objectPosition: "center 30%" } : {}}
               />
             </div>
             <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
