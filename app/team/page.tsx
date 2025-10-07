@@ -686,7 +686,7 @@ const teamMembers: TeamMember[] = [
     position: "Community Manager",
     team: "Community Managers",
     domain: "CSE - 2nd Year",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/teams/community/madhav.webp",
     linkedin: "https://www.linkedin.com/in/madhav-krishna-jps/",
     email: "",
     instagram: "",
