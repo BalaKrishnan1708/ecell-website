@@ -285,6 +285,48 @@ const StartupSimulatorGame: React.FC = () => {
       message: "A critical bug was discovered in your product."
     },
     {
+      name: "Database Corruption",
+      probability: 0.08,
+      effect: { users: -80, satisfaction: -35, innovation: -10, money: -200000 },
+      message: "Database corruption has caused data loss and system instability."
+    },
+    {
+      name: "API Integration Failure",
+      probability: 0.12,
+      effect: { users: -50, satisfaction: -25, innovation: -15, money: -100000 },
+      message: "Third-party API integration has failed, breaking core functionality."
+    },
+    {
+      name: "Memory Leak Crisis",
+      probability: 0.09,
+      effect: { users: -40, satisfaction: -30, innovation: -20, money: -150000 },
+      message: "Severe memory leaks are causing server crashes and poor performance."
+    },
+    {
+      name: "Security Vulnerability",
+      probability: 0.07,
+      effect: { users: -100, satisfaction: -40, innovation: -5, money: -300000 },
+      message: "A major security vulnerability has been discovered in your codebase."
+    },
+    {
+      name: "Payment Gateway Down",
+      probability: 0.11,
+      effect: { users: -60, satisfaction: -30, innovation: 0, money: -250000 },
+      message: "Payment processing system is down, preventing user transactions."
+    },
+    {
+      name: "Code Deployment Failure",
+      probability: 0.13,
+      effect: { users: -70, satisfaction: -25, innovation: -10, money: -120000 },
+      message: "Latest code deployment has broken the production environment."
+    },
+    {
+      name: "Server Overload",
+      probability: 0.15,
+      effect: { users: -90, satisfaction: -35, innovation: 0, money: -180000 },
+      message: "Server infrastructure cannot handle the user load, causing frequent downtime."
+    },
+    {
       name: "Economic Times Coverage",
       probability: 0.04,
       effect: { users: 150, satisfaction: 20, innovation: 10, money: 0 },
@@ -422,6 +464,284 @@ const StartupSimulatorGame: React.FC = () => {
       probability: 0.02,
       effect: { users: -400, satisfaction: -70, innovation: -30, money: -1500000 },
       message: "A critical product defect forced a massive recall, destroying user trust."
+    },
+    // Additional positive events to balance the game
+    {
+      name: "TechCrunch India Feature",
+      probability: 0.06,
+      effect: { users: 180, satisfaction: 25, innovation: 20, money: 0 },
+      message: "Your startup was featured in TechCrunch India!"
+    },
+    {
+      name: "Series A Funding Success",
+      probability: 0.05,
+      effect: { users: 0, satisfaction: 0, innovation: 0, money: 5000000 },
+      message: "Your Series A funding round was successful!"
+    },
+    {
+      name: "Product-Market Fit Achieved",
+      probability: 0.07,
+      effect: { users: 250, satisfaction: 40, innovation: 30, money: 0 },
+      message: "You've achieved product-market fit! Users love your product."
+    },
+    {
+      name: "International Expansion",
+      probability: 0.05,
+      effect: { users: 400, satisfaction: 20, innovation: 25, money: 0 },
+      message: "Your product is gaining traction in international markets!"
+    },
+    {
+      name: "Award Recognition",
+      probability: 0.06,
+      effect: { users: 100, satisfaction: 35, innovation: 20, money: 1000000 },
+      message: "Your startup won a prestigious industry award!"
+    },
+    {
+      name: "Key Hire Success",
+      probability: 0.08,
+      effect: { users: 30, satisfaction: 15, innovation: 40, money: 0 },
+      message: "You hired a world-class CTO who's revolutionizing your tech stack."
+    },
+    {
+      name: "Customer Success Story",
+      probability: 0.09,
+      effect: { users: 80, satisfaction: 30, innovation: 10, money: 0 },
+      message: "A major customer shared their success story, boosting your credibility."
+    },
+    {
+      name: "Government Contract",
+      probability: 0.04,
+      effect: { users: 0, satisfaction: 0, innovation: 0, money: 10000000 },
+      message: "You secured a major government contract!"
+    },
+    {
+      name: "Viral TikTok Campaign",
+      probability: 0.08,
+      effect: { users: 300, satisfaction: 15, innovation: 5, money: 0 },
+      message: "Your marketing campaign went viral on TikTok!"
+    },
+    {
+      name: "Enterprise Client Win",
+      probability: 0.06,
+      effect: { users: 50, satisfaction: 20, innovation: 15, money: 2000000 },
+      message: "You secured a major enterprise client with a lucrative contract!"
+    },
+    {
+      name: "Patent Approval",
+      probability: 0.05,
+      effect: { users: 0, satisfaction: 0, innovation: 50, money: 0 },
+      message: "Your innovative technology received patent approval!"
+    },
+    {
+      name: "Mentor Network Access",
+      probability: 0.07,
+      effect: { users: 0, satisfaction: 25, innovation: 30, money: 0 },
+      message: "You gained access to a prestigious mentor network!"
+    },
+    {
+      name: "Platform Optimization Success",
+      probability: 0.08,
+      effect: { users: 60, satisfaction: 20, innovation: 25, money: 0 },
+      message: "Your platform optimization efforts resulted in 50% better performance!"
+    },
+    {
+      name: "Community Building Success",
+      probability: 0.09,
+      effect: { users: 120, satisfaction: 35, innovation: 10, money: 0 },
+      message: "Your user community has grown into a thriving ecosystem!"
+    },
+    {
+      name: "Strategic Acquisition Offer",
+      probability: 0.03,
+      effect: { users: 0, satisfaction: 0, innovation: 0, money: 20000000 },
+      message: "A major corporation made a strategic acquisition offer!"
+    },
+    {
+      name: "Open Source Contribution",
+      probability: 0.06,
+      effect: { users: 40, satisfaction: 15, innovation: 35, money: 0 },
+      message: "Your open source contributions gained recognition in the developer community!"
+    },
+    {
+      name: "User Retention Breakthrough",
+      probability: 0.08,
+      effect: { users: 0, satisfaction: 30, innovation: 20, money: 0 },
+      message: "You discovered the secret to dramatically improving user retention!"
+    },
+    {
+      name: "Cost Optimization Success",
+      probability: 0.07,
+      effect: { users: 0, satisfaction: 10, innovation: 15, money: 1500000 },
+      message: "Your cost optimization efforts saved significant operational expenses!"
+    },
+    {
+      name: "Brand Partnership",
+      probability: 0.05,
+      effect: { users: 200, satisfaction: 25, innovation: 10, money: 0 },
+      message: "A major brand wants to partner with your startup!"
+    },
+    {
+      name: "Research Breakthrough",
+      probability: 0.04,
+      effect: { users: 0, satisfaction: 0, innovation: 60, money: 0 },
+      message: "Your R&D team made a breakthrough that could revolutionize the industry!"
+    },
+    {
+      name: "User-Generated Content Explosion",
+      probability: 0.08,
+      effect: { users: 150, satisfaction: 40, innovation: 5, money: 0 },
+      message: "Users are creating amazing content about your product, driving organic growth!"
+    },
+    {
+      name: "API Monetization Success",
+      probability: 0.06,
+      effect: { users: 0, satisfaction: 0, innovation: 20, money: 3000000 },
+      message: "Your API monetization strategy is generating significant revenue!"
+    },
+    {
+      name: "Sustainability Initiative",
+      probability: 0.05,
+      effect: { users: 80, satisfaction: 30, innovation: 25, money: 0 },
+      message: "Your sustainability initiatives gained recognition and attracted eco-conscious users!"
+    },
+    {
+      name: "Mobile App Store Feature",
+      probability: 0.07,
+      effect: { users: 250, satisfaction: 20, innovation: 15, money: 0 },
+      message: "Your mobile app was featured on the App Store homepage!"
+    },
+    {
+      name: "AI Integration Success",
+      probability: 0.06,
+      effect: { users: 100, satisfaction: 25, innovation: 45, money: 0 },
+      message: "Your AI integration has significantly improved user experience!"
+    },
+    {
+      name: "Global Recognition",
+      probability: 0.04,
+      effect: { users: 500, satisfaction: 50, innovation: 30, money: 0 },
+      message: "Your startup received international recognition and media coverage!"
+    },
+    // Additional critical bug-like events
+    {
+      name: "Zero-Day Vulnerability",
+      probability: 0.05,
+      effect: { users: -150, satisfaction: -50, innovation: -20, money: -600000 },
+      message: "A zero-day vulnerability was discovered in your core system, requiring immediate patching."
+    },
+    {
+      name: "Memory Leak Explosion",
+      probability: 0.08,
+      effect: { users: -80, satisfaction: -40, innovation: -25, money: -200000 },
+      message: "Critical memory leaks are causing system crashes every few minutes."
+    },
+    {
+      name: "Database Deadlock Crisis",
+      probability: 0.07,
+      effect: { users: -100, satisfaction: -35, innovation: -15, money: -300000 },
+      message: "Database deadlocks are preventing users from completing transactions."
+    },
+    {
+      name: "API Rate Limit Exceeded",
+      probability: 0.09,
+      effect: { users: -60, satisfaction: -30, innovation: 0, money: -150000 },
+      message: "You've exceeded API rate limits, breaking core functionality."
+    },
+    {
+      name: "Cache Poisoning Attack",
+      probability: 0.04,
+      effect: { users: -200, satisfaction: -45, innovation: -10, money: -400000 },
+      message: "A cache poisoning attack has corrupted your data and user sessions."
+    },
+    {
+      name: "Load Balancer Failure",
+      probability: 0.06,
+      effect: { users: -120, satisfaction: -40, innovation: 0, money: -250000 },
+      message: "Your load balancer has failed, causing massive service disruption."
+    },
+    {
+      name: "SSL Certificate Expired",
+      probability: 0.08,
+      effect: { users: -90, satisfaction: -35, innovation: 0, money: -100000 },
+      message: "Your SSL certificate expired, making your site appear unsafe to users."
+    },
+    {
+      name: "Microservices Communication Breakdown",
+      probability: 0.07,
+      effect: { users: -70, satisfaction: -30, innovation: -20, money: -180000 },
+      message: "Your microservices architecture has communication failures between services."
+    },
+    {
+      name: "CDN Outage",
+      probability: 0.08,
+      effect: { users: -50, satisfaction: -25, innovation: 0, money: -120000 },
+      message: "Your CDN provider is experiencing outages, slowing down your site globally."
+    },
+    {
+      name: "Queue Processing Backlog",
+      probability: 0.09,
+      effect: { users: -40, satisfaction: -20, innovation: -10, money: -80000 },
+      message: "Your message queue is backed up, causing delays in user actions."
+    },
+    {
+      name: "Docker Container Crash Loop",
+      probability: 0.06,
+      effect: { users: -110, satisfaction: -40, innovation: -15, money: -220000 },
+      message: "Your Docker containers are stuck in a crash loop, preventing service recovery."
+    },
+    {
+      name: "Redis Cache Corruption",
+      probability: 0.05,
+      effect: { users: -80, satisfaction: -30, innovation: -10, money: -160000 },
+      message: "Your Redis cache has become corrupted, causing data inconsistencies."
+    },
+    {
+      name: "Elasticsearch Cluster Split",
+      probability: 0.04,
+      effect: { users: -60, satisfaction: -25, innovation: -20, money: -140000 },
+      message: "Your Elasticsearch cluster has split, causing search functionality to fail."
+    },
+    {
+      name: "Kubernetes Pod Eviction",
+      probability: 0.07,
+      effect: { users: -90, satisfaction: -35, innovation: -15, money: -200000 },
+      message: "Kubernetes is evicting your pods due to resource constraints."
+    },
+    {
+      name: "Message Broker Failure",
+      probability: 0.06,
+      effect: { users: -70, satisfaction: -30, innovation: -20, money: -180000 },
+      message: "Your message broker has failed, breaking async processing."
+    },
+    {
+      name: "Database Connection Pool Exhaustion",
+      probability: 0.08,
+      effect: { users: -100, satisfaction: -40, innovation: -10, money: -160000 },
+      message: "Database connection pool is exhausted, preventing new user connections."
+    },
+    {
+      name: "Third-Party Service Deprecated",
+      probability: 0.05,
+      effect: { users: -50, satisfaction: -20, innovation: -30, money: -300000 },
+      message: "A critical third-party service you depend on has been deprecated."
+    },
+    {
+      name: "Configuration Drift",
+      probability: 0.07,
+      effect: { users: -60, satisfaction: -25, innovation: -15, money: -120000 },
+      message: "Configuration drift has caused your production environment to behave unexpectedly."
+    },
+    {
+      name: "Network Partition",
+      probability: 0.04,
+      effect: { users: -130, satisfaction: -45, innovation: -20, money: -350000 },
+      message: "A network partition has split your distributed system, causing data inconsistency."
+    },
+    {
+      name: "Resource Starvation",
+      probability: 0.08,
+      effect: { users: -80, satisfaction: -35, innovation: -25, money: -200000 },
+      message: "Your system is experiencing resource starvation, causing performance degradation."
     }
   ]
 
