@@ -180,7 +180,7 @@ const teamMembers: TeamMember[] = [
     position: "Tech Head",
     team: "Department Heads",
     domain: "AI&DS - 3rd Year",
-    image: "/teams/heads/Tech1.webp",
+    image: "/teams/heads/Tech.webp",
     linkedin: "https://www.linkedin.com/in/balakrishnan-r-5a1006278",
     email: "2023ad0681@svce.ac.in",
     instagram: "iambalakrishnan.r",
