@@ -60,8 +60,615 @@ const StartupSimulatorGame: React.FC = () => {
     showAnalytics: false
   })
 
+  const getDecisionsForLevel = (level: number) => {
+    switch(level) {
+      case 1:
+        return [
+          {
+            id: 1,
+            title: "Digital Marketing Campaign",
+            description: "Invest in social media and Google ads to attract users",
+            cost: 50000,
+            effect: { users: { min: 30, max: 70 }, satisfaction: { min: 5, max: 15 }, innovation: { min: 2, max: 8 } },
+            probability: 0.8,
+            risk: 0.1
+          },
+          {
+            id: 2,
+            title: "Hire Full-Stack Developer",
+            description: "Add a skilled developer to improve your product",
+            cost: 120000,
+            effect: { users: { min: 15, max: 35 }, satisfaction: { min: 15, max: 25 }, innovation: { min: 25, max: 40 } },
+            probability: 0.9,
+            risk: 0.03
+          },
+          {
+            id: 3,
+            title: "User Research & Feedback",
+            description: "Conduct user research to improve satisfaction",
+            cost: 25000,
+            effect: { users: { min: 5, max: 20 }, satisfaction: { min: 20, max: 35 }, innovation: { min: 10, max: 25 } },
+            probability: 0.95,
+            risk: 0.02
+          },
+          {
+            id: 4,
+            title: "Product Feature Update",
+            description: "Add new features to increase innovation",
+            cost: 75000,
+            effect: { users: { min: 20, max: 45 }, satisfaction: { min: 10, max: 25 }, innovation: { min: 20, max: 35 } },
+            probability: 0.85,
+            risk: 0.05
+          },
+          {
+            id: 5,
+            title: "Strategic Partnership",
+            description: "Form partnership with Indian companies",
+            cost: 100000,
+            effect: { users: { min: 60, max: 120 }, satisfaction: { min: 0, max: 10 }, innovation: { min: 5, max: 15 } },
+            probability: 0.6,
+            risk: 0.2
+          },
+          {
+            id: 6,
+            title: "Product Pivot",
+            description: "Major product direction change",
+            cost: 150000,
+            effect: { users: { min: -30, max: 10 }, satisfaction: { min: -15, max: 5 }, innovation: { min: 35, max: 55 } },
+            probability: 0.4,
+            risk: 0.4
+          },
+          // ----- 5 More Decisions for Level 1 -----
+          {
+            id: 7,
+            title: "Hire a UI/UX Designer",
+            description: "Improve the look and feel of your product to boost user satisfaction.",
+            cost: 90000,
+            effect: { users: { min: 10, max: 25 }, satisfaction: { min: 25, max: 40 }, innovation: { min: 5, max: 15 } },
+            probability: 0.9,
+            risk: 0.05
+          },
+           {
+             id: 8,
+             title: "Content Marketing Initiative",
+             description: "Create blog posts and videos to attract users organically over time.",
+             cost: 30000,
+             effect: { users: { min: 20, max: 50 }, satisfaction: { min: 0, max: 5 }, innovation: { min: 0, max: 0 } },
+             probability: 0.7,
+             risk: 0.1
+           },
+          {
+            id: 9,
+            title: "Bootstrap Operations",
+            description: "Focus on extreme frugality to conserve cash, slowing growth but increasing runway.",
+            cost: 5000,
+            effect: { users: { min: -10, max: 5 }, satisfaction: { min: -5, max: 0 }, innovation: { min: 0, max: 0 }, money: { min: 50000, max: 100000 } },
+            probability: 0.98,
+            risk: 0.01
+          },
+           {
+             id: 10,
+             title: "Attend a Startup Conference",
+             description: "Network with potential investors and partners, but it's a gamble.",
+             cost: 20000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 5, max: 20 } },
+             probability: 0.3,
+             risk: 0.1
+           },
+           {
+             id: 11,
+             title: "Offer a Freemium Plan",
+             description: "Lure a large number of users with a free plan, hoping they upgrade later.",
+             cost: 40000,
+             effect: { users: { min: 100, max: 200 }, satisfaction: { min: -10, max: 5 } },
+             probability: 0.6,
+             risk: 0.3
+           },
+           // ----- 5 More Decisions for Level 1 -----
+           {
+             id: 12,
+             title: "Create a Mobile App",
+             description: "Develop a mobile version to reach users on the go.",
+             cost: 80000,
+             effect: { users: { min: 50, max: 120 }, satisfaction: { min: 15, max: 30 }, innovation: { min: 10, max: 20 } },
+             probability: 0.8,
+             risk: 0.1
+           },
+           {
+             id: 13,
+             title: "Implement User Feedback System",
+             description: "Add in-app feedback collection to understand user needs better.",
+             cost: 15000,
+             effect: { users: { min: 5, max: 15 }, satisfaction: { min: 20, max: 35 }, innovation: { min: 5, max: 15 } },
+             probability: 0.95,
+             risk: 0.02
+           },
+           {
+             id: 14,
+             title: "Launch Referral Program",
+             description: "Reward users for bringing in new customers.",
+             cost: 25000,
+             effect: { users: { min: 30, max: 80 }, satisfaction: { min: 10, max: 20 } },
+             probability: 0.7,
+             risk: 0.15
+           },
+           {
+             id: 15,
+             title: "Optimize Website Speed",
+             description: "Improve loading times to reduce bounce rate and improve user experience.",
+             cost: 35000,
+             effect: { users: { min: 10, max: 30 }, satisfaction: { min: 15, max: 25 }, innovation: { min: 5, max: 10 } },
+             probability: 0.9,
+             risk: 0.05
+           },
+           {
+             id: 16,
+             title: "Hire a Marketing Intern",
+             description: "Bring in a young, energetic intern to help with social media and content.",
+             cost: 20000,
+             effect: { users: { min: 15, max: 40 }, satisfaction: { min: 5, max: 15 }, innovation: { min: 2, max: 8 } },
+             probability: 0.85,
+             risk: 0.08
+           }
+        ]
+      
+      case 2:
+        return [
+          {
+            id: 1,
+            title: "AI/ML Integration",
+            description: "Integrate artificial intelligence features",
+            cost: 300000,
+            effect: { users: { min: 40, max: 80 }, satisfaction: { min: 25, max: 45 }, innovation: { min: 40, max: 60 } },
+            probability: 0.7,
+            risk: 0.15
+          },
+          {
+            id: 2,
+            title: "Customer Support Team",
+            description: "Build dedicated customer support",
+            cost: 200000,
+            effect: { users: { min: 20, max: 50 }, satisfaction: { min: 40, max: 60 }, innovation: { min: 10, max: 20 } },
+            probability: 0.9,
+            risk: 0.05
+          },
+          {
+            id: 3,
+            title: "Tier-2/3 City Expansion",
+            description: "Expand to smaller Indian cities",
+            cost: 400000,
+            effect: { users: { min: 100, max: 200 }, satisfaction: { min: 15, max: 30 }, innovation: { min: 5, max: 15 } },
+            probability: 0.75,
+            risk: 0.1
+          },
+          {
+            id: 4,
+            title: "Viral Marketing Blitz",
+            description: "High-risk, high-reward marketing strategy",
+            cost: 500000,
+            effect: { users: { min: 150, max: 400 }, satisfaction: { min: -10, max: 20 }, innovation: { min: 0, max: 10 } },
+            probability: 0.3,
+            risk: 0.5
+          },
+          {
+            id: 5,
+            title: "Enterprise Sales Team",
+            description: "Build B2B sales capabilities",
+            cost: 600000,
+            effect: { users: { min: 30, max: 60 }, satisfaction: { min: 20, max: 35 }, innovation: { min: 15, max: 25 }, money: { min: 1000000, max: 2000000 } },
+            probability: 0.65,
+            risk: 0.25
+          },
+          {
+            id: 6,
+            title: "Platform Optimization",
+            description: "Optimize for scale and performance",
+            cost: 350000,
+            effect: { users: { min: 50, max: 100 }, satisfaction: { min: 30, max: 45 }, innovation: { min: 25, max: 40 } },
+            probability: 0.8,
+            risk: 0.1
+          },
+          // ----- 5 More Decisions for Level 2 -----
+           {
+             id: 7,
+             title: "Secure Series A Funding",
+             description: "Raise a new round of funding to accelerate growth significantly.",
+             cost: 100000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 0, max: 0 }, money: { min: 3000000, max: 8000000 } },
+             probability: 0.7,
+             risk: 0.2
+           },
+          {
+            id: 8,
+            title: "Build a Data Analytics Team",
+            description: "Invest in data science to understand user behavior and make better decisions.",
+            cost: 450000,
+            effect: { satisfaction: { min: 15, max: 25 }, innovation: { min: 30, max: 45 } },
+            probability: 0.8,
+            risk: 0.1
+          },
+          {
+            id: 9,
+            title: "Refactor Core Codebase",
+            description: "Pause feature development to rewrite old code, improving stability and future speed.",
+            cost: 500000,
+            effect: { users: { min: -20, max: 0 }, satisfaction: { min: 20, max: 40 }, innovation: { min: 25, max: 35 } },
+            probability: 0.75,
+            risk: 0.15
+          },
+          {
+            id: 10,
+            title: "Launch a Brand Ambassador Program",
+            description: "Incentivize your most loyal users to promote the product for you.",
+            cost: 250000,
+            effect: { users: { min: 80, max: 150 }, satisfaction: { min: 15, max: 25 } },
+            probability: 0.6,
+            risk: 0.2
+          },
+           {
+             id: 11,
+             title: "Open a Second Office",
+             description: "Establish a new office in another major city to attract a wider talent pool.",
+             cost: 700000,
+             effect: { users: { min: 10, max: 30 }, innovation: { min: 20, max: 40 } },
+             probability: 0.5,
+             risk: 0.3
+           },
+           // ----- 5 More Decisions for Level 2 -----
+           {
+             id: 12,
+             title: "Implement Advanced Analytics",
+             description: "Deploy sophisticated data tracking to understand user behavior patterns.",
+             cost: 200000,
+             effect: { users: { min: 20, max: 50 }, satisfaction: { min: 25, max: 40 }, innovation: { min: 20, max: 35 } },
+             probability: 0.85,
+             risk: 0.1
+           },
+           {
+             id: 13,
+             title: "Launch API for Third-Party Developers",
+             description: "Open your platform to external developers to create integrations.",
+             cost: 300000,
+             effect: { users: { min: 100, max: 250 }, innovation: { min: 30, max: 50 } },
+             probability: 0.6,
+             risk: 0.25
+           },
+           {
+             id: 14,
+             title: "Establish Customer Success Team",
+             description: "Dedicated team to help customers achieve their goals with your product.",
+             cost: 400000,
+             effect: { users: { min: 30, max: 60 }, satisfaction: { min: 35, max: 55 }, innovation: { min: 10, max: 20 } },
+             probability: 0.9,
+             risk: 0.05
+           },
+           {
+             id: 15,
+             title: "Invest in Security Infrastructure",
+             description: "Strengthen security measures to protect user data and build trust.",
+             cost: 250000,
+             effect: { users: { min: 10, max: 30 }, satisfaction: { min: 20, max: 35 }, innovation: { min: 15, max: 25 } },
+             probability: 0.8,
+             risk: 0.1
+           },
+           {
+             id: 16,
+             title: "Launch White-Label Solution",
+             description: "Allow other companies to rebrand your product for their own use.",
+             cost: 500000,
+             effect: { users: { min: 50, max: 150 }, satisfaction: { min: 10, max: 20 }, money: { min: 500000, max: 1500000 } },
+             probability: 0.7,
+             risk: 0.2
+           }
+        ]
+      
+      case 3:
+        return [
+          {
+            id: 1,
+            title: "International Expansion",
+            description: "Expand to global markets",
+            cost: 1000000,
+            effect: { users: { min: 200, max: 500 }, satisfaction: { min: 10, max: 25 }, innovation: { min: 30, max: 50 } },
+            probability: 0.5,
+            risk: 0.4
+          },
+          {
+            id: 2,
+            title: "Acquire Competitor",
+            description: "Acquire a smaller competitor",
+            cost: 2000000,
+            effect: { users: { min: 100, max: 200 }, satisfaction: { min: 20, max: 40 }, innovation: { min: 15, max: 30 }, money: { min: -500000, max: 1000000 } },
+            probability: 0.4,
+            risk: 0.6
+          },
+          {
+            id: 3,
+            title: "Complete Platform Rebuild",
+            description: "Rebuild entire platform with modern tech",
+            cost: 1500000,
+            effect: { users: { min: -100, max: 50 }, satisfaction: { min: -20, max: 10 }, innovation: { min: 50, max: 80 } },
+            probability: 0.3,
+            risk: 0.7
+          },
+          {
+            id: 4,
+            title: "Massive Layoffs",
+            description: "Cut costs by reducing team size significantly",
+            cost: 200000,
+            effect: { users: { min: -150, max: -50 }, satisfaction: { min: -50, max: -20 }, innovation: { min: -40, max: -10 } },
+            probability: 0.8,
+            risk: 0.3
+          },
+          {
+            id: 5,
+            title: "Desperate Funding Round",
+            description: "Accept unfavorable terms to get emergency funding",
+            cost: 100000,
+            effect: { money: { min: 2000000, max: 5000000 } },
+            probability: 0.6,
+            risk: 0.8
+          },
+          {
+            id: 6,
+            title: "Pivot to Completely New Market",
+            description: "Abandon current market and enter entirely new sector",
+            cost: 1200000,
+            effect: { users: { min: -300, max: 100 }, satisfaction: { min: -60, max: 20 }, innovation: { min: 10, max: 50 } },
+            probability: 0.2,
+            risk: 0.9
+          },
+          // ----- 5 More Decisions for Level 3 -----
+           {
+             id: 7,
+             title: "Aggressive Poaching from Competitor",
+             description: "Lure away the top talent from your main rival, risking a lawsuit.",
+             cost: 800000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 40, max: 60 }, money: { min: -1000000, max: 0 } },
+             probability: 0.5,
+             risk: 0.6
+           },
+           {
+             id: 8,
+             title: "Launch a Sub-Brand",
+             description: "Create a new product line under a different brand to target a niche market.",
+             cost: 1800000,
+             effect: { users: { min: 150, max: 300 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 20, max: 30 } },
+             probability: 0.4,
+             risk: 0.5
+           },
+           {
+             id: 9,
+             title: "Lobbying Efforts",
+             description: "Spend heavily to influence government regulations in your favor.",
+             cost: 2500000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: -10, max: 0 }, innovation: { min: 0, max: 0 }, money: { min: 0, max: 5000000 } },
+             probability: 0.3,
+             risk: 0.7
+           },
+          {
+            id: 10,
+            title: "Initiate a Franchise Model",
+            description: "Allow third parties to operate under your brand for rapid, low-cost expansion.",
+            cost: 500000,
+            effect: { users: { min: 400, max: 800 }, satisfaction: { min: -30, max: -10 }, innovation: { min: 0, max: 0 }, money: { min: 1000000, max: 2000000 } },
+            probability: 0.6,
+            risk: 0.4
+          },
+           {
+             id: 11,
+             title: "Automate Core Operations",
+             description: "Replace manual processes with a huge investment in automation, reducing long-term costs.",
+             cost: 3000000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: -20, max: 0 }, innovation: { min: 10, max: 20 }, money: { min: -1000000, max: 500000 } },
+             probability: 0.7,
+             risk: 0.3
+           },
+           // ----- 5 More Decisions for Level 3 -----
+           {
+             id: 12,
+             title: "Host a Major Industry Conference",
+             description: "Organize a large-scale event to establish thought leadership and attract partners.",
+             cost: 2000000,
+             effect: { users: { min: 200, max: 500 }, satisfaction: { min: 30, max: 50 }, innovation: { min: 20, max: 35 } },
+             probability: 0.6,
+             risk: 0.4
+           },
+           {
+             id: 13,
+             title: "Launch a Venture Studio",
+             description: "Create an internal incubator to develop new products and business lines.",
+             cost: 5000000,
+             effect: { innovation: { min: 40, max: 70 }, money: { min: -2000000, max: 10000000 } },
+             probability: 0.4,
+             risk: 0.6
+           },
+           {
+             id: 14,
+             title: "Establish Global Partnerships",
+             description: "Form strategic alliances with major international corporations.",
+             cost: 3000000,
+             effect: { users: { min: 300, max: 600 }, satisfaction: { min: 20, max: 40 }, innovation: { min: 25, max: 45 } },
+             probability: 0.5,
+             risk: 0.5
+           },
+           {
+             id: 15,
+             title: "Implement Advanced AI/ML Systems",
+             description: "Deploy cutting-edge artificial intelligence to revolutionize your product capabilities.",
+             cost: 8000000,
+             effect: { users: { min: 100, max: 300 }, satisfaction: { min: 40, max: 60 }, innovation: { min: 60, max: 90 } },
+             probability: 0.3,
+             risk: 0.7
+           },
+           {
+             id: 16,
+             title: "Launch a Corporate University",
+             description: "Create an internal education system to train employees and attract top talent.",
+             cost: 4000000,
+             effect: { satisfaction: { min: 30, max: 50 }, innovation: { min: 35, max: 55 } },
+             probability: 0.7,
+             risk: 0.3
+           }
+        ]
+      
+      default:
+        // Level 4+ - Most challenging decisions
+        return [
+          {
+            id: 1,
+            title: "IPO Preparation",
+            description: "Prepare for initial public offering",
+            cost: 5000000,
+            effect: { users: { min: 300, max: 600 }, satisfaction: { min: 40, max: 60 }, innovation: { min: 20, max: 40 }, money: { min: 10000000, max: 50000000 } },
+            probability: 0.3,
+            risk: 0.8
+          },
+          {
+            id: 2,
+            title: "Global Acquisition Spree",
+            description: "Acquire multiple companies worldwide",
+            cost: 10000000,
+            effect: { users: { min: 500, max: 1000 }, satisfaction: { min: 30, max: 50 }, innovation: { min: 40, max: 70 }, money: { min: -20000000, max: 10000000 } },
+            probability: 0.2,
+            risk: 0.9
+          },
+          {
+            id: 3,
+            title: "Revolutionary Technology R&D",
+            description: "Invest in breakthrough technology research",
+            cost: 8000000,
+            effect: { users: { min: 0, max: 100 }, satisfaction: { min: 0, max: 20 }, innovation: { min: 80, max: 100 } },
+            probability: 0.1,
+            risk: 0.95
+          },
+          {
+            id: 4,
+            title: "Market Monopoly Attempt",
+            description: "Try to dominate entire market through aggressive tactics",
+            cost: 15000000,
+            effect: { users: { min: 1000, max: 2000 }, satisfaction: { min: -30, max: 10 }, innovation: { min: 10, max: 30 }, money: { min: -50000000, max: 100000000 } },
+            probability: 0.05,
+            risk: 0.98
+          },
+          {
+            id: 5,
+            title: "Complete Business Model Pivot",
+            description: "Change entire business model and revenue streams",
+            cost: 6000000,
+            effect: { users: { min: -500, max: 200 }, satisfaction: { min: -40, max: 20 }, innovation: { min: 60, max: 90 } },
+            probability: 0.15,
+            risk: 0.85
+          },
+          {
+            id: 6,
+            title: "Emergency Restructuring",
+            description: "Complete organizational restructuring to survive",
+            cost: 3000000,
+            effect: { users: { min: -200, max: 0 }, satisfaction: { min: -60, max: -20 }, innovation: { min: -20, max: 10 }, money: { min: -10000000, max: 5000000 } },
+            probability: 0.6,
+            risk: 0.7
+          },
+          // ----- 5 More Decisions for Level 4+ -----
+           {
+             id: 7,
+             title: "Sell the Company",
+             description: "Final exit. Sell the entire company to a major corporation or private equity firm.",
+             cost: 1000000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 0, max: 0 }, money: { min: 50000000, max: 200000000 } },
+             probability: 0.4,
+             risk: 0.5
+           },
+          {
+            id: 8,
+            title: "Create a Venture Capital Arm",
+            description: "Use your vast resources to start investing in the next generation of startups.",
+            cost: 25000000,
+            effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 30, max: 50 }, money: { min: -50000000, max: 100000000 } },
+            probability: 0.2,
+            risk: 0.8
+          },
+          {
+            id: 9,
+            title: "Build a Corporate Campus",
+            description: "Construct a massive, state-of-the-art campus to attract top global talent and boost morale.",
+            cost: 50000000,
+            effect: { users: { min: 0, max: 0 }, satisfaction: { min: 50, max: 70 }, innovation: { min: 40, max: 60 } },
+            probability: 0.7,
+            risk: 0.4
+          },
+          {
+            id: 10,
+            title: "Launch a Satellite Constellation",
+            description: "Moonshot project: build and launch your own satellite network for a new global service.",
+            cost: 100000000,
+            effect: { users: { min: 0, max: 1000 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 90, max: 100 }, money: { min: -200000000, max: 50000000 } },
+            probability: 0.02,
+            risk: 0.99
+          },
+           {
+             id: 11,
+             title: "Influence Public Policy",
+             description: "Establish a foundation and use your influence to shape the technological and social future.",
+             cost: 80000000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 10, max: 30 }, innovation: { min: 10, max: 30 } },
+             probability: 0.1,
+             risk: 0.9
+           },
+           // ----- 5 More Decisions for Level 4+ -----
+           {
+             id: 12,
+             title: "Acquire a Major Media Company",
+             description: "Buy a major news outlet to control the narrative and influence public opinion.",
+             cost: 200000000,
+             effect: { users: { min: 1000, max: 2000 }, satisfaction: { min: -20, max: 20 }, innovation: { min: 0, max: 0 }, money: { min: -500000000, max: 100000000 } },
+             probability: 0.15,
+             risk: 0.85
+           },
+           {
+             id: 13,
+             title: "Launch a Space Program",
+             description: "Enter the space industry with satellite launches and space-based services.",
+             cost: 500000000,
+             effect: { users: { min: 500, max: 1500 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 80, max: 100 }, money: { min: -1000000000, max: 200000000 } },
+             probability: 0.05,
+             risk: 0.95
+           },
+           {
+             id: 14,
+             title: "Create a Digital Currency",
+             description: "Launch your own cryptocurrency and payment system to compete with traditional banking.",
+             cost: 100000000,
+             effect: { users: { min: 2000, max: 5000 }, satisfaction: { min: -30, max: 10 }, innovation: { min: 70, max: 95 }, money: { min: -200000000, max: 1000000000 } },
+             probability: 0.08,
+             risk: 0.92
+           },
+           {
+             id: 15,
+             title: "Establish a Global Monopoly",
+             description: "Use aggressive tactics to eliminate all competition and dominate the market completely.",
+             cost: 1000000000,
+             effect: { users: { min: 5000, max: 10000 }, satisfaction: { min: -50, max: 0 }, innovation: { min: -20, max: 10 }, money: { min: -2000000000, max: 5000000000 } },
+             probability: 0.02,
+             risk: 0.98
+           },
+           {
+             id: 16,
+             title: "Achieve Immortality Through Technology",
+             description: "Invest in life extension and consciousness transfer technologies to achieve digital immortality.",
+             cost: 10000000000,
+             effect: { users: { min: 0, max: 0 }, satisfaction: { min: 0, max: 0 }, innovation: { min: 95, max: 100 }, money: { min: -5000000000, max: 10000000000 } },
+             probability: 0.001,
+             risk: 0.999
+           }
+        ]
+    }
+  }
 
-  const decisions = [
+  // OLD STATIC ARRAYS REMOVED - Now using level-based system with getDecisionsForLevel()
+  // The old decisions, achievements, and randomEvents arrays have been replaced with:
+  // - getDecisionsForLevel() function that returns different decisions per level
+  // - Level-based achievements and events are handled within the game logic
     {
       id: 1,
       title: "Digital Marketing Campaign",
@@ -242,9 +849,9 @@ const StartupSimulatorGame: React.FC = () => {
       probability: 0.2,
       risk: 0.9
     }
-  ]
+  // ]
 
-  const achievements = [
+  // const achievements = [
     { id: 1, name: "First Users", condition: (state: GameState) => state.users >= 100 },
     { id: 2, name: "High Satisfaction", condition: (state: GameState) => state.satisfaction >= 80 },
     { id: 3, name: "Innovation Leader", condition: (state: GameState) => state.innovation >= 90 },
@@ -257,9 +864,9 @@ const StartupSimulatorGame: React.FC = () => {
     { id: 10, name: "Market Leader", condition: (state: GameState) => state.users >= 2000 },
     { id: 11, name: "Crisis Survivor", condition: (state: GameState) => state.decisions.filter(d => d.includes('Crisis')).length >= 1 },
     { id: 12, name: "Strategic Master", condition: (state: GameState) => state.decisions.length >= 20 }
-  ]
+  // ]
 
-  const randomEvents = [
+  // const randomEvents = [
     {
       name: "Viral on Instagram/YouTube",
       probability: 0.05,
@@ -743,7 +1350,7 @@ const StartupSimulatorGame: React.FC = () => {
       effect: { users: -80, satisfaction: -35, innovation: -25, money: -200000 },
       message: "Your system is experiencing resource starvation, causing performance degradation."
     }
-  ]
+  // ]
 
   // Game loop
   useEffect(() => {
@@ -869,7 +1476,7 @@ const StartupSimulatorGame: React.FC = () => {
     })
   }, [gameState, achievements])
 
-  const makeDecision = useCallback((decision: typeof decisions[0]) => {
+  const makeDecision = useCallback((decision: any) => {
     if (gameState.money >= decision.cost) {
       // Check if decision succeeds based on probability
       const success = Math.random() < decision.probability
@@ -1378,14 +1985,18 @@ const StartupSimulatorGame: React.FC = () => {
             <CardContent className="p-4">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-yellow-400" />
-                Make Strategic Decisions
+                Make Strategic Decisions - Level {gameState.level}
               </h3>
               <p className="text-gray-400 text-sm mb-4">
                 Choose decisions to grow your startup. Each decision costs money but can increase users, satisfaction, or innovation.
+                {gameState.level === 1 && " Start with basic growth strategies."}
+                {gameState.level === 2 && " Scale up with advanced features and partnerships."}
+                {gameState.level === 3 && " Face major challenges and high-stakes decisions."}
+                {gameState.level >= 4 && " Navigate complex corporate-level strategies and risks."}
               </p>
               
               <div className="grid gap-3 grid-cols-1 md:grid-cols-2">
-                {decisions.map((decision) => (
+                {getDecisionsForLevel(gameState.level).map((decision) => (
                   <div
                     key={decision.id}
                     className={`p-4 rounded-lg border transition-all cursor-pointer ${
@@ -1431,19 +2042,19 @@ const StartupSimulatorGame: React.FC = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-gray-400">Users:</span>
                           <span className="text-blue-400">
-                            {decision.effect.users.min > 0 ? '+' : ''}{decision.effect.users.min}-{decision.effect.users.max}
+                            {decision.effect.users ? (decision.effect.users.min > 0 ? '+' : '') + decision.effect.users.min + '-' + decision.effect.users.max : '0'}
                           </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-400">Satisfaction:</span>
                           <span className="text-yellow-400">
-                            {decision.effect.satisfaction.min > 0 ? '+' : ''}{decision.effect.satisfaction.min}-{decision.effect.satisfaction.max}
+                            {decision.effect.satisfaction ? (decision.effect.satisfaction.min > 0 ? '+' : '') + decision.effect.satisfaction.min + '-' + decision.effect.satisfaction.max : '0'}
                           </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-400">Innovation:</span>
                           <span className="text-purple-400">
-                            {decision.effect.innovation.min > 0 ? '+' : ''}{decision.effect.innovation.min}-{decision.effect.innovation.max}
+                            {decision.effect.innovation ? (decision.effect.innovation.min > 0 ? '+' : '') + decision.effect.innovation.min + '-' + decision.effect.innovation.max : '0'}
                           </span>
                         </div>
                         {decision.effect.money && (
