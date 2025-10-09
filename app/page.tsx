@@ -66,7 +66,7 @@ export default function Home() {
     {
       name: "Dr. Arvind A R",
       designation: "Deputy General Manager, Ashok Leyland Limited",
-      image: "",
+      image: "/Inspirational Speakers/Arvind AR.jpg",
     },
     {
       name: "Mr. T. Vignesh",
@@ -87,39 +87,39 @@ export default function Home() {
       name: "Mr. Palaniappan Narayanan",
       designation:
         "Co-Founder & CEO at Mocero Health Solutions, Chennai",
-      image: "",
+      image: "/Inspirational Speakers/Palaniappan.jpg",
     },
     {
       name: "Mr. Shri Sivarajah Ramanathan",
       designation:
         "Chief Guest, Mission Director of Tamil Nadu Startup and Innovation Mission, Government of Tamil Nadu",
-      image: "",
+      image: "/Inspirational Speakers/Shivarajah.jpg",
     },
     {
       name: "Nithin Alexander",
       designation:
         "Founder, Entrepreneurs of Madras, The Underdogs of Madras",
-      image: "",
+      image: "/Inspirational Speakers/Nithin.jpg",
     },
     {
       name: "Mr. Ajay Prasath G A",
       designation: "Founder & CEO, Loopmans Automation Pvt Ltd.",
-      image: "",
+      image: "/Inspirational Speakers/Ajay.jpg",
     },
     {
       name: "Mr. sarabesh Sriram",
       designation: "Founder & partner, Stacia corp",
-      image: "",
+      image: "/Inspirational Speakers/Sarabesh.jpg",
     },
     {
       name: "Mr. Deepak Kumar",
       designation: "Founder of ScrollMe, Habitate.io, and C3",
-      image: "",
+      image: "/Inspirational Speakers/Deepak kumar.jpg",
     },
     {
       name: "T. G. Ramakrishnan",
       designation: "Founder of TGR Tex",
-      image: "",
+      image: "/Inspirational Speakers/Ramakrishan.jpg",
     },
   ]
 
@@ -225,17 +225,17 @@ export default function Home() {
                     className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                   >
                     <div className="card-primary p-6 h-full flex flex-col items-center text-center">
-                      <div className="h-24 w-24 rounded-full overflow-hidden bg-slate-800/70 flex items-center justify-center mb-4">
+                      <div className="h-32 w-32 rounded-full overflow-hidden bg-slate-800/70 flex items-center justify-center mb-4">
                         {speaker.image ? (
                           <Image
                             src={speaker.image}
                             alt={speaker.name}
-                            width={96}
-                            height={96}
+                            width={128}
+                            height={128}
                             className="h-full w-full object-cover"
                           />
                         ) : (
-                          <span className="text-lg font-semibold text-white">
+                          <span className="text-xl font-semibold text-white">
                             {speaker.name
                               .split(" ")
                               .map((n) => n[0])

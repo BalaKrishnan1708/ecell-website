@@ -212,7 +212,7 @@ export default function AlumniPage() {
             <span className="text-sm font-semibold text-amber-800">Our Success Stories</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-amber-800 via-orange-700 to-red-700 bg-clip-text text-transparent leading-tight">
-            Entrepreneurs Alumni
+            Alumni Entrepreneurs
           </h1>
           <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
             Discover the remarkable journeys of our alumni who have built successful ventures and made their mark in the entrepreneurial world.
