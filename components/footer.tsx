@@ -60,6 +60,18 @@ const Footer = () => {
               <li>
                 <Link href="/blog" className="text-indigo-300 hover:text-indigo-500 transition-colors">Blog</Link>
               </li>
+              <li>
+                <Link href="/alumni" className="text-indigo-300 hover:text-indigo-500 transition-colors">Alumni</Link>
+              </li>
+              <li>
+                <Link href="/entrepreneurship" className="text-indigo-300 hover:text-indigo-500 transition-colors">Entrepreneurship</Link>
+              </li>
+              <li>
+                <Link href="/incubation-center" className="text-indigo-300 hover:text-indigo-500 transition-colors">Incubation Center</Link>
+              </li>
+              <li>
+                <Link href="/our-services" className="text-indigo-300 hover:text-indigo-500 transition-colors">Our Services</Link>
+              </li>
             </ul>
           </div>
 
@@ -75,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
 
-  <div className="mt-6 pt-2 border-t border-indigo-800/50 text-center text-xs text-indigo-500">
+        <div className="mt-6 pt-2 border-t border-indigo-800/50 text-center text-xs text-indigo-500">
           <p className="text-indigo-500">© {new Date().getFullYear()} E - Cell SVCE. All rights reserved.</p>
         </div>
       </div>

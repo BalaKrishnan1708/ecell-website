@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useMemo } from "react"
+import { Search, Filter, Building2, GraduationCap, Calendar, Users } from "lucide-react"
 
 type Alumni = {
   id: number
@@ -179,29 +180,90 @@ const normalizedOverrideMap: Record<string, string> = Object.fromEntries(
 )
 
 export default function AlumniPage() {
+  // Group alumni by department
+  const groupedAlumni = useMemo(() => {
+    const groups: Record<string, Alumni[]> = {}
+    
+    alumni.forEach(alumnus => {
+      const dept = alumnus.department || 'Other'
+      if (!groups[dept]) {
+        groups[dept] = []
+      }
+      groups[dept].push(alumnus)
+    })
+    
+    // Sort departments alphabetically
+    const sortedGroups = Object.keys(groups).sort()
+    const result: Record<string, Alumni[]> = {}
+    
+    sortedGroups.forEach(dept => {
+      result[dept] = groups[dept]
+    })
+    
+    return result
+  }, [])
+
   return (
-    <div className="flex flex-col min-h-screen bg-[#f5efe6] text-stone-900">
-      <section className="py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-[#5a3825]">Entrepreneurs Alumni</h1>
-          <p className="text-stone-600">Placeholders for all entries. Share photos/text to fill in.</p>
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 text-stone-900">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-100/30 to-orange-100/30"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block px-6 py-2 bg-gradient-to-r from-amber-200 to-orange-200 rounded-full mb-6">
+            <span className="text-sm font-semibold text-amber-800">Our Success Stories</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-amber-800 via-orange-700 to-red-700 bg-clip-text text-transparent leading-tight">
+            Entrepreneurs Alumni
+          </h1>
+          <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            Discover the remarkable journeys of our alumni who have built successful ventures and made their mark in the entrepreneurial world.
+          </p>
+          <div className="mt-8 flex justify-center items-center gap-8 text-sm text-stone-500">
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              <span>{alumni.length} Alumni</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Building2 className="w-4 h-4" />
+              <span>Various Industries</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <GraduationCap className="w-4 h-4" />
+              <span>{Object.keys(groupedAlumni).length} Departments</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {alumni.map((a) => (
-              <AlumniCard key={a.id} data={{ ...a, image: imageOverrides[a.name] || a.image }} />
-            ))}
-          </div>
+      <section className="pb-20 px-4">
+        <div className="container mx-auto space-y-16">
+          {Object.entries(groupedAlumni).map(([department, departmentAlumni], deptIndex) => (
+            <div key={department} className="space-y-8">
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-2">
+                  {department}
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto rounded-full"></div>
+                <p className="text-stone-600 mt-2">{departmentAlumni.length} Alumni</p>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {departmentAlumni.map((alumnus, index) => (
+                  <AlumniCard 
+                    key={alumnus.id} 
+                    data={{ ...alumnus, image: imageOverrides[alumnus.name] || alumnus.image }} 
+                    index={deptIndex * 100 + index}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
   )
 }
 
-function AlumniCard({ data }: { data: Alumni }) {
+function AlumniCard({ data, index }: { data: Alumni; index: number }) {
   const baseName = data.name
   const noTitle = removeTitles(baseName)
   const tokens = noTitle.split(/\s+/).filter(Boolean)
@@ -245,22 +307,29 @@ function AlumniCard({ data }: { data: Alumni }) {
   const src = sources[idx]
 
   return (
-    <div className="bg-white rounded-xl shadow-md border border-amber-200 overflow-hidden">
-      <div className="px-4 py-6 flex flex-col items-center text-center">
-        <div className="h-28 w-28 rounded-full overflow-hidden bg-stone-300 flex items-center justify-center mb-3">
+    <div 
+      className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl border border-amber-200/50 overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-white/90"
+      style={{
+        animationDelay: `${index * 100}ms`,
+        animation: 'fadeInUp 0.6s ease-out forwards'
+      }}
+    >
+      <div className="px-6 py-8 flex flex-col items-center text-center h-full">
+        <div className="relative h-32 w-32 rounded-full overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-200/20 to-orange-200/20"></div>
           {idx < sources.length ? (
             <Image
               src={src}
               alt={data.name}
-              width={112}
-              height={112}
-              className="h-full w-full object-cover"
+              width={128}
+              height={128}
+              className="h-full w-full object-cover relative z-10"
               onError={() => setIdx((i) => i + 1)}
               onLoadingComplete={() => !resolvedSrc && setResolvedSrc(src)}
               priority={false}
             />
           ) : (
-            <span className="text-xl font-semibold text-stone-600">
+            <span className="text-2xl font-bold text-amber-700 relative z-10">
               {data.name
                 .split(" ")
                 .map((n) => n[0])
@@ -269,11 +338,21 @@ function AlumniCard({ data }: { data: Alumni }) {
             </span>
           )}
         </div>
-        <h3 className="font-semibold text-[#7a4930]">{data.name}</h3>
-        <p className="text-sm text-stone-700 mt-1">{data.position}</p>
-        <p className="text-xs text-stone-500">{data.company}</p>
+        <h3 className="font-bold text-lg text-amber-900 mb-2 group-hover:text-amber-800 transition-colors duration-300">
+          {data.name}
+        </h3>
+        <p className="text-sm font-medium text-amber-700 mb-1 group-hover:text-amber-600 transition-colors duration-300">
+          {data.position}
+        </p>
+        <p className="text-xs text-stone-600 mb-3 group-hover:text-stone-700 transition-colors duration-300">
+          {data.company}
+        </p>
         {(data.period || data.department) && (
-          <p className="mt-2 text-xs text-stone-500">{[data.period, data.department].filter(Boolean).join(" | ")}</p>
+          <div className="mt-auto">
+            <p className="text-xs text-stone-500 bg-stone-100 px-3 py-1 rounded-full group-hover:bg-stone-200 transition-colors duration-300">
+              {[data.period, data.department].filter(Boolean).join(" • ")}
+            </p>
+          </div>
         )}
       </div>
     </div>
