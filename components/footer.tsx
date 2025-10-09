@@ -63,15 +63,6 @@ const Footer = () => {
               <li>
                 <Link href="/alumni" className="text-indigo-300 hover:text-indigo-500 transition-colors">Alumni</Link>
               </li>
-              <li>
-                <Link href="/entrepreneurship" className="text-indigo-300 hover:text-indigo-500 transition-colors">Entrepreneurship</Link>
-              </li>
-              <li>
-                <Link href="/incubation-center" className="text-indigo-300 hover:text-indigo-500 transition-colors">Incubation Center</Link>
-              </li>
-              <li>
-                <Link href="/our-services" className="text-indigo-300 hover:text-indigo-500 transition-colors">Our Services</Link>
-              </li>
             </ul>
           </div>
 
