@@ -1005,6 +1005,9 @@ video {
 .h-24 {
   height: 6rem;
 }
+.h-28 {
+  height: 7rem;
+}
 .h-3 {
   height: 0.75rem;
 }
@@ -1139,6 +1142,9 @@ video {
 }
 .w-24 {
   width: 6rem;
+}
+.w-28 {
+  width: 7rem;
 }
 .w-3 {
   width: 0.75rem;
@@ -1606,6 +1612,10 @@ video {
 .border-\[--color-border\] {
   border-color: var(--color-border);
 }
+.border-amber-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(253 230 138 / var(--tw-border-opacity, 1));
+}
 .border-blue-100 {
   --tw-border-opacity: 1;
   border-color: rgb(219 234 254 / var(--tw-border-opacity, 1));
@@ -1699,6 +1709,10 @@ video {
 .bg-\[\#60a5fa\] {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#f5efe6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 239 230 / var(--tw-bg-opacity, 1));
 }
 .bg-\[--color-bg\] {
   background-color: var(--color-bg);
@@ -1840,6 +1854,10 @@ video {
 }
 .bg-slate-800\/70 {
   background-color: rgb(30 41 59 / 0.7);
+}
+.bg-stone-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity, 1));
 }
 .bg-teal-900\/30 {
   background-color: rgb(19 78 74 / 0.3);
@@ -2069,6 +2087,9 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pb-16 {
+  padding-bottom: 4rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -2158,9 +2179,6 @@ video {
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
-.text-\[11px\] {
-  font-size: 11px;
-}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -2223,6 +2241,14 @@ video {
 }
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+.text-\[\#5a3825\] {
+  --tw-text-opacity: 1;
+  color: rgb(90 56 37 / var(--tw-text-opacity, 1));
+}
+.text-\[\#7a4930\] {
+  --tw-text-opacity: 1;
+  color: rgb(122 73 48 / var(--tw-text-opacity, 1));
 }
 .text-accent {
   color: hsl(var(--accent));
@@ -2344,6 +2370,22 @@ video {
 }
 .text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
+}
+.text-stone-500 {
+  --tw-text-opacity: 1;
+  color: rgb(120 113 108 / var(--tw-text-opacity, 1));
+}
+.text-stone-600 {
+  --tw-text-opacity: 1;
+  color: rgb(87 83 78 / var(--tw-text-opacity, 1));
+}
+.text-stone-700 {
+  --tw-text-opacity: 1;
+  color: rgb(68 64 60 / var(--tw-text-opacity, 1));
+}
+.text-stone-900 {
+  --tw-text-opacity: 1;
+  color: rgb(28 25 23 / var(--tw-text-opacity, 1));
 }
 .text-teal-300 {
   --tw-text-opacity: 1;

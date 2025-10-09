@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
 
 type Alumni = {
   id: number
@@ -9,6 +10,7 @@ type Alumni = {
   company: string
   period: string
   department?: string
+  image?: string
 }
 
 const alumni: Alumni[] = [
@@ -86,38 +88,209 @@ const alumni: Alumni[] = [
   { id: 72, name: "Kabilan K M", position: "Director", company: "ZOVI Food Industries Pvt Ltd", period: "2020", department: "" },
 ]
 
+// Explicit image overrides for known filenames in public/ALumini profile
+const imageOverrides: Record<string, string> = {
+  "B Alagu Selvan": "/ALumini profile/ALAGU-SELVAN.webp",
+  "T. V. Sivakumar": "/ALumini profile/sivakumar-entrepreneur.webp",
+  "Dr. Mallik Mahalingam": "/ALumini profile/MALIK-MAHALINGAM-ENTRPRE.webp",
+  "Mr. Jigar Doshi": "/ALumini profile/JIGAR-JOSHI-ENTREPR.webp",
+  "S. Prashanth": "/ALumini profile/Prashanth S-ENTREPRE.webp",
+  "Mr. Jonathan Siddharth": "/ALumini profile/jonathan-entrepr.webp",
+  "G. Srikrishnan": "/ALumini profile/Srikrishnan G-entrepre.webp",
+  "T. Srinivasan": "/ALumini profile/t-srinivasan-entrpre.webp",
+  "Dr. Doreen Hephzibah Miriam": "/ALumini profile/doreen-entrepre.webp",
+  "Mr. Gautham Shankar": "/ALumini profile/Gautham Shankar-entrepre.webp",
+  "Mr. Praveen Sekar": "/ALumini profile/Praveen Sekar-entrepre.webp",
+  "Ms. Shwetha Lakshmanan": "/ALumini profile/swetha-laks-entrep.webp",
+  "Mr.Arun Bhikshesvaran": "/ALumini profile/Arun Bhikshesvaran.webp",
+  "Mr.Karunakaran": "/ALumini profile/Karunakaran.webp",
+  "Mr.Pravin Shekar": "/ALumini profile/Pravin Shekar.webp",
+  "Mr.Udeep.B": "/ALumini profile/Udeep.B (1).webp",
+  "Mr.Ramanathan Srinivasan": "/ALumini profile/Ramanathan Srinivasan.webp",
+  "Ms.Sowmya Mahadevan": "/ALumini profile/Sowmya Mahadevan 1.webp",
+  "Mr.Pradeep A": "/ALumini profile/pradeep-cve-1.webp",
+  "Mr. Premdas VGP": "/ALumini profile/PREMDAS-PROMINENT-EEE.webp",
+  "Mr.Moorthy Prakash": "/ALumini profile/Moorthy Prakash.webp",
+  "Mr.Satish Vijayan": "/ALumini profile/Satish Vijayan.webp",
+  "Mr.A.S.Praveen Raj": "/ALumini profile/Praveen raj.webp",
+  "Mr.Vineeth Vijayaraghavan": "/ALumini profile/Vineeth Vijayaraghavan.webp",
+  "Ms.Manasa Pillai": "/ALumini profile/Manasa Pillai.webp",
+  "Ms.Pavithra Srinivasan": "/ALumini profile/Pavithra Srinivasan.webp",
+  "Mr.Siddharta Govindaraj": "/ALumini profile/Siddharta Govindaraj.webp",
+  "Ms.Asha Yoganandan": "/ALumini profile/Asha.webp",
+  "Mr.Sriharsha C": "/ALumini profile/Sriharsha.webp",
+  "Mr.Ratan Vishwanath Subramaniyan": "/ALumini profile/Ratan Vishwanath Subramaniyan.webp",
+  "Mr.Kishore I": "/ALumini profile/Kishore.webp",
+  "Mr.B Sudharsan": "/ALumini profile/sudharsan.webp",
+  "Mr. Rajkumar. D": "/ALumini profile/RAJKUMAR-CHE.webp",
+  "Mr.Vasanth Immanuel": "/ALumini profile/VASANTH -CHE.webp",
+  "Mr. Himakiran Anugula": "/ALumini profile/HIMAKIRAN-CHE 1.webp",
+  "Mr.Varadharajan Pandian": "/ALumini profile/VARADHARAJAN-CHE.webp",
+  "Mr. Thandava Moorthy S": "/ALumini profile/THANDVA MOORTHY -CHE.webp",
+  "Mr. Mohamed Hussain K": "/ALumini profile/MOHAMED HOSSAIN-CHE.webp",
+  "Mr.Kavin K": "/ALumini profile/KAVIN-CHE.webp",
+  "Mr. Vignesh Ganesan": "/ALumini profile/vignesh1.webp",
+  "Ms Pallavi Aravind Narasimhan": "/ALumini profile/pallavi.webp",
+  "Mr. Venu madhav Chennupati": "/ALumini profile/venu.webp",
+  "Mr. Praveen J": "/ALumini profile/Praveen Sekar-entrepre.webp",
+  "Ms. Malini S": "/ALumini profile/malini.webp",
+  "Dr.Ramya S Moorthy": "/ALumini profile/Ramya-s-moorthy_11zon.webp",
+  "Mr. Saravanan Ramakrishnan": "/ALumini profile/saravanan.webp",
+  "Akash Jain": "/ALumini profile/akash jain.webp",
+  "Balaji Kulothungan": "/ALumini profile/Balajikolochungan.webp",
+  "Balaji E": "/ALumini profile/Balaji.webp",
+  "Ambareesh Ramakrishnan": "/ALumini profile/Ambareesh Ramakrishnan 2012-2016 batch.webp",
+  "Harshita Gupta": "/ALumini profile/Harshitha.webp",
+  "Shameem Javed A": "/ALumini profile/shameem.webp",
+  "Kabilan K M": "/ALumini profile/kabi.webp",
+  "Vyas Dhamodaran": "/ALumini profile/Vyas.webp",
+  "MR.ANANTH NARAYANAN": "/ALumini profile/ANAND NARAYANAN.webp",
+  "MR.ISRAEL JEBSINGH IAS": "/ALumini profile/Aron Israsel Jebasingh.webp",
+  "MR.SANJEEV S VAKIL": "/ALumini profile/SANJIV VAKIL.webp",
+  "MR.VINAYAK R ESHWAR": "/ALumini profile/Vinayak Easwar.webp",
+  "Mrs S.Vasuki Vinothini": "/ALumini profile/Mrs. S. Vasuki Vinothini.webp",
+  "MR.PALANIAPPAN THIYAGARAJAN": "/ALumini profile/PANALIAPPAN.webp",
+  "Mr.SRIKRISHNA L": "/ALumini profile/CVE_SRIKRISHNA L 15-19.webp",
+  "Mr.ARAVINDANKARUPPIAH K": "/ALumini profile/Aravidhan Karu 17-21.webp",
+  "Mr.HARITH BHARADWAAJ G": "/ALumini profile/CVE_HARITH BHARADWAAJ G 17-21.webp",
+  "Mr.SHARAFATH ALI J": "/ALumini profile/CVE_Sharafath Ali 16-20.webp",
+  "Ms.HARIPRIYAA A": "/ALumini profile/CVE_Haripriya A 15-19.webp",
+  "Mr.CHETHANNARAYANAN S": "/ALumini profile/CVE_CHETHANNARAYANAN  S 15-19.webp",
+  "Mr.SANTHOSH G": "/ALumini profile/CVE_Santhosh G 15-19 1.webp",
+  "Mr.Aadhithya Rajan S": "/ALumini profile/CVE_Aadhithya Rajan 12-16.webp",
+  "Mr.Karthick Pandiyan S": "/ALumini profile/CVE_Karthick Pandiyan S 14-18.webp",
+  "Mr.JAYAHARISHKUMAR S": "/ALumini profile/CVE_JAYAHARISHKUMAR S 13-17.webp",
+  "Mr.Varun Kumar S": "/ALumini profile/CVE_Varun Kumar S 13-17.webp",
+  "Saranya Mohan": "/ALumini profile/pras.webp",
+}
+
+// Build a normalized lookup so slight name differences still match overrides
+function normalizeNameForOverride(input: string): string {
+  return removeTitles(input)
+    .toLowerCase()
+    .replace(/\./g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "")
+}
+
+const normalizedOverrideMap: Record<string, string> = Object.fromEntries(
+  Object.entries(imageOverrides).map(([k, v]) => [normalizeNameForOverride(k), v])
+)
+
 export default function AlumniPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <section className="page-hero">
+    <div className="flex flex-col min-h-screen bg-[#f5efe6] text-stone-900">
+      <section className="py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-2">Alumni</h1>
-          <p className="text-brand-secondary">Placeholders for all entries. Share photos/text to fill in.</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-[#5a3825]">Entrepreneurs Alumni</h1>
+          <p className="text-stone-600">Placeholders for all entries. Share photos/text to fill in.</p>
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {alumni.map((a) => (
-              <div key={a.id} className="card-primary p-6 flex flex-col items-center text-center">
-                <div className="h-20 w-20 rounded-full overflow-hidden bg-slate-800/70 flex items-center justify-center mb-4">
-                  {/* Image placeholder; replace src when available */}
-                  <span className="text-sm font-semibold text-white">{a.id}</span>
-                </div>
-                <h3 className="text-white text-sm font-semibold">{a.name}</h3>
-                <p className="text-xs text-brand-secondary">{a.position}</p>
-                <p className="text-xs text-brand-muted">{a.company}</p>
-                {(a.period || a.department) && (
-                  <p className="text-[11px] text-brand-muted mt-1">{[a.period, a.department].filter(Boolean).join(" • ")}</p>
-                )}
-              </div>
+              <AlumniCard key={a.id} data={{ ...a, image: imageOverrides[a.name] || a.image }} />
             ))}
           </div>
         </div>
       </section>
     </div>
   )
+}
+
+function AlumniCard({ data }: { data: Alumni }) {
+  const baseName = data.name
+  const noTitle = removeTitles(baseName)
+  const tokens = noTitle.split(/\s+/).filter(Boolean)
+  const first = tokens[0] || ""
+  const last = tokens[tokens.length - 1] || ""
+  const firstLast = [first, last].filter(Boolean).join(" ")
+  const initials = tokens.map((t) => t[0]).join("")
+  const folders = ["ALumini profile", "alumini profile"]
+  const names = [
+    baseName,
+    noTitle,
+    firstLast,
+    first,
+    last,
+    initials,
+    slugify(baseName),
+    slugify(noTitle),
+    slugify(firstLast),
+    baseName.replace(/\./g, ""),
+    noTitle.replace(/\./g, ""),
+  ]
+  const exts = ["webp", "jpg", "jpeg", "png"]
+  const sources: string[] = []
+  // explicit image path or normalized override comes first if provided
+  const overrideSrc = normalizedOverrideMap[normalizeNameForOverride(baseName)] || data.image
+  if (overrideSrc) {
+    sources.push(overrideSrc)
+  }
+  for (const f of folders) {
+    const encF = encodeURIComponent(f)
+    for (const n of names) {
+      for (const e of exts) {
+        sources.push(`/${encF}/${n}.${e}`)
+      }
+    }
+  }
+  // final guaranteed placeholder
+  sources.push("/ALumini%20profile/noprofile.webp")
+  const [idx, setIdx] = useState(0)
+  const [resolvedSrc, setResolvedSrc] = useState<string | null>(null)
+  const src = sources[idx]
+
+  return (
+    <div className="bg-white rounded-xl shadow-md border border-amber-200 overflow-hidden">
+      <div className="px-4 py-6 flex flex-col items-center text-center">
+        <div className="h-28 w-28 rounded-full overflow-hidden bg-stone-300 flex items-center justify-center mb-3">
+          {idx < sources.length ? (
+            <Image
+              src={src}
+              alt={data.name}
+              width={112}
+              height={112}
+              className="h-full w-full object-cover"
+              onError={() => setIdx((i) => i + 1)}
+              onLoadingComplete={() => !resolvedSrc && setResolvedSrc(src)}
+              priority={false}
+            />
+          ) : (
+            <span className="text-xl font-semibold text-stone-600">
+              {data.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")
+                .slice(0, 2)}
+            </span>
+          )}
+        </div>
+        <h3 className="font-semibold text-[#7a4930]">{data.name}</h3>
+        <p className="text-sm text-stone-700 mt-1">{data.position}</p>
+        <p className="text-xs text-stone-500">{data.company}</p>
+        {(data.period || data.department) && (
+          <p className="mt-2 text-xs text-stone-500">{[data.period, data.department].filter(Boolean).join(" | ")}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function slugify(input: string): string {
+  return input
+    .toLowerCase()
+    .replace(/\./g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "")
+}
+
+function removeTitles(input: string): string {
+  return input.replace(/^(mr\.|mrs\.|ms\.|dr\.|prof\.)\s+/i, "").trim()
 }
 
 
