@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/events", label: "Events" },
   { href: "/team", label: "Team" },
+  { href: "/alumni", label: "Alumni" },
   { href: "/builders-guild", label: "Builders Guild" },
   { href: "/contact", label: "Contact" },
 ];
@@ -76,7 +77,7 @@ const Navbar = () => {
               className={`font-bold rounded transition-all duration-500 ${
                 scrolled ? "text-sm px-4 py-2" : "text-xs px-2 py-1"
               } ${
-                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                (pathname ?? "") === link.href || (link.href !== "/" && (pathname ?? "").startsWith(link.href))
                   ? "text-brand-primary bg-indigo-900/50"
                   : "text-gray-300 hover:text-brand-primary"
               }`}
@@ -112,7 +113,7 @@ const Navbar = () => {
               className={`font-bold rounded transition-all duration-500 ${
                 scrolled ? "text-sm px-4 py-2" : "text-xs px-2 py-1"
               } ${
-                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                (pathname ?? "") === link.href || (link.href !== "/" && (pathname ?? "").startsWith(link.href))
                   ? "text-brand-primary bg-indigo-900/50"
                   : "text-gray-300 hover:text-brand-primary"
               }`}

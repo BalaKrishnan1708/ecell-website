@@ -675,7 +675,7 @@ const StartupSimulatorGame: React.FC = () => {
                 onClick={toggleAnalytics}
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                ✕
+                ×
               </button>
             </div>
 
@@ -718,7 +718,7 @@ const StartupSimulatorGame: React.FC = () => {
                 <div className="space-y-2 max-h-40 overflow-y-auto">
                   {gameState.achievements.map((achievement, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">
-                      <span className="text-yellow-400">🏆</span>
+                      <span className="text-yellow-400">•</span>
                       <span className="text-gray-300">{achievement}</span>
                         </div>
                       ))}

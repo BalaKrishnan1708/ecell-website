@@ -8,6 +8,14 @@ import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users } from "lucide-react"
 import { useState } from "react"
 import ServiceModal from "@/components/ServiceModal"
 import StartupSimulatorGame from "@/components/StartupSimulatorGame"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 
 export default function Home() {
   const [selectedService, setSelectedService] = useState<number | null>(null)
@@ -53,6 +61,91 @@ export default function Home() {
       ],
     },
   ]
+
+  const speakers = [
+    {
+      name: "Dr. Arvind A R",
+      designation: "Deputy General Manager, Ashok Leyland Limited",
+      image: "",
+    },
+    {
+      name: "Mr. T. Vignesh",
+      designation: "Chief Guest, Associate Business Facilitation Officer",
+      image: "",
+    },
+    {
+      name: "Gurunathraje",
+      designation: "Executive Member, E-cell",
+      image: "",
+    },
+    {
+      name: "Subash Chandra Bose",
+      designation: "Executive Member E-cell Svce, Co-founder, hraipal.com",
+      image: "",
+    },
+    {
+      name: "Mr. Palaniappan Narayanan",
+      designation:
+        "Co-Founder & CEO at Mocero Health Solutions, Chennai",
+      image: "",
+    },
+    {
+      name: "Mr. Shri Sivarajah Ramanathan",
+      designation:
+        "Chief Guest, Mission Director of Tamil Nadu Startup and Innovation Mission, Government of Tamil Nadu",
+      image: "",
+    },
+    {
+      name: "Nithin Alexander",
+      designation:
+        "Founder, Entrepreneurs of Madras, The Underdogs of Madras",
+      image: "",
+    },
+    {
+      name: "Mr. Ajay Prasath G A",
+      designation: "Founder & CEO, Loopmans Automation Pvt Ltd.",
+      image: "",
+    },
+    {
+      name: "Mr. sarabesh Sriram",
+      designation: "Founder & partner, Stacia corp",
+      image: "",
+    },
+    {
+      name: "Mr. Deepak Kumar",
+      designation: "Founder of ScrollMe, Habitate.io, and C3",
+      image: "",
+    },
+    {
+      name: "T. G. Ramakrishnan",
+      designation: "Founder of TGR Tex",
+      image: "",
+    },
+  ]
+
+  const [speakersApi, setSpeakersApi] = useState<CarouselApi | null>(null)
+
+  // Simple autoplay that advances faster (every 0.7s)
+  useState(() => {
+    let interval: NodeJS.Timeout | null = null
+    const start = () => {
+      if (interval) return
+      interval = setInterval(() => {
+        speakersApi?.scrollNext()
+      }, 700)
+    }
+    const stop = () => {
+      if (interval) {
+        clearInterval(interval)
+        interval = null
+      }
+    }
+    // Start when api becomes available
+    if (speakersApi) start()
+    return () => {
+      stop()
+    }
+  })
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -106,6 +199,62 @@ export default function Home() {
                 </button>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Inspirational Speakers</h2>
+            <p className="text-brand-secondary max-w-3xl mx-auto">
+              Discover the influential speakers who have shared their wisdom and
+              insights at E-Cell events.
+            </p>
+          </div>
+          <div className="relative">
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              setApi={setSpeakersApi}
+              className="w-full"
+            >
+              <CarouselContent>
+                {speakers.map((speaker, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                  >
+                    <div className="card-primary p-6 h-full flex flex-col items-center text-center">
+                      <div className="h-24 w-24 rounded-full overflow-hidden bg-slate-800/70 flex items-center justify-center mb-4">
+                        {speaker.image ? (
+                          <Image
+                            src={speaker.image}
+                            alt={speaker.name}
+                            width={96}
+                            height={96}
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <span className="text-lg font-semibold text-white">
+                            {speaker.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")
+                              .slice(0, 2)}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-semibold text-white leading-tight">{speaker.name}</h3>
+                      <p className="text-sm text-brand-secondary leading-snug">
+                        {speaker.designation}
+                      </p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-6 md:-left-10 bg-black/30 border-white/10 hover:bg-black/50" />
+              <CarouselNext className="-right-6 md:-right-10 bg-black/30 border-white/10 hover:bg-black/50" />
+            </Carousel>
           </div>
         </div>
       </section>
