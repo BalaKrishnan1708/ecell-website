@@ -70,7 +70,7 @@ export default function RootLayout({
   const PageTransitionLoader = require("@/components/PageTransitionLoader").default;
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
+      <body suppressHydrationWarning
         className={cn(
           "min-h-screen font-sans antialiased",
           inter.variable,
