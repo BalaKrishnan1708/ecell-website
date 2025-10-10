@@ -12,6 +12,10 @@ type Alumni = {
   period: string
   department?: string
   image?: string
+  companyStarted?: string
+  employees?: string
+  turnover?: string
+  companyBrief?: string
 }
 
 const alumni: Alumni[] = [
@@ -75,11 +79,11 @@ const alumni: Alumni[] = [
   { id: 58, name: "Mr.JAYAHARISHKUMAR S", position: "Proprietor", company: "JHK Builders", period: "2013-2017", department: "CVE" },
   { id: 59, name: "Mr.Varun Kumar S", position: "MD", company: "Eee Vee Homes", period: "2013-2017", department: "CVE" },
   { id: 60, name: "Mrs S.Vasuki Vinothini", position: "Chairman & Managing Director", company: "Kurukshetra IAS Academy", period: "2008-2012", department: "INT" },
-  { id: 61, name: "MR.ANANTH NARAYANAN", position: "CO-FOUNDER & CEO", company: "MEDLIFE", period: "1991-1995", department: "MECH" },
-  { id: 62, name: "MR.ISRAEL JEBSINGH IAS", position: "DIRECTOR", company: "OFFICIERS IAS ACADEMY", period: "1992-1996", department: "MECH" },
-  { id: 63, name: "MR.SANJEEV S VAKIL", position: "CEO", company: "Hindustan Institute of Maritime Training (HIMT)", period: "1985-1990", department: "MECH" },
-  { id: 64, name: "MR.VINAYAK R ESHWAR", position: "DIRECTOR", company: "ORIENT IMPEX", period: "2008-2012", department: "MECH" },
-  { id: 65, name: "MR.PALANIAPPAN THIYAGARAJAN", position: "DIRECTOR", company: "IYAPPAN ENGINEERING INDUSTRIES PVT LTD", period: "1995-1999", department: "MECH" },
+  { id: 61, name: "MR.ANANTH NARAYANAN", position: "CO-FOUNDER & CEO", company: "MEDLIFE", period: "1991-1995", department: "MECH", companyStarted: "2014 (Acquired by PharmEasy in 2021)", employees: "~5,000 (pre-acquisition)", turnover: "₹363.4 crore (FY 2019)", companyBrief: "Medlife was a pioneering digital healthcare platform and online pharmacy in India, offering online medicine delivery, health check-ups, and tele-consultations before merging with PharmEasy in 2021." },
+  { id: 62, name: "MR.ISRAEL JEBSINGH IAS", position: "DIRECTOR", company: "OFFICIERS IAS ACADEMY", period: "1992-1996", department: "MECH", companyStarted: "2013", employees: "~50–150", turnover: "₹15–50 crore (estimated)", companyBrief: "Officers IAS Academy is a Chennai-based civil services coaching institute run by former IAS officers, providing training and mentorship for UPSC aspirants." },
+  { id: 63, name: "MR.SANJEEV S VAKIL", position: "CEO", company: "Hindustan Institute of Maritime Training (HIMT)", period: "1985-1990", department: "MECH", companyStarted: "1998", employees: "~100–250", turnover: "₹30–75 crore (estimated)", companyBrief: "HIMT is a leading maritime education and training institution in India, offering approved courses for aspiring and serving seafarers for merchant navy careers." },
+  { id: 64, name: "MR.VINAYAK R ESHWAR", position: "DIRECTOR", company: "ORIENT IMPEX", period: "2008-2012", department: "MECH", companyStarted: "1978", employees: "11–25", turnover: "₹5–25 crore", companyBrief: "Orient Impex is a specialized supplier and processor of high-performance steel plates, including high-strength and abrasion-resistant grades for heavy industries." },
+  { id: 65, name: "MR.PALANIAPPAN THIYAGARAJAN", position: "DIRECTOR", company: "IYAPPAN ENGINEERING INDUSTRIES PVT LTD", period: "1995-1999", department: "MECH", companyStarted: "1991", employees: "~50–200", turnover: "₹10–40 crore (estimated)", companyBrief: "Iyappan Engineering Industries Pvt Ltd is a Chennai-based manufacturer producing machinery and equipment for diverse industrial applications." },
   { id: 66, name: "Ambareesh Ramakrishnan", position: "Founder & CEO", company: "ANTPOD", period: "2020-2023", department: "Automobile" },
   { id: 67, name: "Shameem Javed A", position: "Proprietor", company: "Alternative Soils", period: "2017-Present", department: "Biotechnology" },
   { id: 68, name: "Harshita Gupta", position: "CEO & Director", company: "Morulaa HealthTech Pvt Ltd", period: "2012-Present", department: "Biotechnology" },
@@ -347,6 +351,30 @@ function AlumniCard({ data, index }: { data: Alumni; index: number }) {
         <p className="text-xs text-stone-600 mb-3 group-hover:text-stone-700 transition-colors duration-300">
           {data.company}
         </p>
+        {(data.companyStarted || data.employees || data.turnover) && (
+          <div className="space-y-1 text-[11px] text-stone-600 mb-3">
+            {data.companyStarted && (
+              <p>
+                <span className="font-semibold text-stone-700">Company Started:</span> {data.companyStarted}
+              </p>
+            )}
+            {data.employees && (
+              <p>
+                <span className="font-semibold text-stone-700">Employees:</span> {data.employees}
+              </p>
+            )}
+            {data.turnover && (
+              <p>
+                <span className="font-semibold text-stone-700">Turnover:</span> {data.turnover}
+              </p>
+            )}
+          </div>
+        )}
+        {data.companyBrief && (
+          <p className="text-[11px] text-stone-600 mb-3 leading-relaxed">
+            {data.companyBrief}
+          </p>
+        )}
         {(data.period || data.department) && (
           <div className="mt-auto">
             <p className="text-xs text-stone-500 bg-stone-100 px-3 py-1 rounded-full group-hover:bg-stone-200 transition-colors duration-300">

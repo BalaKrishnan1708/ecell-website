@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading"
 
+// Image modal with zoom & fade animation
 function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
   return (
     <AnimatePresence>
@@ -38,21 +39,22 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
   )
 }
 
-const numStageOne = 50;
-const numStageTwo = 135;
-const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// BLOG CONTENT GENERATOR
+const numStageOne = 50
+const numStageTwo = 97
+const totalImages = numStageOne + numStageTwo
+const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 function generateBlogPosts() {
-  // April 6, 2025 is the start date for 1.png (stage one)
-  const startDate = new Date(2025, 3, 6); // Month is 0-indexed, so 3 = April
-  const blogPosts: any[] = [];
-  for (let i = 0; i < numStageOne; i++) {
-    const date = new Date(startDate.getTime());
-    date.setDate(startDate.getDate() + i);
-    const month = date.toLocaleString("en-US", { month: "long" });
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const image = `/stage one/${i + 1}.png`;
+  const startDate = new Date(2025, 3, 6)
+  const blogPosts: any[] = []
+  for (let i = 0; i < totalImages; i++) {
+    const date = new Date(startDate.getTime())
+    date.setDate(startDate.getDate() + i)
+    const month = date.toLocaleString("en-US", { month: "long" })
+    const day = date.getDate()
+    const year = date.getFullYear()
+    const image = i < numStageOne ? `/stage one/${i + 1}.png` : `/stage two/${i - numStageOne + 1}.png`
     blogPosts.push({
       date,
       dateString: `${month} ${day}, ${year}`,
@@ -60,29 +62,9 @@ function generateBlogPosts() {
       year,
       image,
       content: `Blog ${month} ${day}, ${year}`,
-    });
+    })
   }
-  // Continue with stage two: 1-135
-  // The next day after the last stage one image
-  let stageTwoStartDate = new Date(startDate.getTime());
-  stageTwoStartDate.setDate(startDate.getDate() + numStageOne);
-  for (let i = 1; i <= numStageTwo; i++) {
-    const date = new Date(stageTwoStartDate.getTime());
-    date.setDate(stageTwoStartDate.getDate() + (i - 1));
-    const month = date.toLocaleString("en-US", { month: "long" });
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const image = `/stage two/${i}.png`;
-    blogPosts.push({
-      date,
-      dateString: `${month} ${day}, ${year}`,
-      month,
-      year,
-      image,
-      content: `Blog ${month} ${day}, ${year}`,
-    });
-  }
-  return blogPosts;
+  return blogPosts
 }
 
 function groupPostsByMonth(blogPosts: any[]) {
@@ -111,12 +93,12 @@ export default function BlogPage() {
 
   if (loading || !postsByMonth || !blogPosts) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0b1b34]">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-indigo-900">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-2xl text-blue-300 font-bold"
+          className="text-2xl text-indigo-400 font-bold"
         >
           Loading Blog...
         </motion.div>
@@ -125,25 +107,12 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden mt-24">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        style={{ filter: "brightness(0.45)" }}
-      >
-        <source src="/your-ai-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="fixed inset-0 z-10 bg-[#0b1b34]/60 pointer-events-none" />
-      <div className="fixed inset-0 z-10 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:100%_3px] pointer-events-none" />
-
-      <div className="relative z-20 py-12 px-4 pb-32">
+    <div className="min-h-screen relative overflow-hidden mt-24 flex flex-col">
+      {/* Black background */}
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-gray-900 via-black to-indigo-900" />
+      <div className="relative z-40 py-12 px-4 pb-32 flex-1">
         <div className="max-w-3xl mx-auto">
-          <AnimatedHeading className="text-blue-300 mb-8 pb-2">Blog - 2025</AnimatedHeading>
-
+          <AnimatedHeading className="text-indigo-400 mb-8 pb-2">Blog - 2025</AnimatedHeading>
           {monthsOrder.map(
             (month) =>
               postsByMonth[month]?.length > 0 && (
@@ -155,15 +124,16 @@ export default function BlogPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7 }}
                 >
+                  {/* Month Toggle */}
                   <motion.button
-                    className={`w-full text-left text-3xl font-bold px-4 py-3 rounded-lg transition-all duration-300 mb-2 border-b-2 ${openMonth === month ? "bg-white/10 text-blue-300 border-blue-500" : "bg-black/30 text-blue-200 border-blue-900/60"}`}
+                    className={`w-full text-left text-3xl font-bold px-4 py-3 rounded-lg transition-all duration-300 mb-2 border-b-2 ${openMonth === month ? "bg-indigo-900/50 text-indigo-300 border-indigo-500" : "bg-gray-800/50 text-indigo-400 border-indigo-700"}`}
                     onClick={() => setOpenMonth(openMonth === month ? null : month)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     {month} 2025
                   </motion.button>
-
+                  {/* Accordion Animation */}
                   <AnimatePresence initial={false}>
                     {openMonth === month && (
                       <motion.div
@@ -173,11 +143,12 @@ export default function BlogPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                       >
+                        {/* Day buttons */}
                         <div className="flex flex-wrap gap-2 py-4">
                           {postsByMonth[month]?.map((post, idx) => (
                             <motion.button
                               key={post.dateString}
-                              className={`rounded px-3 py-1 border font-medium text-sm ${selectedDay?.month === month && selectedDay?.idx === idx ? "bg-blue-500 text-white border-blue-500" : "bg-black/40 text-blue-300 border-blue-700 hover:bg-white/10"}`}
+                              className={`rounded px-3 py-1 border font-medium text-sm ${selectedDay?.month === month && selectedDay?.idx === idx ? "bg-indigo-500 text-white border-indigo-500" : "bg-gray-800 text-indigo-300 border-indigo-600 hover:bg-indigo-900/50"}`}
                               onClick={() => setSelectedDay({ month, idx })}
                               whileHover={{ scale: 1.1 }}
                               whileTap={{ scale: 0.9 }}
@@ -186,29 +157,26 @@ export default function BlogPage() {
                             </motion.button>
                           ))}
                         </div>
-
+                        {/* Selected Day Card */}
                         <AnimatePresence>
                           {selectedDay?.month === month && (
                             <motion.div
                               key={postsByMonth[month][selectedDay.idx].dateString}
-                              className="bg-white/10 rounded-xl shadow-lg p-6 mt-4 border-t-4 border-blue-500"
+                              className="bg-gray-800/90 rounded-xl shadow-lg p-6 mt-4 border-t-4 border-indigo-500"
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: 30 }}
                               transition={{ duration: 0.5 }}
                             >
                               <div className="flex items-center gap-4 mb-4">
-                                <AnimatedHeading className="text-2xl mb-0 text-blue-300">
+                                <AnimatedHeading className="text-2xl mb-0 text-indigo-300">
                                   {postsByMonth[month][selectedDay.idx].dateString}
                                 </AnimatedHeading>
-                                <span className="inline-block bg-white/10 text-blue-300 font-semibold rounded-full px-4 py-1 text-lg border border-blue-500">
-                                  Day Streak:{" "}
-                                  {blogPosts.findIndex(
-                                    (p) => p.dateString === postsByMonth[month][selectedDay.idx].dateString,
-                                  ) + 1}
+                                <span className="inline-block bg-indigo-900/50 text-indigo-200 font-semibold rounded-full px-4 py-1 text-lg border border-indigo-600">
+                                  Day Streak: {blogPosts.findIndex((p) => p.dateString === postsByMonth[month][selectedDay.idx].dateString) + 1}
                                 </span>
                               </div>
-
+                              {/* Blog Image */}
                               <motion.div
                                 className="w-full h-96 bg-gray-800/60 rounded-lg flex items-center justify-center mb-6 overflow-hidden cursor-zoom-in"
                                 onClick={() =>
@@ -226,8 +194,7 @@ export default function BlogPage() {
                                   className="object-contain max-h-96 w-auto mx-auto"
                                 />
                               </motion.div>
-
-                              <div className="text-gray-200 text-lg font-medium">
+                              <div className="text-gray-300 text-lg font-medium">
                                 {postsByMonth[month][selectedDay.idx].content}
                               </div>
                             </motion.div>
@@ -237,14 +204,15 @@ export default function BlogPage() {
                     )}
                   </AnimatePresence>
                 </motion.div>
-              ),
+              )
           )}
         </div>
       </div>
-
+      {/* Image Modal */}
       {modalImg && (
         <ImageModal src={modalImg.src || "/placeholder.svg"} alt={modalImg.alt} onClose={() => setModalImg(null)} />
       )}
+      // ...existing code...
     </div>
   )
 }
