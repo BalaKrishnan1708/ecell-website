@@ -17,14 +17,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ecellsvceconfessions@gmail.com",
-        pass: "osro mjht aoot cibs", // Gmail app password
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
       },
     });
 
     await transporter.sendMail({
-      from: '"Confession Bot" <ecellsvceconfessions@gmail.com>',
-      to: "ecellsvceconfessions@gmail.com",
+      from: `"Confession Bot" <${process.env.MAIL_USER}>`,
+      to: process.env.MAIL_TO || process.env.MAIL_USER,
       subject: "New Anonymous Confession",
       text: confession,
     });
