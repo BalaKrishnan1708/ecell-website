@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useCallback } from 'react'
+import { Badge } from '@/components/ui/badge'
 // Assuming these are globally available or imported from standard libraries for the purpose of this single-file component
 // Since we are creating a single component file, we can treat these as imported from a UI library like shadcn/ui.
 // For the purpose of a runnable single file, I'll remove the unused imports and assume the functionality of the used ones.
