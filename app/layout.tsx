@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   description: "The official hub for the Entrepreneurship Cell of Sri Venkateswara College of Engineering, fostering innovation and startup culture.",
   keywords: ["entrepreneurship", "E-cell", "SVCE", "startups", "innovation", "business", "engineering"],
   authors: [{ name: "E-cell SVCE", url: "https://ecellsvce.in" }],
+    verification: {
+    google: 'ZgGe9C-HXqLHJExhXlQ8IS7nHLipeslwiHoQW_el9js',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
