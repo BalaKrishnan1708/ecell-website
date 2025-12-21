@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Generated sitemap placeholder. Replace {BASE_URL} with your site's full origin
+  (for example: https://ecell.example or https://your-domain.com) before publishing.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Top-level pages discovered in the app/ directory -->
+  <url>
+    <loc>{BASE_URL}/</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/blog</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/about</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/alumni</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/builders-guild</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/contact</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/entrepreneurship</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/events</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/incubation-center</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/our-services</loc>
+  </url>
+  <url>
+    <loc>{BASE_URL}/team</loc>
+  </url>
+</urlset>
