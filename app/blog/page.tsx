@@ -41,11 +41,13 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
 
 // BLOG CONTENT GENERATOR
 const numStageOne = 50
-const numStageTwo = 97
+// stage two now contains images up to 205 (files in public/stage two)
+const numStageTwo = 205
 const totalImages = numStageOne + numStageTwo
 const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 function generateBlogPosts() {
+  // Start date set to April 6, 2025 (months are zero-based)
   const startDate = new Date(2025, 3, 6)
   const blogPosts: any[] = []
   for (let i = 0; i < totalImages; i++) {
