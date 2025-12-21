@@ -748,18 +748,55 @@ const StartupSimulatorGame: React.FC = () => {
     )
   }
 
-  return (
-    <div className="w-full max-w-6xl mx-auto p-4 font-sans min-h-screen bg-gray-900">
+	// Confetti simple overlay when achievements unlocked
+	const [showConfetti, setShowConfetti] = useState(false)
+
+	useEffect(() => {
+		if (gameState.achievements.length > 0) {
+			setShowConfetti(true)
+			const t = setTimeout(() => setShowConfetti(false), 2200)
+			return () => clearTimeout(t)
+		}
+	}, [gameState.achievements.length])
+
+	// Small rotating daily challenge to increase engagement
+	const challenges = [
+		'Acquire 100 users in 60s',
+		'Improve satisfaction by 10%',
+		'Execute a low-cost marketing campaign',
+		'Increase innovation by 15%'
+	]
+	const [dailyChallenge] = useState(() => challenges[Math.floor(Math.random() * challenges.length)])
+
+		return (
+			<div className="w-full max-w-6xl mx-auto p-4 font-sans min-h-[650px] bg-gray-900 relative">
+				{showConfetti && (
+					<div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+						{Array.from({ length: 24 }).map((_, i) => (
+							<span
+								key={i}
+								style={{
+									left: `${(i / 24) * 100}%`,
+									top: `${10 + (i % 6) * 6}%`,
+									transform: `translateY(-10px) rotate(${(i % 5) * 30}deg)`
+								}}
+								className={`absolute text-2xl animate-bounce`}>
+								{['🎉','✨','🎊','🔥','🚀'][i % 5]}
+							</span>
+						))}
+					</div>
+				)}
       <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 rounded-2xl border border-gray-700 shadow-2xl">
         {/* Header */}
         <div className="p-6 border-b border-gray-700">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-            <div className="mb-4 sm:mb-0">
-              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500 mb-2">
-                Desi Startup Dreams
-              </h1>
-              <p className="text-gray-400 text-sm">Navigate the challenges of the Indian startup ecosystem!</p>
-          </div>
+							<div className="mb-4 sm:mb-0">
+							<h1 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500 mb-2">
+								E-Cell Startup Simulator
+							</h1>
+							<p className="text-gray-400 text-sm">Navigate the challenges of the Indian startup ecosystem — now optimized for laptops.</p>
+							<div className="mt-2 text-xs text-gray-400 italic">Daily Challenge: <span className="text-indigo-300 font-semibold">{dailyChallenge}</span></div>
+							</div>
             <div className="flex gap-3">
               <button
                 onClick={toggleAnalytics}
@@ -789,16 +826,22 @@ const StartupSimulatorGame: React.FC = () => {
             <div className="text-2xl font-bold text-blue-400">{gameState.users.toLocaleString()}</div>
             <div className="text-sm text-gray-400">Users (Traction)</div>
                 </div>
-          <div className="bg-gray-800/50 rounded-xl p-4 text-center shadow-lg border border-gray-700">
-            <Lightbulb className='w-6 h-6 mx-auto mb-2 text-yellow-400' />
-            <div className="text-2xl font-bold text-yellow-400">{gameState.satisfaction}%</div>
-            <div className="text-sm text-gray-400">Satisfaction (Retention)</div>
-                  </div>
-          <div className="bg-gray-800/50 rounded-xl p-4 text-center shadow-lg border border-gray-700">
-            <Zap className='w-6 h-6 mx-auto mb-2 text-purple-400' />
-            <div className="text-2xl font-bold text-purple-400">{gameState.innovation}%</div>
-            <div className="text-sm text-gray-400">Innovation (Future)</div>
-                </div>
+					<div className="bg-gray-800/50 rounded-xl p-4 text-center shadow-lg border border-gray-700">
+						<Lightbulb className='w-6 h-6 mx-auto mb-2 text-yellow-400' />
+						<div className="text-2xl font-bold text-yellow-400">{gameState.satisfaction}%</div>
+						<div className="text-sm text-gray-400">Satisfaction (Retention)</div>
+						<div className="mt-3 h-2 bg-gray-700 rounded-full overflow-hidden">
+							<div className="h-full bg-yellow-400 rounded-full" style={{ width: `${Math.min(100, Math.max(0, gameState.satisfaction))}%` }} />
+						</div>
+									</div>
+					<div className="bg-gray-800/50 rounded-xl p-4 text-center shadow-lg border border-gray-700">
+						<Zap className='w-6 h-6 mx-auto mb-2 text-purple-400' />
+						<div className="text-2xl font-bold text-purple-400">{gameState.innovation}%</div>
+						<div className="text-sm text-gray-400">Innovation (Future)</div>
+						<div className="mt-3 h-2 bg-gray-700 rounded-full overflow-hidden">
+							<div className="h-full bg-purple-400 rounded-full" style={{ width: `${Math.min(100, Math.max(0, gameState.innovation))}%` }} />
+						</div>
+							</div>
                 </div>
 
           {/* Game Controls & Status */}
@@ -833,8 +876,9 @@ const StartupSimulatorGame: React.FC = () => {
         {/* Decisions */}
         <div className="p-6 border-t border-gray-700">
           <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2"><Target className='w-5 h-5 text-red-500'/> Strategic Decisions (Level {gameState.level})</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {getDecisionsForLevel(gameState.level).map((decision) => (
+					<div className="max-h-[520px] overflow-y-auto pr-2">
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+								{getDecisionsForLevel(gameState.level).map((decision) => (
                   <div
                     key={decision.id}
                 className={`rounded-xl p-5 border shadow-lg transition-all ${
