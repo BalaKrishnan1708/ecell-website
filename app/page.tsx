@@ -297,7 +297,7 @@ export default function Home() {
                             alt={speaker.name}
                             width={144}
                             height={144}
-                            className="h-full w-full object-cover rounded-2xl grayscale"
+                            className="h-full w-full object-cover rounded-2xl"
                           />
                         ) : (
                           <div className="h-full w-full bg-indigo-500/10 flex items-center justify-center rounded-2xl border border-indigo-500/20">
@@ -383,7 +383,7 @@ export default function Home() {
                         alt={event.title}
                         width={800}
                         height={600}
-                        className="w-full h-auto object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-700"
+                        className="w-full h-auto object-cover aspect-[4/3] transition-all duration-700"
                       />
                     </div>
                   </div>
