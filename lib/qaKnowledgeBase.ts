@@ -438,13 +438,48 @@ export const qaKnowledgeBase: QAEntry[] = [
     keywords: ["achievements", "success", "impact", "events", "startups"],
     relatedQuestions: ["success stories", "impact", "partnerships", "growth"]
   },
+  {
+    question: "what is on this website",
+    answer: "This website is the central hub for E-Cell SVCE. It includes:\n\n1. **Home**: Dashboard with our mission, live stats, and the **SVCE Founder Studio** game.\n2. **About**: Our history, mission, vision, and the core philosophy of innovation at SVCE.\n3. **Events**: A chronological library of our major initiatives, workshops, and summits.\n4. **Team**: Meet the student leaders, department heads, and executive members.\n5. **Alumni**: Dedicated to the successful founders and leaders who graduated from our cell.\n6. **Builders Guild**: Our technical community focused on building real-world solutions.\n7. **Blog**: A daily venture archive and community log of activities.\n8. **Join Us**: Direct links to our WhatsApp community, Instagram, and LinkedIn hubs.",
+    category: "general",
+    keywords: ["website map", "structure", "navigation", "what is on the site", "pages"],
+    relatedQuestions: ["how to use the website", "builders guild", "founder studio"]
+  },
+  {
+    question: "how to play the startup game",
+    answer: "The **SVCE Founder Studio** on the homepage is a high-fidelity startup simulation. Here is how it works:\n\n- **Goal**: Transition your startup from 'Ideation' stage to 'Market Dominance'.\n- **Currency**: You start with ₹5.0L Seed Capital. Manage your burn rate carefully!\n- **Strategic Moves**: Use 'Strategic Moves' cards to invest in MVP building, IP patents, or Growth loops.\n- **Risk vs Reward**: Every move has a Risk % and Success Confidence. Higher Innovation levels boost your success odds.\n- **Valuation**: Your company valuation grows based on User Traction and Product-Market Fit (PMF).\n- **Milestones**: Secure 12 fundamental objectives to reach Unicorn status.",
+    category: "game",
+    keywords: ["startup game", "founder studio", "how to play", "simulation", "game rules"],
+    relatedQuestions: ["what is founder studio", "valuation", "capital", "milestones"]
+  },
+  {
+    question: "what is founder studio",
+    answer: "SVCE Founder Studio is an interactive entrepreneurship simulator built into our website. It allows students to experience the challenges of founding a startup, managing seed capital, refining Product-Market Fit (PMF), and scaling a business within the SVCE ecosystem. It's designed to teach strategic decision-making and financial literacy in a fun, premium environment.",
+    category: "game",
+    keywords: ["founder studio", "startup simulator", "interactive game", "entrepreneurship game"],
+    relatedQuestions: ["how to play the startup game", "what is on the home page"]
+  },
 
   {
+    question: "startup dictionary",
+    answer: "Here are the key concepts used in our **SVCE Founder Studio** and general entrepreneurship:\n\n- **PMF (Product-Market Fit)**: The degree to which a product satisfies a strong market demand. High PMF means people love and use your product consistently.\n- **Seed Capital**: Initial funding used to start a business. In our game, you start with ₹5.0L.\n- **Burn Rate**: The rate at which a startup spends its capital before generating positive cash flow.\n- **Valuation**: The estimated worth of a company. It increases as you gain users and improve PMF.\n- **MVP (Minimum Viable Product)**: A basic version of a product with just enough features to satisfy early customers and provide feedback.\n- **Pivot**: A fundamental change in business strategy when the current model isn't working.\n- **IP (Intellectual Property)**: Creations of the mind, such as inventions, designs, and proprietary code that give your startup a competitive edge.",
+    category: "game",
+    keywords: ["dictionary", "definitions", "pmf", "valuation", "burn rate", "mvp", "pivot"],
+    relatedQuestions: ["how to play the startup game", "what is founder studio"]
+  },
+  {
     question: "what is builders guild",
-    answer: "The Builders Guild is our technical community focused on building innovative solutions. It's a community of student developers and tech enthusiasts who focus on building real-world projects, collaborating on open-source projects, and learning technical knowledge. Activities include weekly coding sessions, project showcases, hackathons, and mentorship programs.",
+    answer: "The Builders Guild is the technical powerhouse of E-Cell SVCE. It's a community of developers, designers, and engineers who build real-world products. Members work on the E-Cell website, internal tools, and startup prototypes. It focuses on peer-to-peer learning and rapid prototyping.",
     category: "technical",
-    keywords: ["builders guild", "technical", "developers", "coding", "projects"],
-    relatedQuestions: ["tech team", "development", "coding", "projects"]
+    keywords: ["builders guild", "tech guild", "developers", "projects", "coding"],
+    relatedQuestions: ["who is the tech head", "team components"]
+  },
+  {
+    question: "tell me about incubation",
+    answer: "The SVCE Incubation Center provides the physical and strategic infrastructure for student startups. We offer:\n- **Workspace**: Dedicated office space on campus.\n- **Mentorship**: Access to alumni founders and industry veterans.\n- **Funding**: Guidance on securing grants like MSME and venture capital.\n- **IP Support**: Assistance with patent filing and legal documentation.",
+    category: "services",
+    keywords: ["incubation", "startups", "office space", "support", "mentorship"],
+    relatedQuestions: ["what services does e-cell provide", "startup dictionary"]
   },
 
   {

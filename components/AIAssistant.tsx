@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { MessageCircle, Send, X, Bot, User } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { MessageCircle, Send, X, Bot, User, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateEnhancedResponse } from "@/lib/qaKnowledgeBase";
 
@@ -17,17 +17,20 @@ const AIAssistant = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-  text: "Hello! I'm the E - Cell SVCE AI assistant. I can help you with information about our programs, events, team, services, and anything related to entrepreneurship. What would you like to know?",
+      text: "Hello! I'm the E-Cell SVCE assistant. I can help you with information about our programs, events, team, and services. How can I assist you today?",
       isUser: false,
       timestamp: new Date(),
     },
   ]);
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const generateResponse = (query: string): string => {
-    return generateEnhancedResponse(query);
-  };
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, isTyping]);
 
   const handleSend = () => {
     if (!inputText.trim()) return;
@@ -44,7 +47,7 @@ const AIAssistant = () => {
     setIsTyping(true);
 
     setTimeout(() => {
-      const aiResponse = generateResponse(inputText);
+      const aiResponse = generateEnhancedResponse(inputText);
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: aiResponse,
@@ -53,7 +56,7 @@ const AIAssistant = () => {
       };
       setMessages((prev) => [...prev, aiMessage]);
       setIsTyping(false);
-    }, 1000);
+    }, 800);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -65,116 +68,128 @@ const AIAssistant = () => {
 
   return (
     <>
-      
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <MessageCircle size={24} />
-      </motion.button>
+      {/* Floating Trigger Button */}
+      {!isOpen && (
+        <motion.button
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-8 right-8 z-[110] p-5 bg-indigo-600 rounded-full shadow-2xl text-white border border-white/20"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </motion.button>
+      )}
 
-      
+      {/* Chat Interface */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50 flex items-end justify-end p-4"
-            onClick={() => setIsOpen(false)}
-          >
+          <div className="fixed inset-0 z-[120] pointer-events-none flex items-end justify-end md:p-10">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              initial={{ scale: 0.9, opacity: 0, y: 100 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              className="bg-white rounded-lg shadow-xl w-full max-w-md h-[600px] flex flex-col"
-              onClick={(e) => e.stopPropagation()}
+              exit={{ scale: 0.9, opacity: 0, y: 100 }}
+              className="bg-[#0a0a0a] md:bg-[#0a0a0a]/90 backdrop-blur-3xl md:rounded-[2.5rem] border-t md:border border-white/10 shadow-2xl w-full md:max-w-lg h-full md:h-[750px] md:max-h-[85vh] flex flex-col pointer-events-auto overflow-hidden"
             >
-              
-              <div className="bg-indigo-600 text-white p-4 rounded-t-lg flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Bot size={20} />
-                  <span className="font-semibold">E - Cell SVCE Assistant</span>
+              {/* Header */}
+              <div className="p-8 bg-indigo-600/10 border-b border-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center">
+                    <Sparkles className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white">E-Cell Assistant</h3>
+                    <div className="flex items-center gap-2 mt-1">
+                       <span className="w-2 h-2 rounded-full bg-green-500" />
+                       <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Online</span>
+                    </div>
+                  </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-gray-200 transition-colors"
+                  className="p-3 bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5 text-gray-400 hover:text-white"
                 >
-                  <X size={20} />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
-              
-              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {/* Messages Area */}
+              <div 
+                ref={scrollRef}
+                className="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar"
+              >
                 {messages.map((message) => (
                   <motion.div
                     key={message.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
                     className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-[80%] p-3 rounded-lg ${
+                      className={`max-w-[85%] p-5 rounded-[2rem] border ${
                         message.isUser
-                          ? "bg-indigo-600 text-white"
-                          : "bg-gray-100 text-gray-800"
+                          ? "bg-indigo-600 border-indigo-500 text-white"
+                          : "bg-white/5 border-white/5 text-gray-200"
                       }`}
                     >
-                      <div className="flex items-start gap-2">
-                        {!message.isUser && <Bot size={16} className="mt-1 flex-shrink-0" />}
-                        <div className="whitespace-pre-wrap">{message.text}</div>
-                        {message.isUser && <User size={16} className="mt-1 flex-shrink-0" />}
+                      <div className="flex items-start gap-4">
+                        {!message.isUser && <Bot className="w-4 h-4 mt-1 flex-shrink-0 text-indigo-400" />}
+                        <div className="text-sm leading-relaxed whitespace-pre-wrap">{message.text}</div>
+                        {message.isUser && <User className="w-4 h-4 mt-1 flex-shrink-0 text-indigo-200" />}
                       </div>
                     </div>
                   </motion.div>
                 ))}
 
-                
                 {isTyping && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex justify-start"
-                  >
-                    <div className="bg-gray-100 text-gray-800 p-3 rounded-lg flex items-center gap-2">
-                      <Bot size={16} />
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                  <div className="flex justify-start">
+                    <div className="bg-white/5 border border-white/5 p-4 rounded-2xl flex items-center gap-3">
+                      <div className="flex space-x-1.5">
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce" />
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.2s]" />
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.4s]" />
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
               </div>
 
-              
-              <div className="p-4 border-t bg-gray-50">
-                <div className="flex gap-2">
+              {/* Input Area */}
+              <div className="p-8 border-t border-white/5 bg-white/[0.02]">
+                <div className="relative flex items-center">
                   <input
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask me anything about E - Cell SVCE..."
-                    className="flex-1 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-800 bg-white"
-                    autoFocus
+                    placeholder="Ask a question..."
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 pr-16 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                   />
                   <button
                     onClick={handleSend}
                     disabled={!inputText.trim()}
-                    className="bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 text-white p-3 rounded-lg transition-colors flex items-center justify-center min-w-[48px]"
+                    className="absolute right-2 p-3 bg-indigo-600 hover:bg-indigo-500 disabled:bg-white/5 text-white rounded-xl transition-all"
                   >
-                    <Send size={20} />
+                    <Send className="w-4 h-4" />
                   </button>
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
+
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 10px;
+        }
+      `}</style>
     </>
   );
 };

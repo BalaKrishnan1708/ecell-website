@@ -73,9 +73,6 @@ export default function AboutPage() {
                   )),
                 ]}
               </ul>
-              <Button size="lg" className="animate-bounce-slow">
-                Join Our Community
-              </Button>
             </div>
             <div className="relative">
               <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-xl shadow-xl">

@@ -9,7 +9,7 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
         onClick={onClose}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -18,7 +18,7 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
         <motion.img
           src={src}
           alt={alt}
-          className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white"
+          className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white/10"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
@@ -41,30 +41,44 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
 
 // BLOG CONTENT GENERATOR
 const numStageOne = 50
-// stage two now contains images up to 205 (files in public/stage two)
-const numStageTwo = 205
+const numStageTwo = 272
 const totalImages = numStageOne + numStageTwo
-const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const monthsOrder = ["April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March"]
 
 function generateBlogPosts() {
-  // Start date set to April 6, 2025 (months are zero-based)
-  const startDate = new Date(2025, 3, 6)
+  const startDate = new Date(2025, 3, 6) // April 6, 2025
+  const endDate = new Date(2026, 2, 27) // March 27, 2026
+  
+  const totalDays = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1 // 356
+  const skipInterval = totalDays / (totalDays - totalImages) // 356 / 34 ≈ 10.47
+  
   const blogPosts: any[] = []
-  for (let i = 0; i < totalImages; i++) {
+  let imageIndex = 0
+  
+  for (let i = 0; i < totalDays && imageIndex < totalImages; i++) {
+    const isMissed = (i % Math.round(skipInterval)) === 0 && (totalDays - i) > (totalImages - imageIndex) && i > 0 && i < totalDays - 1;
+    
     const date = new Date(startDate.getTime())
     date.setDate(startDate.getDate() + i)
-    const month = date.toLocaleString("en-US", { month: "long" })
-    const day = date.getDate()
-    const year = date.getFullYear()
-    const image = i < numStageOne ? `/stage one/${i + 1}.png` : `/stage two/${i - numStageOne + 1}.png`
-    blogPosts.push({
-      date,
-      dateString: `${month} ${day}, ${year}`,
-      month,
-      year,
-      image,
-      content: `Blog ${month} ${day}, ${year}`,
-    })
+    
+    if (!isMissed) {
+      const month = date.toLocaleString("en-US", { month: "long" })
+      const day = date.getDate()
+      const year = date.getFullYear()
+      const imagePath = imageIndex < numStageOne 
+        ? `/stage one/${imageIndex + 1}.png` 
+        : `/stage two/${imageIndex - numStageOne + 1}.png`
+        
+      blogPosts.push({
+        date,
+        dateString: `${month} ${day}, ${year}`,
+        month,
+        year,
+        image: imagePath,
+        content: `Blog update shared with the SVCE E-Cell community archive for ${month} ${day}, ${year}.`,
+      })
+      imageIndex++
+    }
   }
   return blogPosts
 }
@@ -95,47 +109,32 @@ export default function BlogPage() {
 
   if (loading || !postsByMonth || !blogPosts) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-indigo-900">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl text-indigo-400 font-bold"
-        >
-          Loading Blog...
-        </motion.div>
+      <div className="min-h-screen flex items-center justify-center bg-[#050505]">
+        <div className="text-xl font-bold text-indigo-400">Loading Blog...</div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden mt-24 flex flex-col">
-      {/* Black background */}
-      <div className="fixed inset-0 z-0 bg-gradient-to-br from-gray-900 via-black to-indigo-900" />
+    <div className="min-h-screen relative overflow-hidden mt-24 flex flex-col page-container bg-grid">
       <div className="relative z-40 py-12 px-4 pb-32 flex-1">
         <div className="max-w-3xl mx-auto">
-          <AnimatedHeading className="text-indigo-400 mb-8 pb-2">Blog - 2025</AnimatedHeading>
+          <AnimatedHeading className="text-white mb-12 text-5xl">Blog Archive</AnimatedHeading>
+          
           {monthsOrder.map(
             (month) =>
               postsByMonth[month]?.length > 0 && (
-                <motion.div
-                  key={month}
-                  className="mb-12"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                >
-                  {/* Month Toggle */}
-                  <motion.button
-                    className={`w-full text-left text-3xl font-bold px-4 py-3 rounded-lg transition-all duration-300 mb-2 border-b-2 ${openMonth === month ? "bg-indigo-900/50 text-indigo-300 border-indigo-500" : "bg-gray-800/50 text-indigo-400 border-indigo-700"}`}
+                <div key={month} className="mb-12">
+                  <button
+                    className={`w-full text-left text-3xl font-black uppercase tracking-tighter px-6 py-4 transition-all duration-300 mb-2 border-b-2 ${
+                      openMonth === month 
+                        ? "text-indigo-400 border-indigo-500" 
+                        : "text-gray-400 border-white/5 hover:text-white"
+                    }`}
                     onClick={() => setOpenMonth(openMonth === month ? null : month)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.9 }}
                   >
-                    {month} 2025
-                  </motion.button>
-                  {/* Accordion Animation */}
+                    {month} {month === "January" || month === "February" || month === "March" ? "2026" : "2025"}
+                  </button>
                   <AnimatePresence initial={false}>
                     {openMonth === month && (
                       <motion.div
@@ -145,58 +144,55 @@ export default function BlogPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                       >
-                        {/* Day buttons */}
-                        <div className="flex flex-wrap gap-2 py-4">
+                        <div className="flex flex-wrap gap-2 py-6">
                           {postsByMonth[month]?.map((post, idx) => (
-                            <motion.button
+                            <button
                               key={post.dateString}
-                              className={`rounded px-3 py-1 border font-medium text-sm ${selectedDay?.month === month && selectedDay?.idx === idx ? "bg-indigo-500 text-white border-indigo-500" : "bg-gray-800 text-indigo-300 border-indigo-600 hover:bg-indigo-900/50"}`}
+                              className={`w-10 h-10 rounded flex items-center justify-center border transition-all ${
+                                selectedDay?.month === month && selectedDay?.idx === idx 
+                                  ? "bg-indigo-600 text-white border-indigo-500" 
+                                  : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
+                              }`}
                               onClick={() => setSelectedDay({ month, idx })}
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
                             >
                               {post.date.getDate()}
-                            </motion.button>
+                            </button>
                           ))}
                         </div>
-                        {/* Selected Day Card */}
-                        <AnimatePresence>
+                        <AnimatePresence mode="wait">
                           {selectedDay?.month === month && (
                             <motion.div
                               key={postsByMonth[month][selectedDay.idx].dateString}
-                              className="bg-gray-800/90 rounded-xl shadow-lg p-6 mt-4 border-t-4 border-indigo-500"
-                              initial={{ opacity: 0, y: 30 }}
+                              className="glass-card rounded-3xl p-8 mt-4"
+                              initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: 30 }}
-                              transition={{ duration: 0.5 }}
+                              exit={{ opacity: 0, y: 10 }}
+                              transition={{ duration: 0.3 }}
                             >
-                              <div className="flex items-center gap-4 mb-4">
-                                <AnimatedHeading className="text-2xl mb-0 text-indigo-300">
+                              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                                <h3 className="text-2xl font-black text-white uppercase tracking-tighter">
                                   {postsByMonth[month][selectedDay.idx].dateString}
-                                </AnimatedHeading>
-                                <span className="inline-block bg-indigo-900/50 text-indigo-200 font-semibold rounded-full px-4 py-1 text-lg border border-indigo-600">
+                                </h3>
+                                <span className="text-indigo-400 font-bold text-xs uppercase tracking-widest px-4 py-1.5 bg-indigo-500/10 rounded-full border border-indigo-500/20">
                                   Day Streak: {blogPosts.findIndex((p) => p.dateString === postsByMonth[month][selectedDay.idx].dateString) + 1}
                                 </span>
                               </div>
-                              {/* Blog Image */}
-                              <motion.div
-                                className="w-full h-96 bg-gray-800/60 rounded-lg flex items-center justify-center mb-6 overflow-hidden cursor-zoom-in"
+                              <div
+                                className="w-full aspect-video bg-white/5 rounded-2xl flex items-center justify-center mb-6 overflow-hidden cursor-zoom-in"
                                 onClick={() =>
                                   setModalImg({
                                     src: postsByMonth[month][selectedDay.idx].image,
                                     alt: `Blog ${postsByMonth[month][selectedDay.idx].dateString}`,
                                   })
                                 }
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.9 }}
                               >
                                 <img
-                                  src={postsByMonth[month][selectedDay.idx].image || "/placeholder.svg"}
+                                  src={postsByMonth[month][selectedDay.idx].image}
                                   alt={`Blog ${postsByMonth[month][selectedDay.idx].dateString}`}
-                                  className="object-contain max-h-96 w-auto mx-auto"
+                                  className="object-contain h-full w-full"
                                 />
-                              </motion.div>
-                              <div className="text-gray-300 text-lg font-medium">
+                              </div>
+                              <div className="text-gray-400 text-lg leading-relaxed">
                                 {postsByMonth[month][selectedDay.idx].content}
                               </div>
                             </motion.div>
@@ -205,16 +201,14 @@ export default function BlogPage() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </div>
               )
           )}
         </div>
       </div>
-      {/* Image Modal */}
       {modalImg && (
-        <ImageModal src={modalImg.src || "/placeholder.svg"} alt={modalImg.alt} onClose={() => setModalImg(null)} />
+        <ImageModal src={modalImg.src} alt={modalImg.alt} onClose={() => setModalImg(null)} />
       )}
-      // ...existing code...
     </div>
   )
 }
