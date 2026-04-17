@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   },
   description: "The official hub for the Entrepreneurship Cell of Sri Venkateswara College of Engineering, fostering innovation and startup culture.",
   keywords: ["entrepreneurship", "E-cell", "SVCE", "startups", "innovation", "business", "engineering"],
-  authors: [{ name: "E-cell SVCE", url: "https://ecellsvce.in" }],
+  authors: [{ name: "E-cell SVCE", url: "https://ecell-webiste-svce.vercel.app" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-  url: "https://ecellsvce.in",
+  url: "https://ecell-webiste-svce.vercel.app",
     title: "E-cell SVCE | Entrepreneurship Cell",
     description: "Fostering the spirit of entrepreneurship at SVCE.",
     siteName: "E-cell SVCE",
