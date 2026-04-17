@@ -1,2 +1,35 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Next.js build output
 .next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Lock files (only keep package-lock.json)
+pnpm-lock.yaml
+yarn.lock
+
+# Logs & debug
+*.log
+npm-debug.log*
+
+# Build & CI artifacts
+build_output.txt
+redeploy-trigger.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Vercel
+.vercel
