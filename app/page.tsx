@@ -65,17 +65,17 @@ export default function Home() {
   ]
 
   const speakers = [
-    { name: "Dr. Arvind A R", designation: "Deputy General Manager, Ashok Leyland Limited", image: "/Inspirational Speakers/Arvind AR.jpg" },
+    { name: "Dr. Arvind A R", designation: "Deputy General Manager, Ashok Leyland Limited", image: "/inspirational-speakers/Arvind AR.jpg" },
     { name: "Mr. T. Vignesh", designation: "Chief Guest, Associate Business Facilitation Officer", image: "" },
     { name: "Gurunathraje", designation: "Executive Member, E-cell", image: "" },
     { name: "Subash Chandra Bose", designation: "Executive Member E-cell Svce, Co-founder, hraipal.com", image: "" },
-    { name: "Mr. Palaniappan Narayanan", designation: "Co-Founder & CEO at Mocero Health Solutions, Chennai", image: "/Inspirational Speakers/Palaniappan.jpg" },
-    { name: "Mr. Shri Sivarajah Ramanathan", designation: "Mission Director of Tamil Nadu Startup and Innovation Mission", image: "/Inspirational Speakers/Shivarajah.jpg" },
-    { name: "Nithin Alexander", designation: "Founder, Entrepreneurs of Madras", image: "/Inspirational Speakers/Nithin.jpg" },
-    { name: "Mr. Ajay Prasath G A", designation: "Founder & CEO, Loopmans Automation Pvt Ltd.", image: "/Inspirational Speakers/Ajay.jpg" },
-    { name: "Mr. sarabesh Sriram", designation: "Founder & partner, Stacia corp", image: "/Inspirational Speakers/Sarabesh.jpg" },
-    { name: "Mr. Deepak Kumar", designation: "Founder of ScrollMe, Habitate.io, and C3", image: "/Inspirational Speakers/Deepak kumar.jpg" },
-    { name: "T. G. Ramakrishnan", designation: "Founder of TGR Tex", image: "/Inspirational Speakers/Ramakrishan.jpg" },
+    { name: "Mr. Palaniappan Narayanan", designation: "Co-Founder & CEO at Mocero Health Solutions, Chennai", image: "/inspirational-speakers/Palaniappan.jpg" },
+    { name: "Mr. Shri Sivarajah Ramanathan", designation: "Mission Director of Tamil Nadu Startup and Innovation Mission", image: "/inspirational-speakers/Shivarajah.jpg" },
+    { name: "Nithin Alexander", designation: "Founder, Entrepreneurs of Madras", image: "/inspirational-speakers/Nithin.jpg" },
+    { name: "Mr. Ajay Prasath G A", designation: "Founder & CEO, Loopmans Automation Pvt Ltd.", image: "/inspirational-speakers/Ajay.jpg" },
+    { name: "Mr. sarabesh Sriram", designation: "Founder & partner, Stacia corp", image: "/inspirational-speakers/Sarabesh.jpg" },
+    { name: "Mr. Deepak Kumar", designation: "Founder of ScrollMe, Habitate.io, and C3", image: "/inspirational-speakers/Deepak kumar.jpg" },
+    { name: "T. G. Ramakrishnan", designation: "Founder of TGR Tex", image: "/inspirational-speakers/Ramakrishan.jpg" },
   ]
 
   const events = [
