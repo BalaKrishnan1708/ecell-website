@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState, useMemo } from "react"
 import { Search, Filter, Building2, GraduationCap, Calendar, Users } from "lucide-react"
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading"
 
 type Alumni = {
   id: number
@@ -17,6 +18,9 @@ type Alumni = {
   turnover?: string
   companyBrief?: string
 }
+
+// ... Keep existing alumni array and overrides logic ...
+
 
 const alumni: Alumni[] = [
   { id: 1, name: "B Alagu Selvan", position: "CEO", company: "ChennaiBizz", period: "1988 – 1992", department: "CSE" },
@@ -208,30 +212,29 @@ export default function AlumniPage() {
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 text-stone-900">
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-100/30 to-orange-100/30"></div>
+    <div className="min-h-screen relative overflow-hidden pt-28 pb-32 flex flex-col page-container bg-grid text-white">
+      <section className="py-12 sm:py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block px-6 py-2 bg-gradient-to-r from-amber-200 to-orange-200 rounded-full mb-6">
-            <span className="text-sm font-semibold text-amber-800">Our Success Stories</span>
+          <div className="inline-block px-5 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full mb-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">Our Success Stories</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-amber-800 via-orange-700 to-red-700 bg-clip-text text-transparent leading-tight">
+          <AnimatedHeading className="text-4xl sm:text-5xl md:text-6xl text-white mb-4">
             Alumni Entrepreneurs
-          </h1>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-            Discover the remarkable journeys of our alumni who have built successful ventures and made their mark in the entrepreneurial world.
+          </AnimatedHeading>
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            Discover the remarkable journeys of our alumni who have built successful ventures and made their mark in the global entrepreneurial ecosystem.
           </p>
-          <div className="mt-8 flex justify-center items-center gap-8 text-sm text-stone-500">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              <span>{alumni.length} Alumni</span>
+          <div className="mt-8 flex flex-wrap justify-center items-center gap-6 sm:gap-10 text-xs sm:text-sm font-bold text-gray-400">
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+              <Users className="w-4 h-4 text-indigo-400" />
+              <span>{alumni.length} Alumni Founders</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Building2 className="w-4 h-4" />
-              <span>Various Industries</span>
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+              <Building2 className="w-4 h-4 text-indigo-400" />
+              <span>Global Ventures</span>
             </div>
-            <div className="flex items-center gap-2">
-              <GraduationCap className="w-4 h-4" />
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+              <GraduationCap className="w-4 h-4 text-indigo-400" />
               <span>{Object.keys(groupedAlumni).length} Departments</span>
             </div>
           </div>
@@ -239,15 +242,15 @@ export default function AlumniPage() {
       </section>
 
       <section className="pb-20 px-4">
-        <div className="container mx-auto space-y-16">
+        <div className="container mx-auto space-y-20">
           {Object.entries(groupedAlumni).map(([department, departmentAlumni], deptIndex) => (
             <div key={department} className="space-y-8">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-2">
+                <AnimatedHeading className="text-2xl sm:text-3xl font-black text-white mb-2 uppercase tracking-tight">
                   {department}
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto rounded-full"></div>
-                <p className="text-stone-600 mt-2">{departmentAlumni.length} Alumni</p>
+                </AnimatedHeading>
+                <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+                <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">{departmentAlumni.length} Alumni</p>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -312,15 +315,15 @@ function AlumniCard({ data, index }: { data: Alumni; index: number }) {
 
   return (
     <div 
-      className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl border border-amber-200/50 overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-white/90"
+      className="group glass-card rounded-3xl p-6 border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition-all duration-500 flex flex-col items-center text-center h-full shadow-2xl relative overflow-hidden hover:-translate-y-1"
       style={{
         animationDelay: `${index * 100}ms`,
         animation: 'fadeInUp 0.6s ease-out forwards'
       }}
     >
-      <div className="px-6 py-8 flex flex-col items-center text-center h-full">
-        <div className="relative h-32 w-32 rounded-full overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-200/20 to-orange-200/20"></div>
+      <div className="px-2 py-4 flex flex-col items-center text-center h-full w-full">
+        <div className="relative h-28 w-28 sm:h-32 sm:w-32 rounded-full overflow-hidden bg-indigo-500/10 border-2 border-indigo-500/30 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:border-indigo-400 transition-all duration-300 shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
           {idx < sources.length ? (
             <Image
               src={src}
@@ -333,7 +336,7 @@ function AlumniCard({ data, index }: { data: Alumni; index: number }) {
               priority={false}
             />
           ) : (
-            <span className="text-2xl font-bold text-amber-700 relative z-10">
+            <span className="text-2xl font-bold text-indigo-400 relative z-10">
               {data.name
                 .split(" ")
                 .map((n) => n[0])
@@ -342,42 +345,42 @@ function AlumniCard({ data, index }: { data: Alumni; index: number }) {
             </span>
           )}
         </div>
-        <h3 className="font-bold text-lg text-amber-900 mb-2 group-hover:text-amber-800 transition-colors duration-300">
+        <h3 className="font-black text-lg sm:text-xl text-white mb-1 group-hover:text-indigo-400 transition-colors duration-300">
           {data.name}
         </h3>
-        <p className="text-sm font-medium text-amber-700 mb-1 group-hover:text-amber-600 transition-colors duration-300">
+        <p className="text-sm font-bold text-indigo-400 mb-1">
           {data.position}
         </p>
-        <p className="text-xs text-stone-600 mb-3 group-hover:text-stone-700 transition-colors duration-300">
+        <p className="text-xs font-semibold text-gray-300 mb-3">
           {data.company}
         </p>
         {(data.companyStarted || data.employees || data.turnover) && (
-          <div className="space-y-1 text-[11px] text-stone-600 mb-3">
+          <div className="space-y-1 text-[11px] text-gray-400 mb-3 bg-white/5 p-2 rounded-xl border border-white/5 w-full">
             {data.companyStarted && (
               <p>
-                <span className="font-semibold text-stone-700">Company Started:</span> {data.companyStarted}
+                <span className="font-semibold text-gray-300">Started:</span> {data.companyStarted}
               </p>
             )}
             {data.employees && (
               <p>
-                <span className="font-semibold text-stone-700">Employees:</span> {data.employees}
+                <span className="font-semibold text-gray-300">Team:</span> {data.employees}
               </p>
             )}
             {data.turnover && (
               <p>
-                <span className="font-semibold text-stone-700">Turnover:</span> {data.turnover}
+                <span className="font-semibold text-gray-300">Turnover:</span> {data.turnover}
               </p>
             )}
           </div>
         )}
         {data.companyBrief && (
-          <p className="text-[11px] text-stone-600 mb-3 leading-relaxed">
+          <p className="text-[11px] text-gray-400 mb-3 leading-relaxed font-medium">
             {data.companyBrief}
           </p>
         )}
         {(data.period || data.department) && (
-          <div className="mt-auto">
-            <p className="text-xs text-stone-500 bg-stone-100 px-3 py-1 rounded-full group-hover:bg-stone-200 transition-colors duration-300">
+          <div className="mt-auto pt-2">
+            <p className="text-[11px] font-bold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">
               {[data.period, data.department].filter(Boolean).join(" • ")}
             </p>
           </div>

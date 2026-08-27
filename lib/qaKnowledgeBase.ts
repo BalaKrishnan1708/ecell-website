@@ -879,6 +879,99 @@ export const qaKnowledgeBase: QAEntry[] = [
     category: "team",
     keywords: ["balakrishnan", "bala krishna", "tech head", "technology", "department heads"],
     relatedQuestions: ["tech team", "department heads", "technology", "website"]
+  },
+
+  // EXPANDED KNOWLEDGE BASE & SPECIALIZED Q&A
+  {
+    question: "what is the founder quiz",
+    answer: "The **'Are You Ready to Founder?'** quiz is an interactive 25-question diagnostic tool on our website. It evaluates your readiness across 5 dimensions: Mindset, Problem Validation, Product Strategy, Team Execution, and Financial Literacy. Upon completion, you get a Founder Persona and custom recommendations for SVCE E-Cell programs!",
+    category: "quiz",
+    keywords: ["founder quiz", "are you ready to founder", "diagnostic", "quiz", "test", "readiness"],
+    relatedQuestions: ["how to take the quiz", "what programs are available", "startup game"]
+  },
+  {
+    question: "what is msme idea hackathon",
+    answer: "The **MSME Idea Hackathon 4.0** is a national-level innovation challenge where SVCE students pitch groundbreaking solutions to real-world problems. In the latest edition, 18 student proposals from SVCE were successfully selected and forwarded for government incubation and seed funding!",
+    category: "events",
+    keywords: ["msme", "msme hackathon", "hackathon 4.0", "funding", "proposals", "incubation"],
+    relatedQuestions: ["incubation center", "how to get funding", "events"]
+  },
+  {
+    question: "tell me about alumni founders",
+    answer: "SVCE has produced stellar alumni founders including:\n- **Ananth Narayanan** (MECH 1995): Co-Founder & CEO of Medlife (₹363Cr turnover, merged with PharmEasy in 2021).\n- **Jonathan Siddharth** (CSE 2005): CEO of Turing.com (Unicorn talent platform).\n- **G. Srikrishnan** (CSE 2005): CEO of Rocketlane.\n- **Israel Jebasingh IAS** (MECH 1996): Director of Officers IAS Academy.\n- **Dr. Mallik Mahalingam** (CSE 1991): Founder of Springpath (Acquired by Cisco).",
+    category: "alumni",
+    keywords: ["alumni", "alumni founders", "medlife", "turing", "rocketlane", "ananth narayanan", "jonathan siddharth"],
+    relatedQuestions: ["alumni page", "who graduated from svce", "success stories"]
+  },
+  {
+    question: "when are weekly meetups",
+    answer: "E-Cell SVCE conducts **Weekly Community Meetups every Thursday from 3:15 PM to 4:15 PM** on the SVCE Campus. It features open ideation sessions, peer pitch practice, and direct mentorship with senior members.",
+    category: "events",
+    keywords: ["weekly meetup", "thursday meetup", "community meetup", "when are meetups", "weekly"],
+    relatedQuestions: ["events", "how to join e-cell", "community"]
+  },
+  {
+    question: "how to apply for incubation at svce",
+    answer: "You can apply for incubation through the **Incubation Center** page on our website or by pitching your MVP during the MSME Idea Hackathon. The program provides 6 months of workspace, legal support, IP patent guidance, and investor networking.",
+    category: "services",
+    keywords: ["apply for incubation", "incubation process", "epic incubator", "how to incubate"],
+    relatedQuestions: ["incubation center", "msme idea hackathon", "funding"]
+  },
+  {
+    question: "what is business model canvas",
+    answer: "A **Business Model Canvas (BMC)** is a 1-page framework summarizing 9 key blocks of a startup: Customer Segments, Value Propositions, Channels, Customer Relationships, Revenue Streams, Key Resources, Key Activities, Key Partnerships, and Cost Structure. We teach BMC workshops at E-Cell SVCE!",
+    category: "education",
+    keywords: ["bmc", "business model canvas", "framework", "business plan", "monetization"],
+    relatedQuestions: ["workshops", "startup dictionary", "programs"]
+  },
+  {
+    question: "how to get patent support at svce",
+    answer: "SVCE EPIC (Entrepreneurship Promotion & Incubation Center) provides full assistance with **IP (Intellectual Property) protection, prior art search, and patent filing** for innovative student inventions.",
+    category: "services",
+    keywords: ["patent", "ip", "intellectual property", "epic", "patent filing", "legal support"],
+    relatedQuestions: ["incubation center", "services", "faculty managers"]
+  },
+  {
+    question: "who are the faculty managers",
+    answer: "The faculty managers guiding E-Cell SVCE are **Dr. S. Ilaiyavel** (Manager & Professor) and **Mr. V. Senthill Velan** (Manager & Assistant Professor). They provide administrative guidance, institutional backing, and mentorship.",
+    category: "team",
+    keywords: ["faculty manager", "ilaiyavel", "senthill velan", "professors", "faculty", "mentors"],
+    relatedQuestions: ["team", "who is president", "core leadership"]
+  },
+  {
+    question: "what is iit madras edd cohort",
+    answer: "The **IIT Madras EDD Cohort (Growth Track)** is an official joint partnership between SVCE E-Cell and IIT Madras to offer student founders direct mentorship, market validation support, and exposure to seed investors.",
+    category: "events",
+    keywords: ["iit madras", "edd cohort", "growth track", "iitm", "collaboration"],
+    relatedQuestions: ["events", "partnerships", "manit bhopal"]
+  },
+  {
+    question: "what is mou with manit bhopal",
+    answer: "SVCE E-Cell signed an official MoU with **E-Cell MANIT Bhopal** as their official outreach partner for E-Summit 2025, enabling cross-college hackathons and inter-state startup exchanges.",
+    category: "events",
+    keywords: ["manit bhopal", "mou", "bhopal", "e-summit 2025", "collaboration"],
+    relatedQuestions: ["iit madras", "events", "partnerships"]
+  },
+  {
+    question: "how to structure a 10 slide pitch deck",
+    answer: "A standard 10-slide investor pitch deck covers: 1) Problem, 2) Solution, 3) Product Demo, 4) Market Size (TAM), 5) Business Model, 6) Traction / PMF, 7) Marketing Strategy, 8) Competition, 9) Team, 10) Financial Ask & Use of Funds.",
+    category: "education",
+    keywords: ["pitch deck", "10 slides", "investor pitch", "pitch structure", "deck"],
+    relatedQuestions: ["how to pitch to angel investors", "startup dictionary", "workshops"]
+  },
+  {
+    question: "can 1st year students join e-cell",
+    answer: "Yes! **First-year students from any branch** (CSE, ECE, EEE, Mech, Biotech, Chemical, IT, AIDS) are eligible to join E-Cell SVCE. No prior business experience is required; we offer beginner bootcamps and team recruitment calls.",
+    category: "general",
+    keywords: ["1st year", "first year", "can i join", "eligibility", "branches", "freshers"],
+    relatedQuestions: ["how to join e-cell", "team structure", "programs"]
+  },
+  {
+    question: "who are the past speakers",
+    answer: "Inspirational leaders who have spoken at SVCE E-Cell include:\n- **Dr. Arvind A R** (DGM, Ashok Leyland)\n- **Mr. T. Vignesh** (MSME Bureau Officer)\n- **Mr. Palaniappan Narayanan** (CEO, Mocero Health)\n- **Mr. Shri Sivarajah Ramanathan** (Mission Director, StartupTN)\n- **Nithin Alexander** (Founder, Entrepreneurs of Madras)\n- **Mr. Deepak Kumar** (Founder, ScrollMe & Habitate.io)",
+    category: "events",
+    keywords: ["speakers", "past speakers", "ashok leyland", "startuptn", "vignesh", "deepak kumar", "sivarajah"],
+    relatedQuestions: ["events", "who visited svce", "home page"]
   }
 ];
 

@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/events", label: "Events" },
   { href: "/team", label: "Team" },
   { href: "/alumni", label: "Alumni" },
-  { href: "/builders-guild", label: "Builders" },
+  { href: "https://e-cell-builders-guild.vercel.app/", label: "Builders", external: true },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -101,7 +101,25 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => {
-            const isActive = (pathname === link.href) || (link.href !== "/" && pathname?.startsWith(link.href));
+            const isActive = !link.external && ((pathname === link.href) || (link.href !== "/" && pathname?.startsWith(link.href)));
+            if (link.external) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-xl text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300 relative group overflow-hidden text-gray-400 hover:text-white flex items-center gap-1"
+                >
+                  <span className="relative z-10">{link.label}</span>
+                  <ArrowUpRight className="w-3 h-3 text-indigo-400" />
+                  <motion.div
+                    className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    transition={{ duration: 0.3 }}
+                  />
+                </a>
+              );
+            }
             return (
               <Link
                 key={link.href}
@@ -193,7 +211,28 @@ const Navbar = () => {
             
             <nav className="flex flex-col gap-6">
               {navLinks.map((link, i) => {
-                const isActive = (pathname === link.href) || (link.href !== "/" && pathname?.startsWith(link.href));
+                const isActive = !link.external && ((pathname === link.href) || (link.href !== "/" && pathname?.startsWith(link.href)));
+                if (link.external) {
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                    >
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMenu}
+                        className="text-4xl font-bold tracking-tighter transition-all hover:text-indigo-400 flex items-center justify-between group text-white"
+                      >
+                        {link.label}
+                        <ArrowUpRight className="w-6 h-6 text-indigo-400 opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      </a>
+                    </motion.div>
+                  );
+                }
                 return (
                   <motion.div
                     key={link.href}

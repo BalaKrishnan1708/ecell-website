@@ -686,7 +686,7 @@ const teamMembers: TeamMember[] = [
     position: "Community Manager",
     team: "Community Managers",
     domain: "CSE - 2nd Year",
-    image: "/teams/community/madhav.webp",
+    image: "",
     linkedin: "https://www.linkedin.com/in/madhav-krishna-jps/",
     email: "",
     instagram: "",
@@ -722,7 +722,7 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <div className="absolute w-full h-full [backface-visibility:hidden]">
-          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+          <div className="glass-card bg-black/60 border border-white/10 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col text-white">
             <div className="aspect-square relative">
               <Image 
                 src={member.image || "/placeholder.svg"} 
@@ -733,9 +733,9 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
               />
             </div>
             <div className="p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
-              <h3 className="text-base sm:text-lg font-bold mb-1">{member.name}</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground mb-2">{member.position}</p>
-              <span className="inline-block px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+              <h3 className="text-base sm:text-lg font-bold mb-1 text-white">{member.name}</h3>
+              <p className="text-xs sm:text-sm text-indigo-400 mb-2 font-medium">{member.position}</p>
+              <span className="inline-block px-2 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-semibold">
                 {member.domain}
               </span>
             </div>
@@ -743,10 +743,10 @@ function TeamMemberCard({ member, isFlipped, onFlip }: { member: TeamMember; isF
         </div>
 
         <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <div className="bg-[#0b1b34] text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col items-center justify-center p-3 sm:p-4">
-            <h3 className="text-lg sm:text-xl font-bold mb-1 text-center">{member.name}</h3>
-            <p className="text-brand-primary mb-3 text-center text-sm sm:text-base">{member.position}</p>
-            <span className="inline-block mb-4 px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+          <div className="bg-[#0a0a0a] border border-indigo-500/30 text-white rounded-2xl shadow-xl transition-all duration-300 h-full flex flex-col items-center justify-center p-3 sm:p-4">
+            <h3 className="text-lg sm:text-xl font-bold mb-1 text-center text-white">{member.name}</h3>
+            <p className="text-indigo-400 mb-3 text-center text-sm sm:text-base font-semibold">{member.position}</p>
+            <span className="inline-block mb-4 px-2 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-semibold">
               {member.domain}
             </span>
             <div className="flex gap-3 sm:gap-4 mt-2 flex-wrap justify-center">
@@ -832,10 +832,7 @@ export default function TeamPage() {
 
   return (
     <div
-      className="min-h-screen relative overflow-hidden mt-24"
-      style={{
-        background: "radial-gradient(circle at 50% 40%, #23255d 0%, #181e36 100%)"
-      }}
+      className="min-h-screen relative overflow-hidden pt-28 pb-32 flex flex-col page-container bg-grid text-white"
       onClick={() => setFlippedCardId(null)}
     >
       <motion.section

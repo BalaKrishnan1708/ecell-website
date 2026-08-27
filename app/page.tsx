@@ -8,6 +8,7 @@ import { ArrowRight, BookOpen, Briefcase, Lightbulb, Users, Globe, Rocket, Star,
 import { useState, useEffect } from "react"
 import ServiceModal from "@/components/ServiceModal"
 import StartupSimulatorGame from "@/components/StartupSimulatorGame"
+import FounderQuiz from "@/components/FounderQuiz"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Carousel,
@@ -183,6 +184,33 @@ export default function Home() {
             className="shadow-[0_0_100px_rgba(79,70,229,0.1)] rounded-[3rem]"
           >
             <StartupSimulatorGame />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Founder Readiness Quiz Section */}
+      <section className="py-24 px-4 md:px-8 relative bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="section-title">Are You Ready to Founder?</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto font-medium">
+              Take our 25-question interactive diagnostic quiz to evaluate your founder mindset, 
+              validation strategy, execution power, and get custom recommendations for SVCE programs!
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <FounderQuiz />
           </motion.div>
         </div>
       </section>

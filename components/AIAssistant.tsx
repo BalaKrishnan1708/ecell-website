@@ -154,14 +154,14 @@ const AIAssistant = () => {
               </div>
 
               {/* Input Area */}
-              <div className="p-8 border-t border-white/5 bg-white/[0.02]">
+              <div className="p-6 sm:p-8 border-t border-white/5 bg-white/[0.02]">
                 <div className="relative flex items-center">
                   <input
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask a question..."
+                    placeholder="Ask about programs, quiz, events, alumni..."
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 pr-16 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                   />
                   <button
